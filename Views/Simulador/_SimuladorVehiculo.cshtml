@@ -1,0 +1,392 @@
+﻿<style>
+
+
+
+
+    .example {
+        position: relative;
+        max-width: 650px;
+        margin: auto;
+        border-bottom: 15px solid;
+        border-bottom-color: #db4e00;
+    }
+
+    .service-card__title {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 600;        
+        margin-top: 5px;
+        margin-bottom: 6px;
+    }
+    .content-simulador {
+        position: relative;
+        z-index: 10;
+        background-color: #fff;
+        box-shadow: 0px 0px 60px 0px rgb(0 0 0 / 5%);
+        padding-bottom: 20px;
+    }
+
+    .block-title__title {
+        font-size: 30px !important;
+        text-align: center !important;
+    }
+
+    .block-title {
+        margin-bottom: 30px;
+    }
+
+</style>
+
+
+
+
+
+<section class="about-five pt-120 pb-120">
+    <div class="about-five__shape-1"></div><!-- /.about-five__shape-1 -->
+    <div class="about-five__shape-2"></div><!-- /.about-five__shape-2 -->
+    <div class="about-five__shape-3"></div><!-- /.about-five__shape-3 -->
+    <div class="container">
+        <div class="row row-gutter-y-60">
+            <div class="col-lg-6">
+                <div class="about-five__image wow fadeInLeft" data-wow-duration="1500ms">
+                    
+                    <img src="~/Content/IMG-CRESE/Cotizador/cotizador.png" alt="">
+                    <div class="about-five__image__caption">
+                        <div class="about-five__image__caption__shape-1"></div>
+                        <!-- /.about-five__image__caption__shape-1 -->
+                        <div class="about-five__image__caption__shape-2"></div>
+                        <!-- /.about-five__image__caption__shape-2 -->
+                        <div class="about-five__image__caption__shape-3"></div>
+                        <!-- /.about-five__image__caption__shape-3 -->
+                        <h3 class="about-five__image__title">
+                            75<i>%</i>
+                        </h3><!-- /.about-five__image__title -->
+                        <p class="about-five__image__text">Del Valor de tu Auto</p><!-- /.about-five__image__text -->
+                    </div><!-- /.about-five__image__caption -->
+                    <div class="about-five__image__floated">SIMULA</div><!-- /.team-details__floated -->
+                </div><!-- /.about-five__image -->
+            </div><!-- /.col-lg-6 -->
+            <div class="col-lg-6" id="SimuladorCreditoInicio">
+                <div class="about-five__content">
+                    <div class="block-title text-left">
+                        <p class="block-title__tagline">te prestamos más</p><!-- /.block-title__tagline -->
+                        <h2 class="block-title__title">Simula tu préstamo</h2><!-- /.block-title__title -->
+                    </div><!-- /.block-title -->
+                    <!-- Panel Wizard Form Container -->
+                    <div class="panel" id="exampleWizardFormContainer">
+                        <div class="panel-heading" id="INICIOSIMULACION">
+                        </div>
+                        <div class="panel-body">
+                            <!-- Steps -->
+                            <div class="text-center" align="center">
+                                <div class="example">
+                                    <div class="pearls row" style="margin: 0 0 1px;">
+                                        <div class="pearl current col-4">
+                                            <div class="pearl-icon"><i class="fa fa-car" aria-hidden="true"></i></div>
+                                            <span class="pearl-title">Tu auto</span>
+                                        </div>
+                                        <div class="pearl col-4">
+                                            <div class="pearl-icon"><i class="fa fa-user" aria-hidden="true"></i></div>
+                                            <span class="pearl-title">Datos personales</span>
+                                        </div>
+                                        <div class="pearl col-4">
+                                            <div class="pearl-icon"><i class="fa fa-check" aria-hidden="true"></i></div>
+                                            <span class="pearl-title">Validación</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Steps -->
+                            <!-- Wizard Content -->
+                            <form id="exampleFormContainer" class="form-one contact-form-validated">
+                                <div class="wizard-content">
+
+                                    <div class="wizard-pane active" id="DivAuto" role="tabpanel">
+
+                                        <div class="container">
+
+                                            <!--<div class="row row-gutter-y-50 pt-30">
+                                <div class="col-lg-12">
+                                    <div class="service-card">
+                                        <div class="service-card__content">
+                                            <div class="service-card__content__inner">
+
+                                                <p class="service-card__title">
+                                                    Selecciona los datos de vehículo para crear una oferta de préstamo por tu vehículo
+                                                </p>-->
+                                            <!-- /.service-card__title -->
+                                            <!--</div>--><!-- /.service-card__content__inner -->
+                                            <!--</div>--><!-- /.service-card__content -->
+                                            <!--</div>--><!-- /.service-card -->
+                                            <!--</div>--><!-- /.col-lg-4 col-md-12 col-sm-12 -->
+                                            <!--</div>-->
+
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p class="service-card__title">
+                                                        Selecciona los datos de vehículo.
+                                                    </p><!-- /.service-card__title -->
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <section class="security-wrap ptb-30">
+                                                        <div class="row gx-5 align-items-center">
+
+                                                            <div class="col-lg-12">
+
+                                                                <div class="row">
+
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group">
+                                                                            <label for="IdAnio" class="text-blue">Año de tu auto</label>
+                                                                            @Html.DropDownList("IdAnio", (IEnumerable<SelectListItem>)ViewBag.IdAnio, new { @class = "form-control select2", id = "IdAnio", @dataplugin = "select2" })
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group">
+                                                                            <label for="IdMarca" class="text-blue">Marca</label>
+                                                                            <select class="form-control select2" id="IdMarca" required="required" name="IdMarca" data-plugin="select2">
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group">
+                                                                            <label for="IdModelo" class="text-blue">Modelo</label>
+                                                                            <select class="form-control select2" id="IdModelo" name="IdModelo" required="required" data-plugin="select2">
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group">
+                                                                            <label for="IdVersion" class="text-blue">Versión</label>
+                                                                            <select class="form-control select2" id="IdVersion" required="required" name="IdVersion" data-plugin="select2">
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+
+
+                                                            </div>
+
+
+                                                        </div>
+                                                    </section>
+
+                                                </div>
+
+
+
+                                            </div>
+
+                                        </div>
+
+
+
+                                    </div>
+
+
+
+
+                                    <div class="wizard-pane" id="DivDatosContacto" role="tabpanel">
+
+                                        <div class="container">
+
+                                            <!--<div class="row row-gutter-y-50 pt-30">
+                                <div class="col-lg-12">
+                                    <div class="service-card">
+                                        <div class="service-card__content">
+                                            <div class="service-card__content__inner">
+                                                <div class="service-card__icon">
+                                                    <i class="fa fa-address-book"></i>
+                                                </div>-->
+                                            <!-- /.service-card__icon -->
+                                            <!--<h3 class="service-card__title">
+                                    Cuéntanos un poco sobre ti
+                                </h3>-->
+                                            <!-- /.service-card__title -->
+                                            <!--</div>--><!-- /.service-card__content__inner -->
+                                            <!--</div>--><!-- /.service-card__content -->
+                                            <!--</div>--><!-- /.service-card -->
+                                            <!--</div>--><!-- /.col-lg-4 col-md-12 col-sm-12 -->
+                                            <!--</div>-->
+
+                                            <div class="row">
+
+                                                <h3 class="service-card__title">
+                                                    Cuéntanos un poco sobre ti
+                                                </h3><!-- /.service-card__title -->
+
+                                                <div class="form-group col-md-4">
+                                                    <label class="floating-label text-blue">Nombre</label>
+                                                    <input type="text" name="Nombre" id="Nombre" required="required" class="form-control" />
+                                                </div>
+
+                                                <div class="form-group col-md-4">
+                                                    <label class="floating-label text-blue">Apellido paterno</label>
+                                                    <input type="text" name="ApellidoPaterno" id="ApellidoPaterno" required="required" class="form-control" />
+                                                </div>
+
+                                                <div class="form-group col-md-4">
+                                                    <label class="floating-label text-blue">Apellido materno</label>
+                                                    <input type="text" name="ApellidoMaterno" id="ApellidoMaterno" class="form-control" />
+                                                </div>
+
+
+
+                                                <div class="form-group col-md-6">
+
+                                                    <label class="floating-label text-blue">Teléfono celular</label>
+                                                    <input type="text" name="Telefono" id="Telefono" required="required" class="form-control" maxlength="10" />
+
+                                                </div>
+
+                                                <div class="form-group col-md-6">
+                                                    <label class="floating-label text-blue">Email</label>
+                                                    <input type="text" name="Email" id="Email" required="required" class="form-control" />
+                                                </div>
+
+
+                                                <div class="col-md-12">
+                                                    <div class="checkbox-custom checkbox-primary">
+                                                        <input type="checkbox" name="AvisoPrivacidad" required="required">
+                                                        <label></label>
+                                                        Estoy de acuerdo con las <a style="color: #ee7e3c;" href="javascript:MostrarAvisoGlobal();"><strong>Aviso de Privacidad</strong></a>  y <a style="color: #ee7e3c;" href="javascript:MostrarTerminosGlobal();"><strong>Términos y Condiciones</strong></a>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+
+                                        </div>
+
+
+
+
+                                    </div>
+
+
+                                    <div class="wizard-pane" id="DivValidacion" role="tabpanel">
+
+
+
+                                        <div class="container">
+
+
+                                            <!--<div class="row row-gutter-y-50 pt-30">
+                                <div class="col-lg-12">
+                                    <div class="service-card">
+                                        <div class="service-card__content">
+                                            <div class="service-card__content__inner">
+                                                <div class="service-card__icon">
+                                                    <i class="icon-car"></i>
+                                                </div>-->
+                                            <!-- /.service-card__icon -->
+                                            <!--<h3 class="service-card__title">
+                                    Código de verificación.
+                                </h3>-->
+                                            <!-- /.service-card__title -->
+                                            <!--<p class="text-justify">Por seguridad de tu información ingresa el código de verificación que hemos enviado vía mensaje de texto al:</p>
+
+                                </div>-->
+                                            <!-- /.service-card__content__inner -->
+                                            <!--</div>--><!-- /.service-card__content -->
+                                            <!--</div>--><!-- /.service-card -->
+                                            <!--</div>--><!-- /.col-lg-4 col-md-12 col-sm-12 -->
+                                            <!--</div>-->
+
+                                            <div class="row">
+
+                                                <h3 class="service-card__title">
+                                                    Código de verificación.
+                                                </h3><!-- /.service-card__title -->
+
+                                                <div class="form-group col-md-4">
+                                                    <label class="floating-label text-blue">Nombre</label>
+                                                    <input type="text" name="NombreInfo" id="NombreInfo" class="form-control" readonly />
+                                                </div>
+                                                <div class="form-group col-md-4">
+                                                    <label class="floating-label text-blue">Apellido paterno</label>
+                                                    <input type="text" name="ApellidoPaternoInfo" id="ApellidoPaternoInfo" class="form-control" readonly />
+                                                </div>
+                                                <div class="form-group col-md-4">
+                                                    <label class="floating-label text-blue">Apellido materno</label>
+                                                    <input type="text" name="ApellidoMaternoInfo" id="ApellidoMaternoInfo" class="form-control" readonly />
+                                                </div>
+
+
+                                                <div class="form-group col-md-6">
+                                                    <label class="floating-label text-blue">Teléfono celular</label>
+                                                    <input type="text" name="TelefonoInfo" id="TelefonoInfo" class="form-control" readonly />
+                                                </div>
+
+                                                <div class="form-group col-md-6">
+                                                    <label class="floating-label text-blue">Código</label>
+                                                    <input type="text" name="Codigo" id="Codigo" required="required" class="form-control" maxlength="4" />
+                                                    <small class="invalid-feedback" id="validCodigo">Código incorrecto</small>
+                                                </div>
+
+                                                <div class="col-12 text-center" id="loading" style="display:none;">
+                                                    Estamos preparando tu propuesta.
+                                                    <div class="text-center">
+                                                        <div class="spinner-border" role="status">
+                                                            <span class="visually-hidden">Loading...</span>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+
+
+
+
+
+
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- Wizard Content -->
+
+
+
+                        </div>
+                    </div>
+                    <!-- End Panel Wizard Form Container -->
+
+
+
+
+
+
+
+
+
+
+                </div><!-- /.about-five__content -->
+
+
+                <div class="loan-calculator__form__terms">
+                    *La información proporcionada en este simulador es para fines ilustrativos y esta sujeta a cambios sin previo aviso.
+                </div>
+
+            </div><!-- /.col-lg-6 -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</section><!-- /.about-five -->
+
+
+
+
+
+
+
+
+
+
+

@@ -20,10 +20,10 @@ namespace AutoyVaro.Controllers
         private Entities db = new Entities();
         private String llave = "";
 
-        public ActionResult Index()
+        public ActionResult Index1() 
         {
             var wsLibrozul = new wslibroazulSoapClient();
-            llave = wsLibrozul.IniciarSesion("prodAutoVaro5221", "da123123123");
+            llave = wsLibrozul.IniciarSesion("prodAutoVaro5221", "data*8541");
             Session["llaveTemp"] = llave;
 
             var listaAnios = wsLibrozul.ObtenerAnios(llave, 0, 0);
@@ -49,7 +49,7 @@ namespace AutoyVaro.Controllers
             return View();
         }
 
-        public ActionResult Inicio()
+        public ActionResult Inicio1()
         {
             var wsLibrozul = new wslibroazulSoapClient();
             llave = wsLibrozul.IniciarSesion("prodAutoVaro5221", "daqwerqwer1");

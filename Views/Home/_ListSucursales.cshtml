@@ -4,12 +4,30 @@
 
     @foreach (var item in Model)
     {
-        if (item.visible)
+        if (item.visible && item.Activo)
         {
-            <li class="nav-item">
-                <a href="@Url.Action("Sucursal","Home", new {Id = item.Id })" class="nav-link">@item.Descripción</a>
-            </li>
+            if (item.Descripción == "Puebla")
+            {
+                <li class="nav-item">
+                    <a href="" class="nav-link">Puebla</a>
+                    <ul>
+                        <li class="nav-item">
+                            <a href="@Url.Action("Sucursal","Home", new {Id = 7 })" class="nav-link">Anzures </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="@Url.Action("Sucursal","Home", new {Id = 23 })" class="nav-link">Plaza Bios</a>
+                        </li>
+                    </ul>
+                </li>
+            }
+            else
+            {
+                <li class="nav-item">
+                    <a href="@Url.Action("Sucursal","Home", new {Id = item.Id })" class="nav-link">@item.Descripción</a>
+                </li>
+            }
 
         }
     }
 </ul>
+

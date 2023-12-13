@@ -1,0 +1,297 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>CRESE - Crédito Seguro</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- favicons Icons -->
+
+
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="~/Content/IMG-CRESE/icon180.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="~/Content/IMG-CRESE/ICON32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="~/Content/IMG-CRESE/ICON32x32.png" />
+    <link rel="manifest" href="~/Content/assets-crese/images/favicons/site.webmanifest" />
+    <meta name="description" content="Finlon - Loan & Credit Repair HTML Template" />
+
+    <!-- fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/assets-crese/vendors/reey-font/stylesheet.css">
+    <link rel="stylesheet" href="~/Content/assets-crese/vendors/bootstrap/css/bootstrap.min.css" />
+    
+    <link href="~/Content/assets-crese/vendors/bootstrap/css/bootstrap-extend.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="~/Content/assets-crese/vendors/animate/animate.min.css" />
+            
+    <link href="~/Content/assets-crese/fonts/font-awesome/font-awesome.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="~/Content/assets-crese/vendors/finlon-icons/style.css" />
+    <link rel="stylesheet" href="~/Content/assets-crese/vendors/jarallax/jarallax.css" />
+    <link rel="stylesheet" href="~/Content/assets-crese/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
+    <link rel="stylesheet" href="~/Content/assets-crese/vendors/nouislider/nouislider.min.css" />
+    <link rel="stylesheet" href="~/Content/assets-crese/vendors/nouislider/nouislider.pips.css" />
+    <link rel="stylesheet" href="~/Content/assets-crese/vendors/odometer/odometer.min.css" />
+    <link rel="stylesheet" href="~/Content/assets-crese/vendors/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="~/Content/assets-crese/vendors/owl-carousel/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="~/Content/assets-crese/vendors/owl-carousel/assets/owl.theme.default.min.css" />
+    
+    <link href="~/Content/assets-crese/vendors/notie/notie.css" rel="stylesheet" />
+
+    <link href="~/Content/assets-crese/vendors/select2/select2.css" rel="stylesheet" />
+
+    <link href="~/Content/assets-crese/vendors/jquery-wizard/jquery-wizard.css" rel="stylesheet" />
+    <link href="~/Content/assets-crese/vendors/formvalidation/formValidation.css" rel="stylesheet" />
+
+
+
+    <!-- template styles -->
+    <link rel="stylesheet" href="~/Content/assets-crese/css/finlon.css" />
+
+
+</head>
+
+
+<body class="custom-cursor">
+
+    <div class="custom-cursor__cursor"></div>
+    <div class="custom-cursor__cursor-two"></div>
+
+    <div class="preloader">
+        <div class="preloader__image"></div>
+    </div>
+
+    <!-- /.preloader -->
+    <div class="page-wrapper">
+
+        @Html.Partial("_MenuCrese")
+
+        <div class="stricky-header stricked-menu main-menu">
+            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+        </div><!-- /.stricky-header -->
+        <!-- ======= Start Contenido ======= -->
+        @RenderSection("featured", required: false)
+        @RenderBody()
+        <!-- End Contenido -->
+
+
+
+        @Html.Partial("_FooterCrese")
+
+    </div><!-- /.page-wrapper -->
+
+
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+        <!-- /.mobile-nav__overlay -->
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
+
+            <div class="logo-box">
+                <a href="index.html" aria-label="logo image"><img src="~/Content/IMG-CRESE/logo.png" width="155" alt="" /></a>
+            </div>
+            <!-- /.logo-box -->
+            <div class="mobile-nav__container"></div>
+            <!-- /.mobile-nav__container -->
+
+            <ul class="mobile-nav__contact list-unstyled">
+                <li>
+                    <i class="icon-email"></i>
+                    <a href="mailto:asesor@cresetuauto.mx">asesor@cresetuauto.mx</a>
+                </li>
+                <li>
+                    <i class="icon-telephone"></i>
+                    <a href="tel:2821100040">282 110 0040</a>
+                </li>
+            </ul><!-- /.mobile-nav__contact -->
+
+            <div class="mobile-nav__social">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-pinterest"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div><!-- /.mobile-nav__social -->
+
+        </div>
+        <!-- /.mobile-nav__content -->
+    </div>
+    <!-- /.mobile-nav__wrapper -->
+
+
+    <div class="search-popup">
+        <div class="search-popup__overlay search-toggler"></div>
+        <!-- /.search-popup__overlay -->
+        <div class="search-popup__content">
+            <form action="#">
+                <label for="search" class="sr-only">search here</label><!-- /.sr-only -->
+                <input type="text" id="search" placeholder="Search Here..." />
+                <button type="submit" aria-label="search submit" class="thm-btn">
+                    <i class="icon-magnifying-glass"></i>
+                </button>
+            </form>
+        </div>
+        <!-- /.search-popup__content -->
+    </div>
+    <!-- /.search-popup -->
+    <!-- Modal -->
+    <div class="modal fade" id="ModalGlobal" aria-hidden="true" aria-labelledby="ModalGlobal"
+         role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-simple modal-lg">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <div class="service-card-four__icon">
+                        <i class="fa fa-envelope-o"></i>
+                    </div>
+
+                    <a onclick="$('#ModalGlobal').modal('hide');" class="close" data-dismiss="modal" aria-label="Close">
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <div class="modal-body" id="ModalGlobalBody">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- End Modal -->
+
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+
+
+    <script src="~/Content/assets-crese/vendors/jquery/jquery-3.6.0.min.js"></script>
+    <script src="~/Content/assets-crese/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/assets-crese/vendors/jarallax/jarallax.min.js"></script>
+    <script src="~/Content/assets-crese/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+    <script src="~/Content/assets-crese/vendors/jquery-appear/jquery.appear.min.js"></script>
+    <script src="~/Content/assets-crese/vendors/jquery-circle-progress/jquery.circle-progress.min.js"></script>
+    <script src="~/Content/assets-crese/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="~/Content/assets-crese/vendors/jquery-validate/jquery.validate.min.js"></script>
+    <script src="~/Content/assets-crese/vendors/nouislider/nouislider.min.js"></script>
+    <script src="~/Content/assets-crese/vendors/odometer/odometer.min.js"></script>
+    <script src="~/Content/assets-crese/vendors/swiper/swiper.min.js"></script>
+    <script src="~/Content/assets-crese/vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="~/Content/assets-crese/vendors/wnumb/wNumb.min.js"></script>
+    <script src="~/Content/assets-crese/vendors/wow/wow.js"></script>
+    <script src="~/Content/assets-crese/vendors/isotope/isotope.js"></script>
+    <script src="~/Content/assets-crese/vendors/countdown/countdown.min.js"></script>
+    <!-- template js -->
+
+    <script src="~/Content/assets-crese/vendors/formvalidation/formValidation.js"></script>
+    <script src="~/Content/assets-crese/vendors/select2/select2.js"></script>
+
+    <script src="~/Content/assets-crese/vendors/formvalidation/framework/bootstrap.js"></script>
+    <script src="~/Content/assets-crese/vendors/matchheight/jquery.matchHeight-min.js"></script>
+    <script src="~/Content/assets-crese/vendors/jquery-wizard/jquery-wizard.js"></script>
+    <script src="~/Content/assets-crese/vendors/notie/notie.js"></script>
+
+    <script src="~/Content/assets-crese/js/finlon.js"></script>
+
+    <script type="text/javascript">
+
+        function MostrarTerminosGlobal() {
+            $.get('@Url.Action("TerminosPartial", "Home")').done(function (data) {
+                $("#ModalGlobalBody").html(data);
+                $("#ModalGlobal").modal("show");
+            });
+        }
+        function MostrarAvisoGlobal() {
+            $.get('@Url.Action("AvisoPartial", "Home")').done(function (data) {
+                $("#ModalGlobalBody").html(data);
+                $("#ModalGlobal").modal("show");
+            });
+        }
+
+
+        function IniciarSesionPrincipal() {
+            $("#ModalLoggin").modal("show");
+            RegistroUser();
+        }
+
+
+        function SolicitudAsesoriaPrincipal() {
+            $("#ModalGlobal").modal("show");
+            var URL_Contacto = "@Url.Action("ContactoPartial", "Home")";
+            $.get(URL_Contacto).done(function (data) {
+                $("#ModalGlobal").modal("show");
+                $("#ModalGlobalBody").html(data);                
+            });
+        }
+
+        function LoginUser() {
+            $("#tabRegistro").html("");
+            $("#tabLogin").removeClass("active");
+            $("#tabRegistro").removeClass("active");
+            $("#tabLogin").addClass("active");
+            $("#LinktabLogin").removeClass("active");
+            $("#LinktabRegistro").removeClass("active");
+            $("#LinktabLogin").addClass("active");
+
+            var urlLogin ='@Url.Action("Login", "Account")';
+            $.get(urlLogin).done(function (data) {
+                $("#tabLogin").html(data);
+
+            });
+        }
+
+        function RegistroUser() {
+            $("#tabLogin").html("");
+            $("#tabRegistro").removeClass("active");
+            $("#tabLogin").removeClass("active");
+            $("#tabRegistro").addClass("active");
+            $("#LinktabRegistro").removeClass("active");
+            $("#LinktabLogin").removeClass("active");
+            $("#LinktabRegistro").addClass("active");
+            var urlLogin ='@Url.Action("Register", "Account")';
+            $.get(urlLogin).done(function (data) {
+                $("#tabRegistro").html(data);
+
+            });
+        }
+
+        function MostrarTerminosGlobal() {
+            $.get('@Url.Action("TerminosPartial", "Home")').done(function (data) {
+                $("#ModalGlobalBody").html(data);
+                $("#ModalGlobal").modal("show");
+            });
+        }
+        function MostrarAvisoGlobal() {
+            $.get('@Url.Action("AvisoPartial", "Home")').done(function (data) {
+                $("#ModalGlobalBody").html(data);
+                $("#ModalGlobal").modal("show");
+            });
+        }
+
+        $('.back-to-top-inicio').on('click', function () {
+            $('html, body').animate({
+                scrollTop: 0
+            }, 100);
+            return false;
+        });
+
+
+
+
+    </script>
+
+    @RenderSection("scripts", required: false)
+</body>
+
+
+
+
+
+</html>
