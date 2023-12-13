@@ -1,0 +1,141 @@
+﻿@using AutoyVaro.Models
+@model LoginViewModel
+
+
+<div class="row">
+    <div class="col-md-12">
+
+        <div class="alert alert-danger" id="validacion" style="display:none;">
+
+        </div>
+        <section id="loginForm">
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", id = "formRegister", role = "form", enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+                <h4>Iniciar Sesión</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Email, new { @class = "col-md-12 control-label" })
+                    <div class="col-md-12">
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control Email" })
+                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Password, new { @class = "col-md-12 control-label" })
+                    <div class="col-md-12">
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control Password" })
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-12 text-right">
+                        <a class="btn btn-default" onclick="$('#ModalLoggin').modal('hide');">Cancelar</a>
+                        <button type="submit" class="btn style1 ladda-button btnGuardarLogin" id="btnGuardar" data-style="expand-right"
+                                data-plugin="ladda">
+                            <span class="ladda-label">
+                                <i class="icon wb-user mr-10" aria-hidden="true"></i>Iniciar sesión
+                            </span>
+                        </button>                        
+                    </div>
+                </div>
+
+                <p>
+                    @Html.ActionLink("¿Ha olvidado su contraseña?", "ForgotPassword")
+                </p>
+            }
+        </section>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+
+    var btnGuardarLogin = Ladda.create(document.querySelector('.btnGuardarLogin'));
+
+    var __RequestVerificationToken = $("input[name=__RequestVerificationToken]").val();
+    $("#formRegister").submit(function (event) {
+        event.preventDefault();
+        var actionurl = '@Url.Action("Login", "Account")';
+        var formData = new FormData($(this)[0]);
+        btnGuardarLogin.start();
+        $.ajax({
+            url: actionurl,
+            type: 'POST',
+            success: SuccessOk,
+            error: SuccessNot,
+            data: formData,
+            cache: false,
+            contentType: false,
+            processData: false
+        });
+    });
+
+    $(".form-control").change(function () {
+        DesmarcarError($(this).attr("id"));
+        $("#validacion").html("");
+        $("#validacion").hide();
+    });
+
+    $(".form-control").keyup(function () {
+        $("#validacion").html("");
+        $("#validacion").hide();
+    });
+
+
+    function LimpiarFormulario() {
+        document.getElementById("formUsuario").reset();
+    }
+
+
+    function SuccessOk(Data) {
+        if (!Data.Error) {
+            var urlINFOUSER = '@Url.Action("loginInfo", "Account")';
+            $.get(urlINFOUSER).done(function (Data) {
+                $("#logoutForm").replaceWith(Data);
+                btnGuardarLogin.stop();
+            });
+            $('#ModalLoggin').modal('hide');
+        } else {
+            ValidatorForm(Data.data);
+            btnGuardarLogin.stop();
+        }
+    }
+
+
+    // Control de validaciones
+    function ValidatorForm(Data) {
+        console.log(Data);
+        if (Data == -1) {
+            $("#validacion").html('Usuario o contraseña no válida.');
+            $("#validacion").show();
+            return;
+        } else {
+            $("#validacion").hide();
+        }
+        $.each(Data, function (index, value) {
+            $("." + value.Id).addClass("is-invalid");
+            $("." + value.Id).attr("data-toggle", "tooltip");
+            $("." + value.Id).attr("data-placement", "top");
+            $("." + value.Id).attr("title", value.Mensaje);
+            $("." + value.Id).attr("data-original-title", value.Mensaje);
+            $("." + value.Id).tooltip()
+        });
+    }
+    function DesmarcarError(Id) {
+        $("." + Id).removeClass("is-invalid");
+        $("." + Id).removeAttr("data-toggle");
+        $("." + Id).removeAttr("data-placement");
+        $("." + Id).removeAttr("data-original-title");
+
+    }
+
+
+    function SuccessNot(Data) {
+
+    }
+
+</script>
+

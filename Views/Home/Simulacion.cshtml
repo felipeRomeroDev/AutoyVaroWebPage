@@ -1,0 +1,231 @@
+﻿
+@{
+    ViewBag.Title = "Simulacion";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+
+</style>
+
+<!-- ##### Call To Action Start ###### -->
+<section class="cta-area d-flex flex-wrap">
+    <!-- Cta Thumbnail -->
+    <div class="cta-thumbnail bg-gray jarallax">
+
+        <div class="card">
+            <div class="card-header mb-3">
+                <h5 class="text-orange">SIMULA TU CRÉDITO</h5>
+            </div>
+            <div class="card-body">
+
+                <div class="container">
+
+                    <div class="row">
+
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="add-area mb-100 wow fadeInUp" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
+                                <a href="#"><img src="../Content/Page/img/bg-img/add.png" alt=""></a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-8">
+                            <h2 class="text-blue">Importe a Financiar</h2>
+                            <div class="input-group input-group-lg">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroup-sizing-lg"><b>$</b></span>
+                                </div>
+                                <input id="ImporteFinanciamiento" value="@ViewBag.MontoMaximo" type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+                            </div>
+
+                            <div class="form-group">
+                                <br /><br />
+                                <input type="range" min="MontoMinimo" max="@ViewBag.MontoMaximo" step="0.1" class="form-control-range input-lg" id="ControlRange">
+                            </div>
+                            <div class="bg-grey-100 clearfix">
+                                <input id="MontoMinimo" value="@ViewBag.MontoMinimo" type="text" class="credit-btn form-control float-left" style="width:130px; min-width:130px !important;">
+                                <input type="text" id="MontoMaximo" value="@ViewBag.MontoMaximo" class="credit-btn form-control float-right" style="width:130px; min-width:130px !important;">
+                            </div>
+
+                            <div class="form-group">
+                                <br />
+                                <h4 class="text-blue">Selecciona el plazo</h4>
+                                <select class="form-control input-lg" id="IdMarca" name="IdMarca">
+                                    <option value="2">3 Meses</option>
+                                    <option value="3">6 Meses</option>
+                                    <option value="4">9 Meses</option>
+                                    <option value="5">12 Meses</option>
+                                    <option value="6">18 Meses</option>
+                                    <option value="7" selected>24 Meses</option>
+                                </select>
+                            </div>
+
+                        </div>
+                        
+
+
+                        <br />
+                        <br />
+                        <div class="row">
+
+                            
+                            <!-- FAQ Area -->
+                            <div class="col-12">
+                                <br />
+                                <div class="accordions mb-100" id="accordion" role="tablist" aria-multiselectable="true">
+                                    <!-- single accordian area -->
+                                    <div class="panel single-accordion">
+                                        <h6>
+                                            <a role="button" class="" aria-expanded="true" aria-controls="collapseOne" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                                Datos informativos por revisión
+                                                <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                                <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                                            </a>
+                                        </h6>
+                                        <div id="collapseOne" class="accordion-content collapse show">
+                                            <br /><br />
+                                            <div class="row">
+                                                
+                                                <div class="col-md-3">
+                                                    <h5>Precio de Compra</h5>
+                                                </div>
+
+                                                <div class="col-md-3">
+                                                    <div class="input-group input-group-lg">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text" id="inputGroup-sizing-lg"><b>$</b></span>
+                                                        </div>
+                                                        <input type="text" value="@ViewBag.Compra" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-3">
+                                                    <h5>Precio de Venta</h5>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="input-group input-group-lg">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text" id="inputGroup-sizing-lg"><b>$</b></span>
+                                                        </div>
+                                                        <input type="text" value="@ViewBag.Venta" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+
+
+
+                            
+                            
+                        </div>
+
+                    </div>
+
+                    
+
+                    
+                    
+
+
+                </div>
+                    
+                    
+
+                
+
+                
+
+            </div>
+        </div>
+
+
+        
+
+        
+
+    </div>
+
+    <!-- Cta Content -->
+    <div class="cta-content">
+        <!-- Section Heading -->
+        <div class="section-heading white">
+            <div class="line"></div>
+            <p>Con Auto y Varo</p>
+            <h2>Obten un Crédito de hasta  <b id="monto">$@ViewBag.MontoMaximo</b></h2>
+        </div>        
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="card text-dark bg-light mb-3" style="max-width: 23rem;">
+                    <div class="card-header tittle-blue"><h5 class="text-light">Sigue Manejando</h5></div>
+                    <div class="card-body">
+                        <h5 class="card-title text-blue" id="txtPlazo2">Plazo de 24 Meses</h5>
+                        Monto del prestamo
+                        <h5 class="card-title text-orange" id="txtMontoMaximo2">$@ViewBag.MontoMaximo</h5>
+                        
+                        Apertura del Credido
+                        <h5 class="card-title text-orange" id="txtApertura2">$@((ViewBag.MontoMaximo * (decimal)0.02)* (decimal)1.16)</h5>
+                        
+                        Entrega Liquida
+                        <h5 class="card-title text-orange" id="txtEntrega2">$@(ViewBag.MontoMaximo-((ViewBag.MontoMaximo * (decimal)0.02) * (decimal)1.16))</h5>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card text-dark bg-light mb-3" style="max-width: 23rem;">
+                    <div class="card-header tittle-blue"><h5 class="text-light">Nosotros de cuidamos tu auto</h5></div>
+                    <div class="card-body">
+                        <h5 class="card-title text-blue" id="txtPlazo">Plazo de 24 Meses</h5>
+                        Monto del prestamo
+                        <h5 class="card-title text-orange" id="txtMontoMaximo">$@ViewBag.MontoMaximo</h5>
+
+                        Apertura del Credido
+                        <h5 class="card-title text-orange" id="txtApertura">$@((ViewBag.MontoMaximo * (decimal)0.02) * (decimal)1.16)</h5>
+
+                        Entrega Liquida
+                        <h5 class="card-title text-orange" id="txtEntrega">$@(ViewBag.MontoMaximo - ((ViewBag.MontoMaximo * (decimal)0.02) * (decimal)1.16))</h5>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <p class="text-blue text-justify">
+                    Ejemplo de cálculo no vinculante: Plazo: 2 años. Tasa anual equivalente: 6.06 % (interés fijo). Por lo tanto, un préstamo de $00,000.00 costará $0.000,00 al mes, con un importe total de $00.00,00. Interés: 5.90 %. Actualizado el 01/09/2020                    
+                </p>                
+            </div>
+
+        </div>
+
+
+
+    </div>
+</section>
+<!-- ##### Call To Action End ###### -->
+
+@section Scripts {
+
+    <script>
+
+
+        $("#ControlRange").change(function () {
+            $("#ImporteFinanciamiento").val($("#ControlRange").val());
+        });
+
+
+        function ActualizarData() {
+
+        }
+
+
+    </script>
+        
+}

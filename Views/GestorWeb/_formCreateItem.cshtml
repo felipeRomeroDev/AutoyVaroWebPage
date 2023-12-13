@@ -1,0 +1,414 @@
+﻿@model AutoyVaro.PlantillaWebItem
+
+<style type="text/css">
+    .tox-tinymce-aux {
+        z-index: 99999999999 !important;
+    }
+
+    textarea#mentions {
+        height: 350px;
+    }
+
+    div.card,
+    .tox div.card {
+        width: 240px;
+        background: white;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        box-shadow: 0 4px 8px 0 rgba(34, 47, 62, .1);
+        padding: 8px;
+        font-size: 14px;
+        font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+    }
+
+        div.card::after,
+        .tox div.card::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        div.card h1,
+        .tox div.card h1 {
+            font-size: 14px;
+            font-weight: bold;
+            margin: 0 0 8px;
+            padding: 0;
+            line-height: normal;
+            font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+        }
+
+        div.card p,
+        .tox div.card p {
+            font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+        }
+
+        div.card img.avatar,
+        .tox div.card img.avatar {
+            width: 48px;
+            height: 48px;
+            margin-right: 8px;
+            float: left;
+        }
+</style>
+
+
+@using (Html.BeginForm("Create", "GestorWeb", FormMethod.Post, new { id = "formPoliticas", autocomplete = "off" }))
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>PlantillaWebItem</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    
+
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            @Html.LabelFor(model => model.Descripcion, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Descripcion, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Descripcion, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Activo, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.EditorFor(model => model.Activo)
+            @Html.ValidationMessageFor(model => model.Activo, "", new { @class = "text-danger" })            
+        </div>
+
+    </div>
+</div>
+
+    
+
+   
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Code, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Code, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Code, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group" style="display:none;">
+        @Html.LabelFor(model => model.CodeLite, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.CodeLite, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.CodeLite, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group" style="display:none;">
+        @Html.LabelFor(model => model.TipoItemWebId, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.TipoItemWebId, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TipoItemWebId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group" style="display:none;">
+        @Html.LabelFor(model => model.PlantillaWebId, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.PlantillaWebId, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.PlantillaWebId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    
+
+    <div class="form-group" style="display:none;">
+        @Html.LabelFor(model => model.PlantillaWebUsadaId, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.PlantillaWebUsadaId, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.PlantillaWebUsadaId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+    </div>
+
+
+    <textarea class="tinymce" style="min-height:80vh">
+            @Html.Raw(Model.Code)
+    </textarea>
+
+
+</div>
+}
+
+
+
+<script type="text/javascript">
+
+
+
+    var __RequestVerificationToken = $("input[name=__RequestVerificationToken]").val();
+    $("#formPoliticas").submit(function (event) {
+        event.preventDefault();
+        var actionurl = '@Url.Action("Edit", "GestorWeb")';
+        var formData = new FormData($(this)[0]);
+        $.ajax({
+            url: actionurl,
+            type: 'POST',
+            success: SuccessOkPoliticas,
+            error: SuccessNot,
+            data: formData,
+            cache: false,
+            contentType: false,
+            processData: false
+        });
+    });
+    $(".form-control").change(function () {
+        DesmarcarError($(this).attr("id"));
+    });
+
+
+    function LimpiarFormulario() {
+        document.getElementById("formPoliticas").reset();
+    }
+
+
+    function SuccessOkPoliticas(Data) {
+        if (!Data.Error) {
+            notie.alert({ type: 1, text: Data.Mensaje, time: 3 })
+            refrescarPoliticas();
+            refreshPlugin();
+            $("#addLabelForm").modal("hide");
+        } else {
+            notie.alert({ type: 3, text: Data.Mensaje, time: 3 })
+            ValidatorForm(Data.data);
+        }
+    }
+
+    function SuccessNot(e) {
+        console.log("Error: ", e)
+    }
+
+
+
+
+</script>
+
+
+
+
+
+<div class="py-5">
+
+    
+
+</div>
+
+<script>
+
+    function InitEditor() {
+        if (typeof (base_url) == "undefined") {
+            var base_url = location.protocol + '//' + location.host + '/';
+
+            const LOCAL_DOMAINS = ["localhost", "127.0.0.1", 'tinymce-bootstrap-plugin'];
+            if (LOCAL_DOMAINS.includes(window.location.hostname)) {
+                var tbpKey = 'tAj3ykawOTzO195azIrI3ySeQFBO6D8hQq5DaemwXGfqNYTRZK2bELP65Z6pvf1IvzLvI2lHI48rDAalMnErddxKFvg7iufXy7JG0tAzcJA=';
+            } else {
+                var tbpKey = 'tAj3ykawOTzO195azIrI3ySeQFBO6D8hQq5DaemwXGfqNYTRZK2bELP65Z6pvf1IvzLvI2lHI48rDAalMnErddxKFvg7iufXy7JG0tAzcJA=';
+            }
+        }
+        // uncomment the following line to test if your key is properly set
+        // console.log(tbpKey);
+        tinymce.init({
+            // language: 'fr_FR',
+            // language_url :'/bootstrap5/plugin/langs/fr_FR.js',
+            selector: 'textarea.tinymce',
+            toolbar_mode: 'wrap',
+
+            images_upload_handler: example_image_upload_handler,
+            setup: function (ed) {
+                ed.on("change", function () {
+                    $("#Code").val(ed.getBody().innerHTML)                    
+                })
+            },           
+
+            /* enable title field in the Image dialog*/
+            image_title: true,
+            /* enable automatic uploads of images represented by blob or data URIs*/
+            automatic_uploads: true,
+
+            file_picker_types: 'image',
+            /* and here's our custom image picker*/
+            file_picker_callback: function (cb, value, meta) {
+                var input = document.createElement('input');
+                input.setAttribute('type', 'file');
+                input.setAttribute('accept', 'image/*');
+
+                /*
+                  Note: In modern browsers input[type="file"] is functional without
+                  even adding it to the DOM, but that might not be the case in some older
+                  or quirky browsers like IE, so you might want to add it to the DOM
+                  just in case, and visually hide it. And do not forget do remove it
+                  once you do not need it anymore.
+                */
+
+                input.onchange = function () {
+                    var file = this.files[0];
+
+                    var reader = new FileReader();
+                    reader.onload = function () {
+                        /*
+                          Note: Now we need to register the blob in TinyMCEs image blob
+                          registry. In the next release this part hopefully won't be
+                          necessary, as we are looking to handle it internally.
+                        */
+                        var id = 'blobid' + (new Date()).getTime();
+                        var blobCache = tinymce.activeEditor.editorUpload.blobCache;
+                        var base64 = reader.result.split(',')[1];
+                        var blobInfo = blobCache.create(id, file, base64);
+                        blobCache.add(blobInfo);
+
+                        /* call the callback and populate the Title field with the file name */
+                        cb(blobInfo.blobUri(), { title: file.name });
+                    };
+                    reader.readAsDataURL(file);
+                };
+
+                input.click();
+            },
+
+
+
+
+
+
+
+
+            plugins: 'advlist autolink bootstrap link image lists charmap preview help table code',
+            toolbar: [
+                'undo redo | bootstrap | link image | code',
+                'cut copy paste | styles | alignleft aligncenter alignright alignjustify | bold italic  | preview | help'],
+            contextmenu: "link image imagetools table spellchecker | bootstrap",
+            file_picker_types: 'file image media',
+            bootstrapConfig: {
+                bootstrapColumns: 24,
+                // language: 'fr_FR',
+                url: base_url + 'Content/pluginTinyMCE/',
+                iconFont: 'font-awesome-solid',
+                imagesPath: '/Content/pluginTinyMCE/demo-images',
+                key: tbpKey
+            },
+            styles: {
+                alignleft: { selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes: 'text-start' },
+                aligncenter: { selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes: 'text-center' },
+                alignright: { selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes: 'text-end' },
+                alignjustify: { selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes: 'text-justify' },
+                bold: { inline: 'strong' },
+                italic: { inline: 'em' },
+                underline: { inline: 'u' },
+                sup: { inline: 'sup' },
+                sub: { inline: 'sub' },
+                strikethrough: { inline: 'del' }
+            },
+            style_formats: [
+                {
+                    title: 'Headings', items: [
+                        { title: 'Heading 1', format: 'h1' },
+                        { title: 'Heading 2', format: 'h2' },
+                        { title: 'Heading 3', format: 'h3' },
+                        { title: 'Heading 4', format: 'h4' },
+                        { title: 'Heading 5', format: 'h5' },
+                        { title: 'Heading 6', format: 'h6' }
+                    ]
+                },
+                {
+                    title: 'Blocks', items: [
+                        { title: 'Paragraph', format: 'p' },
+                        { title: 'Blockquote', format: 'blockquote' },
+                        { title: 'Div', block: 'div', wrapper: true }
+                    ]
+                },
+                {
+                    title: 'Containers', items: [
+                        { title: 'Container fluid', block: 'div', classes: 'container-fluid', wrapper: true },
+                        { title: 'Container', block: 'div', classes: 'container', wrapper: true },
+                        { title: 'Section', block: 'section', wrapper: true },
+                        { title: 'Article', block: 'article', wrapper: true }
+                    ]
+                }
+            ],
+            style_formats_merge: false,
+            style_formats_autohide: true
+        });
+    }
+
+
+
+    const example_image_upload_handler = (blobInfo, progress) => new Promise((resolve, reject) => {
+
+        xhr = new XMLHttpRequest();
+        xhr.withCredentials = false;
+        xhr.open('POST', '/GestorWeb/UploadImage');
+
+        
+
+        xhr.upload.onprogress = (e) => {
+            progress(e.loaded / e.total * 100);
+        };
+
+        xhr.onload = () => {
+            if (xhr.status === 403) {
+                reject({ message: 'HTTP Error: ' + xhr.status, remove: true });
+                return;
+            }
+
+            if (xhr.status < 200 || xhr.status >= 300) {
+                reject('HTTP Error: ' + xhr.status);
+                return;
+            }
+
+            const json = JSON.parse(xhr.responseText);
+
+            if (!json || typeof json.imagen != 'string') {
+                reject('Invalid JSON: ' + xhr.responseText);
+                return;
+            }
+
+            resolve("IMG/"+json.imagen);
+        };
+
+        xhr.onerror = () => {
+            reject('Image upload failed due to a XHR Transport error. Code: ' + xhr.status);
+        };
+
+        const formData = new FormData();
+        formData.append('ArchivoExpediente', blobInfo.blob(), blobInfo.filename());
+
+        xhr.send(formData)
+    });
+
+
+    
+
+    
+
+
+</script>
+
+
+
+

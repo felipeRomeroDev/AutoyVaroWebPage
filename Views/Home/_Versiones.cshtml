@@ -1,0 +1,25 @@
+﻿@model AutoyVaro.com.libroazul.www.Catalogo[]
+
+<div class="row h-lg-250" data-plugin="scrollable" data-skin="scrollable-shadow">
+    <div class="col-md-12" data-role="container" style="min-width: 100%;">
+
+
+        <div class="list-group" data-role="content" style="min-width: 100%;">
+
+            @foreach (var item in Model)
+            {
+                <a class="list-group-item flex-column align-items-start label_version" id="@("VersionId"+item.Clave)" href="javascript:selectVersion(@item.Clave, '@item.Nombre')">
+                    <h6 class="list-group-item-heading mt-0 mb-5">@item.Nombre</h6>
+                </a>
+            }
+
+        </div>
+
+
+    </div>
+</div>
+
+<script type="text/javascript">
+    var listaVersionesTemporal = @Html.Raw(Json.Encode(Model));
+</script>
+

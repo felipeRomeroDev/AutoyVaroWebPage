@@ -1,0 +1,153 @@
+﻿@using AutoyVaro.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Iniciar sesión";
+}
+
+
+
+<div class="row">
+
+    <div class="col-md-12">
+        <div class="alert alert-danger" id="validacion" style="display:none;">
+
+        </div>
+
+        @using (Html.BeginForm("LoginPorIdSolicitud", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form", id = "formRegister", enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+    <h4>Iniciar Sesión</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <input type="hidden" value="@ViewBag.IdSolicitud" id="IdSolicitud" name="IdSolicitud" />
+            <div class="form-group">
+                @Html.LabelFor(m => m.Email, new { @class = "control-label" })
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Password, new { @class = "control-label" })
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group text-right">
+                <div class="col-md-12">
+                    <a class="btn btn-default" onclick="$('#ModalLogginSecon').modal('hide');">Cancelar</a>
+
+                    <button type="submit" class="btn style1 ladda-button btnGuardarLoginSecon" id="btnGuardarSecon" data-style="expand-right"
+                            data-plugin="ladda">
+                        <span class="ladda-label">
+                            <i class="icon wb-user mr-10" aria-hidden="true"></i>Iniciar sesión
+                        </span>
+                    </button>
+
+                </div>
+            </div>
+
+        }
+    </div>
+</div>
+
+
+                
+<script type="text/javascript">
+
+    var btnGuardarLoginSecon = Ladda.create(document.querySelector('.btnGuardarLoginSecon'));
+
+    var __RequestVerificationToken = $("input[name=__RequestVerificationToken]").val();
+    $("#formRegister").submit(function (event) {
+        event.preventDefault();
+        var actionurl = '@Url.Action("LoginPorIdSolicitud", "Account")';
+        var formData = new FormData($(this)[0]);
+        btnGuardarLoginSecon.start();
+        $.ajax({
+            url: actionurl,
+            type: 'POST',
+            success: SuccessOk,
+            error: SuccessNot,
+            data: formData,
+            cache: false,
+            contentType: false,
+            processData: false
+        });
+    });
+
+    $(".form-control").change(function () {
+        DesmarcarError($(this).attr("id"));
+        $("#validacion").html("");
+        $("#validacion").hide();
+    });
+
+    $(".form-control").keyup(function () {
+        $("#validacion").html("");
+        $("#validacion").hide();
+    });
+
+
+    function LimpiarFormulario() {
+        document.getElementById("formUsuario").reset();
+    }
+
+
+    function SuccessOk(Data) {
+        if (!Data.Error) {
+            btnGuardarLoginSecon.stop();
+            Configurar();
+        } else {
+            btnGuardarLoginSecon.stop();
+            ValidatorForm(Data.data);
+        }
+    }
+
+
+    // Control de validaciones
+    function ValidatorForm(Data) {
+        if (Data == -1) {
+            $("#validacion").html('Usuario o contraseña no válida.');
+            $("#validacion").show();
+            return;
+        } else {
+            $("#validacion").hide();
+        }
+        $.each(Data, function (index, value) {
+            $("#" + value.Id).addClass("is-invalid");
+            $("#" + value.Id).attr("data-toggle", "tooltip");
+            $("#" + value.Id).attr("data-placement", "top");
+            $("#" + value.Id).attr("title", value.Mensaje);
+            $("#" + value.Id).attr("data-original-title", value.Mensaje);
+            $("#" + value.Id).tooltip()
+        });
+    }
+    function DesmarcarError(Id) {
+        $("#" + Id).removeClass("is-invalid");
+        $("#" + Id).removeAttr("data-toggle");
+        $("#" + Id).removeAttr("data-placement");
+        $("#" + Id).removeAttr("data-original-title");
+
+    }
+
+
+    function SuccessNot(Data) {
+
+    }
+
+    function RegistroUserSecon() {
+            $("#tabLoginSecon").html("");
+            $("#tabRegistroSecon").removeClass("active");
+            $("#tabLoginSecon").removeClass("active");
+            $("#tabRegistroSecon").addClass("active");
+            $("#LinktabRegistroSecon").removeClass("active");
+            $("#LinktabLoginSecon").removeClass("active");
+            $("#LinktabRegistroSecon").addClass("active");
+
+            var URL_Register = '@Url.Action("RegisterPorIdSolicitud", "Account", new { IdSolicitud = @ViewBag.IdSolicitud })';
+
+            $.get(URL_Register).done(function (data) {
+                $("#tabRegistroSecon").html(data);
+            });
+        }
+
+
+
+</script>

@@ -1,0 +1,252 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout3.cshtml";
+}
+
+<style type="text/css">
+    .btn-flotante {
+        font-size: 16px; /* Cambiar el tamaño de la tipografia */
+        font-weight: bold; /* Fuente en negrita o bold */
+        color: #ffffff; /* Color del texto */
+        border-radius: 5px; /* Borde del boton */
+        letter-spacing: 2px; /* Espacio entre letras */
+        background-color: #b70012; /* Color de fondo */
+        padding: 18px 30px; /* Relleno del boton */
+        position: fixed;
+        right: 40px;
+        transition: all 300ms ease 0ms;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        z-index: 99;
+    }
+
+        .btn-flotante:hover {
+            background-color: #2c2fa5; /* Color de fondo al pasar el cursor */
+            box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+            transform: translateY(-7px);
+        }
+
+    .modal-lg, .modal-xl {
+        max-width: 90%;
+    }
+</style>
+
+<script src="~/Scripts/AutoYvaro/home.js"></script>
+
+<!-- Bootstrap 5 CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<!-- Tinymce -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/6.0.1/tinymce.min.js" integrity="sha512-WVGmm/5lH0QUFrXEtY8U9ypKFDqmJM3OIB9LlyMAoEOsq+xUs46jGkvSZXpQF7dlU24KRXDsUQhQVY+InRbncA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- Fontawesome icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous" />
+
+<!-- Bootstrap plugin -->
+<script src="~/Content/pluginTinyMCE/plugin.min.js"></script>
+
+<a id="btnVistaPrevia" href="javascript:CerrarVistaPrevia()" class="btn-flotante" style="display:none;">Cerrar Vista Previa</a>
+
+<div id="divContenedor" style="display:none">
+    <a id="btnVistaPrevia" href="javascript:CerrarEditor()" class="btn btn-primary">Cerrar Editor</a>
+    <div id="divContenedorBody">
+
+    </div>
+</div>
+
+
+<div id="DivVistaPlantilla">
+
+</div>
+
+<div class="container-lg ptb-100" id="DivListaPlantillas">
+    <div class="card">
+        <div class="card-header">
+            <p class="mb-0">Plantillas web</p>
+        </div>
+        <div class="card-body">
+            <table id="table"
+                   data-toggle="table"
+                   data-height="750"
+                   data-id-field="EmpleadoID"
+                   data-show-export="true"
+                   data-click-to-select="true"
+                   data-toolbar="#toolbar"
+                   data-show-refresh="true"
+                   data-show-toggle="true"
+                   data-show-columns="true"
+                   data-query-params="queryParams"
+                   data-detail-formatter="detailFormatterDetalle"
+                   data-detail-view="true"
+                   data-url="@Url.Action("GetPlantillas", "GestorWeb")">
+                <thead>
+                    <tr>
+                        <th data-field="Nombre">Nombre</th>
+                        <th data-field="Descripcion">Descripcion</th>
+                        <th data-field="Code" data-formatter="verPlantilla">Código</th>
+                        <th data-field="NumeroItem">Número de Elementos</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+@section Scripts {
+
+    <script type="text/javascript">
+
+    function verPlantilla(value, row, index) {
+        return '<a href="javascript:mostrarVistaPlantilla(' + row.Id +')" data-toggle="tooltip" data-placement="top" title="Ver Plantilla"><i class="fa fa-eye text-primary"></i></a>';
+    }
+    function mostrarVistaPlantilla(Id) {
+        var Url_getPlantilla = '@Url.Action("GetPlantillaById", "GestorWeb")';
+        $.get(Url_getPlantilla, { Id: Id }).done(function (code) {
+            $("#DivVistaPlantilla").html(code);
+            $("#DivListaPlantillas").hide("hide");
+            $("#btnVistaPrevia").show("hide");
+            IniciarCarrurcel();
+        });
+        }
+        function CerrarVistaPrevia() {
+            $("#DivVistaPlantilla").html("");
+            $("#DivListaPlantillas").show("hide");
+            $("#btnVistaPrevia").hide("hide");
+        }
+
+        function detailFormatterDetalle(index, row, $detail) {
+            return buildTableGestion($detail.html('<table></table>').find('table'), row.Id);
+        }
+
+        function detailFormatterDetalleItem(index, row, $detail) {
+            return buildTableGestionItem($detail.html('<table></table>').find('table'), row.Id);
+        }
+
+        function buildTableGestion($el, Id) {
+            $tableUpdate = $el;
+            var columns = []
+            var data = []
+            columns.push({ field: 'Nombre', title: 'Nombre', cellStyle: 'cellStyle' });
+            columns.push({ field: 'Descripcion', title: 'Descripción' });
+            columns.push({ field: 'Tipo', title: 'Tipo de Item' });
+            columns.push({ field: 'Activo', title: 'Activo' });
+            columns.push({ formatter: 'opcionesPlantillaItems', title: '' });
+
+            $el.bootstrapTable({
+                columns: columns,
+                detailFormatter: "detailFormatterDetalleItem",
+                detailView: true,
+                url: '/GestorWeb/GetPlantallaItemsByIdPlantilla?Id=' + Id,
+                onLoadSuccess: function () {
+
+                }
+            });
+        }
+
+        function buildTableGestionItem($el, Id) {
+            $tableUpdate = $el;
+            var columns = []
+            var data = []
+            columns.push({ field: 'Nombre', title: 'Nombre', cellStyle: 'cellStyle' });
+            columns.push({ field: 'Descripcion', title: 'Descripción' });
+            columns.push({ field: 'plantilla', title: 'Plantilla' });
+            columns.push({ field: 'Tipo', title: 'Tipo de Item' });
+            columns.push({ field: 'Activo', title: 'Activo' });
+            columns.push({ formatter: 'opcionesPlantillaItemsHijo', title: '' });
+
+            $el.bootstrapTable({
+                columns: columns,
+                url: '/GestorWeb/GetPlantallaItemsDeItemByIdPlantilla?Id=' + Id,
+                onLoadSuccess: function () {
+
+                }
+            });
+        }
+
+
+        function opcionesPlantillaItems(value, row, index) {
+            var btnEditarHTML = "";
+            if (row.TipoItemWebId == 3) {
+                btnEditarHTML = '<td><a href="javascript:EditarItemHTML(' + row.Id + ')" data-toggle="tooltip" data-placement="top" title="Editar Codigo"><i class="fa fa-edit text-primary"></i></a></td>';
+            }
+            if (row.TipoItemWebId == 5) {
+                btnEditarHTML = btnEditarHTML + '<td><a href="javascript:AgregarItemHTML(' + row.Id + ')" data-toggle="tooltip" data-placement="top" title="Agregar Elemento"><i class="fa fa-plus text-primary"></i></a></td>';
+            }
+            var btnDuplicarSimple = '<td><a href="javascript:duplicarItem(' + row.Id + ')" data-toggle="tooltip" data-placement="top" title="Duplicar"><i class="fa fa-files-o text-success"></i></a></td>';
+            return '<table><tr>' + btnEditarHTML + btnDuplicarSimple + "</tr></table>";
+        }
+
+        function opcionesPlantillaItemsHijo(value, row, index) {
+            var btnEditarHTML = "";
+            if (row.TipoItemWebId == 3) {
+                btnEditarHTML = '<a href="javascript:EditarItemHTML(' + row.PlantillaWebItemHijoId + ')" data-toggle="tooltip" data-placement="top" title="Editar Codigo"><i class="fa fa-edit text-primary"></i></a>';
+            }
+            var btnDuplicarSimple = '<a href="javascript:duplicarItemSimple(' + row.PlantillaWebItemHijoId + ')" data-toggle="tooltip" data-placement="top" title="Duplicar"><i class="fa fa-files-o text-success"></i></a>';
+            return '<table><tr><td>' + btnEditarHTML + '</td><td>' + btnDuplicarSimple + "</td></tr></table>";
+        }
+
+        function duplicarItem(Id) {
+            //Duplicar el elemento
+            var URL_DuplicarItem = "@Url.Action("DuplicarItem","GestorWeb")";
+            $.get(URL_DuplicarItem, { Id: Id }).done(function (data) {
+                $("#table").bootstrapTable("refresh");
+            });
+        }
+
+        function duplicarItemSimple(Id) {
+            //Duplicar el elemento
+            var URL_DuplicarItem = "@Url.Action("DuplicarItemSimple","GestorWeb")";
+            $.get(URL_DuplicarItem, { Id: Id }).done(function (data) {
+                $("#table").bootstrapTable("refresh");
+            });
+        }
+
+
+        function EditarItemHTML(Id) {
+
+            $("#DivListaPlantillas").hide("hide");
+            $("#btnVistaPrevia").hide("hide");
+
+            $("#divContenedorBody").html("");
+            var URL_EditarHTML = '@Url.Action("EditarItemHtml", "GestorWeb")';
+            $("#divContenedor").show("");
+            $.get(URL_EditarHTML, { Id: Id }).done(function (data) {
+                $("#divContenedorBody").html(data);
+                InitEditor();
+            })
+
+        }
+        function AgregarItemHTML(Id) {
+
+            $("#DivListaPlantillas").hide("hide");
+            $("#btnVistaPrevia").hide("hide");
+
+            $("#divContenedorBody").html("");
+            var URL_EditarHTML = '@Url.Action("CreateItemHtml", "GestorWeb")';
+            $("#divContenedor").show("");
+            $.get(URL_EditarHTML, { Id: Id }).done(function (data) {
+                $("#divContenedorBody").html(data);
+                InitEditor();
+            })
+
+        }
+
+        
+
+        function CerrarEditor() {
+            $("#DivVistaPlantilla").html("");
+            $("#DivListaPlantillas").show("hide");
+            $("#btnVistaPrevia").hide("hide");
+            $("#divContenedorBody").html("");
+            $("#divContenedor").hide("");
+        }
+
+    </script>
+
+
+
+}
+

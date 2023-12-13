@@ -1,0 +1,51 @@
+﻿@model IEnumerable<AutoyVaro.Models.DetalleVersion>
+    
+
+    @foreach (var item in Model)
+    {
+
+        <div class="col-md-4">
+            <div class="panel panel-info panel-line">
+                <div class="panel-heading">
+                    @*<img class="card-img-top w-full" src="../../../global/photos/placeholder.png" alt="...">*@
+                </div>
+                <div class="panel-body">
+                   @item.Nombre
+                    <a class="btn btn-primary" href="javascript:MostrarPrecio('@item.Clave', '@item.Nombre')">Seleccionar</a>
+                </div>
+            </div>
+
+            
+        </div>
+
+
+
+    }
+
+
+
+
+
+<div class="col-md-12">
+    <div class="card card-info ">
+
+        <div class="card border border-primary">
+            <div class="card-block">
+                
+                <div class="row"> 
+                <div class="col-12">
+                    <h4 class="card-title">Versión:  @ViewBag.version</h4> 
+                </div>
+                    
+                </div>
+
+                <div class="row" id="DivPreciosTemp">
+                    
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+

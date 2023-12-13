@@ -1,0 +1,446 @@
+﻿
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="en">
+<head>
+
+    <style>
+        .loader div {
+            width: 12px;
+            height: 12px;
+            margin: 0 10px 0 0;
+            border-radius: 50px;
+            -webkit-transform-origin: 50% 0;
+            transform-origin: 50% 0;
+            display: inline-block;
+            -webkit-animation: bouncing 1.4s linear infinite;
+            animation: bouncing 1.4s linear infinite;
+        }
+
+        .content-wrapper-2 {
+            margin-top: 90px;
+        }
+
+        .loader div:last-child {
+            margin: 0;
+        }
+
+        .loader div:nth-child(1) {
+            background: #ee7e3cd9;
+        }
+
+        .loader div:nth-child(2) {
+            background: #ee7e3cd9;
+            -webkit-animation-delay: 0.2s;
+            animation-delay: 0.2s;
+        }
+
+        .loader div:nth-child(3) {
+            background: #ee7e3cd9;
+            -webkit-animation-delay: 0.4s;
+            animation-delay: 0.4s;
+        }
+    </style>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title -->
+    <title>Auto y Varo SA de CV</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="~/Content/global/css/bootstrap.min.css">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="~/Content/assets/css/site.css">
+
+    <!-- Link of CSS files -->
+    <link rel="stylesheet" href="~/Content/assets3/css/bootstrap.min.css">
+    <link href="~/Content/assets/css/bootstrap-extend.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/assets3/css/flaticon.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/waves/waves.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/ladda/ladda.css">
+    <link rel="stylesheet" href="~/Content/assets/examples/css/uikit/buttons.css">
+    <link rel="stylesheet" href="~/Content/assets3/css/remixicon.css">
+    <link rel="stylesheet" href="~/Content/assets3/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/Content/assets3/css/odometer.min.css">
+    <link rel="stylesheet" href="~/Content/assets3/css/fancybox.css">
+    <link rel="stylesheet" href="~/Content/assets3/css/aos.css">
+    <link rel="stylesheet" href="~/Content/assets3/css/style2.css">
+    <link rel="stylesheet" href="~/Content/assets3/css/dark-theme.css">
+    <link rel="stylesheet" href="~/Content/assets3/css/responsive.css">
+    <link rel="icon" type="image/png" href="~/Content/assets3/img/favicon.png">
+    <link rel="stylesheet" href="~/Content/global/vendor/blueimp-file-upload/jquery.fileupload.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/dropify/dropify.css">
+
+
+    <link rel="stylesheet" href="~/Content/global/vendor/fullcalendar/fullcalendar.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/select2/select2.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/bootstrap-tokenfield/bootstrap-tokenfield.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/bootstrap-tagsinput/bootstrap-tagsinput.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/bootstrap-select/bootstrap-select.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/icheck/icheck.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/switchery/switchery.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/asrange/asRange.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/ionrangeslider/ionrangeslider.min.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/asspinner/asSpinner.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/clockpicker/clockpicker.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/ascolorpicker/asColorPicker.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/bootstrap-touchspin/bootstrap-touchspin.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/jquery-labelauty/jquery-labelauty.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/bootstrap-datepicker/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/bootstrap-maxlength/bootstrap-maxlength.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/timepicker/jquery-timepicker.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/jquery-strength/jquery-strength.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/multi-select/multi-select.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/typeahead-js/typeahead.css">
+    <link rel="stylesheet" href="~/Content/assets/examples/css/forms/advanced.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/asscrollable/asScrollable.css">
+
+    <link rel="stylesheet" href="~/Content/assets/examples/css/uikit/modals.css">
+
+    <link rel="stylesheet" href="~/Content/global/vendor/jquery-wizard/jquery-wizard.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/formvalidation/formValidation.css">
+    <link rel="stylesheet" href="~/Content/assets/examples/css/structure/ribbon.css">
+
+
+    <link rel="stylesheet" href="~/Content/global/vendor/alertify/alertify.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/notie/notie.css">
+    <link rel="stylesheet" href="~/Content/assets/examples/css/advanced/alertify.css">
+
+    <link rel="stylesheet" href="~/Content/global/vendor/bootstrap-table/bootstrap-table.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="~/Content/global/fonts/font-awesome/font-awesome.css">
+    <link rel="stylesheet" href="~/Content/global/fonts/7-stroke/7-stroke.css">
+    <link rel="stylesheet" href="~/Content/global/fonts/ionicons/ionicons.css">
+    <link rel="stylesheet" href="~/Content/global/fonts/mfglabs/mfglabs.css">
+    <link rel="stylesheet" href="~/Content/global/fonts/open-iconic/open-iconic.css">
+    <link rel="stylesheet" href="~/Content/global/fonts/themify/themify.css">
+    <link rel="stylesheet" href="~/Content/global/fonts/weather-icons/weather-icons.css">
+    <link rel="stylesheet" href="~/Content/global/fonts/glyphicons/glyphicons.css">
+    <link rel="stylesheet" href="~/Content/global/fonts/web-icons/web-icons.css">
+    <link rel="stylesheet" href="~/Content/global/fonts/octicons/octicons.css">
+    <link rel="stylesheet" href="~/Content/global/fonts/material-design/material-design.min.css">
+    <link rel="stylesheet" href="~/Content/global/fonts/brand-icons/brand-icons.min.css">
+
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-951753375"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'AW-951753375');</script>
+
+    <style>
+        #ModalLoggin {
+            background-color: #eeeeeee3 !important;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <!--Preloader starts-->
+    <div class="loader js-preloader">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <!--Preloader ends-->
+    <!-- Theme Switcher Start -->
+    <div class="switch-theme-mode hidden" style="display:none;">
+        <label id="switch" class="switch">
+            <input type="checkbox" onchange="toggleTheme()" id="slider">
+            <span class="slider round"></span>
+        </label>
+    </div>
+    <!-- Theme Switcher End -->
+    <!-- Page Wrapper End -->
+    <div class="page-wrapper">
+
+        <!-- Header Section Start -->
+        <header class="header-wrap style1">
+
+            <div class="header-bottom">
+                <div class="container">
+                    <nav class="navbar navbar-expand-md navbar-light">
+                        <a class="navbar-brand" href="@Url.Action("Index", "Cotizador")">
+                            <img class="logo-light" style="width: 160px;" src="~/Content/IMG/Logo.png" alt="logo">
+
+                        </a>
+                        <div class="collapse navbar-collapse main-menu-wrap" id="navbarSupportedContent">
+                            <div class="menu-close xl-none">
+                                <a href="javascript:void(0)"> <i class="ri-close-line"></i></a>
+                            </div>
+                            <ul class="navbar-nav ms-auto">
+                            </ul>
+
+                        </div>
+                    </nav>
+                    <div class="mobile-bar-wrap">
+                        <div class="mobile-sidebar">
+                            <i class="ri-menu-4-line"></i>
+                        </div>
+                        <button class="searchbtn xl-none" type="button">
+                            <i class="flaticon-search"></i>
+                        </button>
+                        <div class="mobile-menu xl-none">
+                            <a href="javascript:void(0)"><i class="ri-menu-line"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="search-area">
+                    <div class="container">
+                        <form action="#">
+                            <div class="form-group">
+                                <input type="search" placeholder="Search Here" autofocus>
+                            </div>
+                        </form>
+                        <button type="button" class="close-searchbox">
+                            <i class="ri-close-line"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Header Section End -->
+
+    </div>
+
+
+
+    <!-- Page -->
+    @RenderSection("featured", required: false)
+    <div class="content-wrapper-2">
+        @RenderBody()
+    </div>
+    <!-- End Page -->
+    <!-- Footer Section Start -->
+    <!-- Footer Section End -->
+    <!-- Page Wrapper End -->
+    <!-- Back-to-top button Start -->
+    <!-- Modal -->
+    <div class="modal fade" id="ModalLoggin" aria-hidden="true" aria-labelledby="examplePositionCenter"
+         role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-simple modal-center">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <!-- Example Tabs In The Panel -->
+                    <div class="panel nav-tabs-horizontal" data-plugin="tabs">
+
+                        <ul class="nav nav-tabs nav-tabs-line" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="LinktabLogin" data-toggle="tab" href="javascript:LoginUser()"
+                                   aria-controls="exampleTopHome" role="tab"><i class="icon fa-sign-in" aria-hidden="true"></i>Iniciar Sesión</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="LinktabRegistro" data-toggle="tab" href="javascript:RegistroUser()"
+                                   aria-controls="exampleTopComponents" role="tab"><i class="icon fa-user-plus" aria-hidden="true"></i>Registrarse</a>
+                            </li>
+                        </ul>
+                        <div class="panel-body">
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="tabLogin" role="tabpanel">
+                                    <div class="text-center">
+                                        <div class="spinner-border" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="tabRegistro" role="tabpanel">
+                                    <div class="text-center">
+                                        <div class="spinner-border" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Example Tabs In The Panel -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Modal -->
+
+
+
+    <a href="javascript:void(0)" class="back-to-top bounce"><i class="ri-arrow-up-s-line"></i></a>
+    <!-- Back-to-top button End -->
+    <!-- Link of JS files -->
+    <script src="~/Content/assets3/js/jquery.min.js"></script>
+    <script src="~/Content/assets3/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/assets3/js/form-validator.min.js"></script>
+    <script src="~/Content/assets3/js/contact-form-script.js"></script>
+    <script src="~/Content/assets3/js/aos.js"></script>
+    <script src="~/Content/assets3/js/owl.carousel.min.js"></script>
+    <script src="~/Content/assets3/js/odometer.min.js"></script>
+    <script src="~/Content/assets3/js/fancybox.js"></script>
+    <script src="~/Content/assets3/js/jquery.appear.js"></script>
+    <script src="~/Content/assets3/js/tweenmax.min.js"></script>
+    <script src="~/Content/assets3/js/main.js"></script>
+
+
+    <script src="~/Content/global/vendor/formvalidation/formValidation.js"></script>
+    <script src="~/Content/global/vendor/formvalidation/framework/bootstrap.js"></script>
+    <script src="~/Content/global/vendor/matchheight/jquery.matchHeight-min.js"></script>
+    <script src="~/Content/global/vendor/jquery-wizard/jquery-wizard.js"></script>
+
+
+    <script src="~/Content/global/vendor/jquery-ui/jquery-ui.min.js"></script>
+    <script src="~/Content/global/vendor/moment/moment.min.js"></script>
+    <script src="~/Content/global/vendor/fullcalendar/fullcalendar.js"></script>
+
+    <script src="~/Content/global/vendor/select2/select2.full.min.js"></script>
+    <script src="~/Content/global/vendor/bootstrap-tokenfield/bootstrap-tokenfield.min.js"></script>
+    <script src="~/Content/global/vendor/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+    <script src="~/Content/global/vendor/bootstrap-select/bootstrap-select.js"></script>
+    <script src="~/Content/global/vendor/icheck/icheck.min.js"></script>
+    <script src="~/Content/global/vendor/switchery/switchery.js"></script>
+    <script src="~/Content/global/vendor/asrange/jquery-asRange.min.js"></script>
+    <script src="~/Content/global/vendor/ionrangeslider/ion.rangeSlider.min.js"></script>
+    <script src="~/Content/global/vendor/asspinner/jquery-asSpinner.min.js"></script>
+    <script src="~/Content/global/vendor/clockpicker/bootstrap-clockpicker.min.js"></script>
+    <script src="~/Content/global/vendor/ascolor/jquery-asColor.min.js"></script>
+    <script src="~/Content/global/vendor/asgradient/jquery-asGradient.min.js"></script>
+    <script src="~/Content/global/vendor/ascolorpicker/jquery-asColorPicker.min.js"></script>
+    <script src="~/Content/global/vendor/bootstrap-maxlength/bootstrap-maxlength.js"></script>
+    <script src="~/Content/global/vendor/jquery-knob/jquery.knob.js"></script>
+    <script src="~/Content/global/vendor/bootstrap-touchspin/bootstrap-touchspin.min.js"></script>
+    <script src="~/Content/global/vendor/jquery-labelauty/jquery-labelauty.js"></script>
+    <script src="~/Content/global/vendor/bootstrap-datepicker/bootstrap-datepicker.js"></script>
+    <script src="~/Content/global/vendor/timepicker/jquery.timepicker.min.js"></script>
+    <script src="~/Content/global/vendor/datepair/datepair.min.js"></script>
+    <script src="~/Content/global/vendor/datepair/jquery.datepair.min.js"></script>
+    <script src="~/Content/global/vendor/jquery-strength/password_strength.js"></script>
+    <script src="~/Content/global/vendor/jquery-strength/jquery-strength.min.js"></script>
+    <script src="~/Content/global/vendor/multi-select/jquery.multi-select.js"></script>
+    <script src="~/Content/global/vendor/typeahead-js/bloodhound.min.js"></script>
+    <script src="~/Content/global/vendor/typeahead-js/typeahead.jquery.min.js"></script>
+    <script src="~/Content/global/vendor/jquery-placeholder/jquery.placeholder.js"></script>
+
+
+
+
+    <script src="~/Content/global/vendor/jquery-ui/jquery-ui.js"></script>
+    <script src="~/Content/global/vendor/blueimp-tmpl/tmpl.js"></script>
+    <script src="~/Content/global/vendor/blueimp-canvas-to-blob/canvas-to-blob.js"></script>
+    <script src="~/Content/global/vendor/blueimp-load-image/load-image.all.min.js"></script>
+    <script src="~/Content/global/vendor/blueimp-file-upload/jquery.fileupload.js"></script>
+    <script src="~/Content/global/vendor/blueimp-file-upload/jquery.fileupload-process.js"></script>
+    <script src="~/Content/global/vendor/blueimp-file-upload/jquery.fileupload-image.js"></script>
+    <script src="~/Content/global/vendor/blueimp-file-upload/jquery.fileupload-audio.js"></script>
+    <script src="~/Content/global/vendor/blueimp-file-upload/jquery.fileupload-video.js"></script>
+    <script src="~/Content/global/vendor/blueimp-file-upload/jquery.fileupload-validate.js"></script>
+    <script src="~/Content/global/vendor/blueimp-file-upload/jquery.fileupload-ui.js"></script>
+    <script src="~/Content/global/vendor/dropify/dropify.min.js"></script>
+
+
+
+
+    <script src="~/Content/global/vendor/ladda/spin.min.js"></script>
+    <script src="~/Content/global/vendor/ladda/ladda.min.js"></script>
+
+
+
+    <!-- Bootstrap Table  -->
+    <script src="~/Content/global/vendor/bootstrap-table/bootstrap-table.js"></script>
+    <script src="~/Content/global/vendor/bootstrap-table/extensions/custom-view/bootstrap-table-custom-view.js"></script>
+    <script src="~/Content/global/vendor/bootstrap-table/extensions/editable/bootstrap-table-editable.js"></script>
+    <script src="~/Content/global/vendor/bootstrap-table/extensions/export/bootstrap-table-export.js"></script>
+    <script src="~/Content/global/vendor/bootstrap-table/extensions/export/tableExport.js"></script>
+    <script src="~/Content/global/vendor/bootstrap-table/extensions/filter-control/bootstrap-table-filter-control.js"></script>
+    <script src="~/Content/global/vendor/bootstrap-table/extensions/mobile/bootstrap-table-mobile.js"></script>
+
+    <script src="~/Content/global/vendor/alertify/alertify.js"></script>
+    <script src="~/Content/global/vendor/notie/notie.js"></script>
+
+    <script src="~/Content/global/vendor/asprogress/jquery-asProgress.js"></script>
+    <script src="~/Content/global/vendor/draggabilly/draggabilly.pkgd.js"></script>
+    <script src="~/Content/global/vendor/raty/jquery.raty.js"></script>
+
+    <script>
+
+        function IniciarSesionPrincipal() {
+            $("#ModalLoggin").modal("show");
+            RegistroUser();
+        }
+        function LoginUser() {
+            $("#tabRegistro").html("");
+            $("#tabLogin").removeClass("active");
+            $("#tabRegistro").removeClass("active");
+            $("#tabLogin").addClass("active");
+            $("#LinktabLogin").removeClass("active");
+            $("#LinktabRegistro").removeClass("active");
+            $("#LinktabLogin").addClass("active");
+
+            var urlLogin ='@Url.Action("Login", "Account")';
+            $.get(urlLogin).done(function (data) {
+                $("#tabLogin").html(data);
+
+            });
+        }
+
+        function RegistroUser() {
+            $("#tabLogin").html("");
+            $("#tabRegistro").removeClass("active");
+            $("#tabLogin").removeClass("active");
+            $("#tabRegistro").addClass("active");
+            $("#LinktabRegistro").removeClass("active");
+            $("#LinktabLogin").removeClass("active");
+            $("#LinktabRegistro").addClass("active");
+            var urlLogin ='@Url.Action("Register", "Account")';
+            $.get(urlLogin).done(function (data) {
+                $("#tabRegistro").html(data);
+
+            });
+        }
+
+    </script>
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/626b3b137b967b11798d073e/1g1pdthg1';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '792198008496764');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1"
+             src="https://www.facebook.com/tr?id=792198008496764&ev=PageView
+&noscript=1" />
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+
+
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>
+

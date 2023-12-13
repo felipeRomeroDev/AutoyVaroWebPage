@@ -1,0 +1,36 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <li class="nav-item dropdown show">
+            <a class="nav-link navbar-avatar waves-effect waves-light waves-round" data-toggle="dropdown" href="#" aria-expanded="true" data-animation="scale-up" role="button">
+                <span class="avatar avatar-online">
+                    <img src="~/Content/assets3/img/user-xs.png" alt="..." style="width: 30px;">
+                    <i></i>
+                </span>
+            </a>
+            <div class="dropdown-menu show" role="menu">
+                @*<a class="dropdown-item waves-effect waves-light waves-round" data-toggle="dropdown" href="#" aria-expanded="true" data-animation="scale-up" role="button"><i class="icon md-account" aria-hidden="true"></i>Perfil</a>*@
+                <a class="dropdown-item waves-effect waves-light waves-round" href="@Url.Action("Solicitudes","Solicitud")" role="menuitem"><i class="icon md-card" aria-hidden="true"></i>Solicitudes</a>
+                @*<a class="dropdown-item waves-effect waves-light waves-round" href="@Url.Action("Index", "Manage")" role="menuitem"><i class="icon md-settings" aria-hidden="true"></i>Ajustes</a>*@
+                <div class="dropdown-divider" role="presentation"></div>
+                <a href="javascript:document.getElementById('logoutForm').submit()" class="dropdown-item waves-effect waves-light waves-round" role="menuitem"><i class="icon md-power" aria-hidden="true"></i> Cerrar sesión</a>
+            </div>
+        </li>
+    }
+}
+else
+{
+    
+
+    <div class="others-options  lg-none" id="logoutForm">        
+        <div class="header-btn lg-none">
+            <a href="javascript:IniciarSesionPrincipal();" class="btn style1">Iniciar sesión | Registro</a>
+        </div>
+    </div>
+
+
+}

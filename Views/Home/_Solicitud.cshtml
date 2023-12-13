@@ -1,0 +1,127 @@
+﻿@model AutoyVaro.SolicitudCotizacion
+
+@using (Html.BeginForm("CreateSolicitud", "Home", FormMethod.Post, new { id = "formSolicitud", autocomplete = "off" }))
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+                
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        
+
+        <div class="form-group" style="display:none;">
+            @Html.HiddenFor(model => model.IdAnioLA)
+            @Html.HiddenFor(model => model.IdMarcaLA)
+            @Html.HiddenFor(model => model.IdModeloLA)
+            @Html.HiddenFor(model => model.ClaveVercion)            
+            @Html.EditorFor(model => model.Compra, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.EditorFor(model => model.Venta, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.EditorFor(model => model.FechaSolicitud, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label class="floating-label text-blue">Nombre completo</label>
+                    @Html.EditorFor(model => model.NombreCopleto, new { htmlAttributes = new { @class = "form-control", placeholder = "Nombre(s) Apellido(s)" } })                    
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="floating-label text-blue">Teléfono celular</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <button type="button" class="btn btn-default btn-outline">+52</button>
+                        </div>
+                        @Html.EditorFor(model => model.Telefono, new { htmlAttributes = new { @class = "form-control", placeholder="Tu número", type="number", maxlength = "10" } })
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="floating-label text-blue">Email</label>
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", placeholder = "micorreo@mail.com", maxlength = "250" } })
+                </div>
+            </div>
+
+            <div class="col-12 text-right">                
+                <input type="submit" value="Ver Ofertas" class="btn credit-btn mt-50" />
+            </div>
+
+        </div>
+
+    </div>
+}
+
+<script type="text/javascript">
+    
+    var __RequestVerificationToken = $("input[name=__RequestVerificationToken]").val();
+    $("#formSolicitud").submit(function (event) {
+        event.preventDefault();
+        var actionurl = '@Url.Action("CreateSolicitud", "Home")';
+        var formData = new FormData($(this)[0]);
+        $.ajax({
+            url: actionurl,
+            type: 'POST',
+            success: SuccessOk,
+            error: SuccessNot,
+            data: formData,
+            cache: false,
+            contentType: false,
+            processData: false
+        });
+    });
+    $(".form-control").change(function () {
+        DesmarcarError($(this).attr("id"));
+    });
+
+
+    function LimpiarFormulario() {
+        document.getElementById("formListaNegra").reset();
+    }
+    $("#IdEstatusCobranza").change(function () {
+        if ($("#IdEstatusCobranza").val() == 4) {
+            $("#divFechaAdjudicacion").show();
+        } else {
+            $("#divFechaAdjudicacion").hide();
+        }
+
+    });
+
+    // Control de validaciones
+    function ValidatorForm(Data) {
+        $.each(Data, function (index, value) {
+            $("#" + value.Id).addClass("is-invalid");
+            $("#" + value.Id).attr("data-toggle", "tooltip");
+            $("#" + value.Id).attr("data-placement", "top");
+            $("#" + value.Id).attr("title", value.Mensaje);
+            $("#" + value.Id).attr("data-original-title", value.Mensaje);
+            $("#" + value.Id).tooltip()
+
+        });
+    }
+    function DesmarcarError(Id) {
+        $("#" + Id).removeClass("is-invalid");
+        $("#" + Id).removeAttr("data-toggle");
+        $("#" + Id).removeAttr("data-placement");
+        $("#" + Id).removeAttr("data-original-title");
+
+    }
+
+    function SuccessOk(Data) {        
+        if (!Data.Error) {            
+            $("#PanelDatos").html(Data);
+        } else {            
+            toastr["info"]("Algunos de tus datos no son correctos.")
+            ValidatorForm(Data.data);
+        }
+    }
+    function SuccessNot(Data) {
+
+    }
+
+    
+    
+
+</script>
+

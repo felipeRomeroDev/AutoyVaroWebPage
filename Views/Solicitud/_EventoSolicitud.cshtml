@@ -1,0 +1,36 @@
+﻿@model AutoyVaro.Fin_Solicitud
+
+@{
+    var docCompleta = true;
+}
+@foreach (var item in Model.Fin_DocumentacionSolicitud)
+{
+
+
+
+    if (item.DocumentacionRequerida.Fase == 1)
+    {
+        docCompleta = item.Fin_DocumentacionSolicitudDetalle.Count() == 0 ? false : docCompleta;
+    }
+
+
+}
+
+@if (docCompleta)
+{
+    <p>
+        <h5>
+            De click en el boton "Enviar documentación" para continuar con la autorización de su crédito.
+        </h5>
+        <a class="btn style1 btn-outline float-right" href="javascript:IniciarValidacion()">Enviar documentación</a>
+        <a class="btn style2 btn-outline" href="@Url.Action("EnviarMailDocumentos", "Solicitud", new { id = Model.Id })"><i class="fa fa-upload"></i>Continuar más tarde</a>
+    </p>
+}
+else
+{
+    <a class="btn style2 btn-outline" href="@Url.Action("EnviarMailDocumentos", "Solicitud", new { id = Model.Id })"><i class="fa fa-upload"></i>Continuar más tarde</a>
+}
+
+
+
+<

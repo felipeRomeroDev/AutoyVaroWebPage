@@ -1,0 +1,160 @@
+﻿@model IEnumerable<AutoyVaro.Fit_Vehiculo>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutBase.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Compra)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Venta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumeroDeSerie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumeroDeMotor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Placas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TarjetaDeCirculacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaSolicitud)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Color)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RFCFactura)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumeroFactura)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaFactura)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumeroDeTarjetaDeCirculacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumeroDePuertas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumeroDeAsientos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumeroDeCilindros)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fit_Cliente.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LA_Anios.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LA_Version.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LA_Marcas.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LA_Modelos.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoTransmision.Descripcion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Compra)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Venta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumeroDeSerie)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumeroDeMotor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Placas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TarjetaDeCirculacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaSolicitud)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Color)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RFCFactura)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumeroFactura)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaFactura)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumeroDeTarjetaDeCirculacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumeroDePuertas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumeroDeAsientos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumeroDeCilindros)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fit_Cliente.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LA_Anios.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LA_Version.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LA_Marcas.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LA_Modelos.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoTransmision.Descripcion)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

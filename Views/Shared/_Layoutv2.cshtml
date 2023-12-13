@@ -1,0 +1,294 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <style>
+        .modal-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1050;
+            width: 100vw;
+            height: 100vh;
+            background-color: #0094ff
+        }
+
+            .modal-backdrop.fade {
+                opacity: 0
+            }
+
+            .modal-backdrop.show {
+                opacity: .5
+            }
+    </style>
+
+    <title>Auto y Varo</title>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="~/Content/assetsv2/img/favicon.png" rel="icon">
+    <link href="~/Content/assetsv2/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    @Styles.Render("~/Content/VendorCSS")
+
+    <!-- Template Main CSS File -->
+    <link href="~/Content/assetsv2/css/style.css" rel="stylesheet" />
+
+
+
+
+
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="~/Content/assets/css/site.css">
+
+    <!-- Plugins -->
+    <link rel="stylesheet" href="~/Content/global/vendor/animsition/animsition.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/asscrollable/asScrollable.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/switchery/switchery.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/intro-js/introjs.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/slidepanel/slidePanel.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/flag-icon-css/flag-icon.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/waves/waves.css">
+    <link rel="stylesheet" href="~/Content/assets/examples/css/uikit/icons.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/jquery-wizard/jquery-wizard.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/formvalidation/formValidation.css">
+    <link rel="stylesheet" href="~/Content/assets/examples/css/structure/ribbon.css">
+
+    <link rel="stylesheet" href="~/Content/global/vendor/fullcalendar/fullcalendar.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/select2/select2.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/bootstrap-tokenfield/bootstrap-tokenfield.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/bootstrap-tagsinput/bootstrap-tagsinput.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/bootstrap-select/bootstrap-select.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/icheck/icheck.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/switchery/switchery.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/asrange/asRange.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/ionrangeslider/ionrangeslider.min.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/asspinner/asSpinner.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/clockpicker/clockpicker.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/ascolorpicker/asColorPicker.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/bootstrap-touchspin/bootstrap-touchspin.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/jquery-labelauty/jquery-labelauty.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/bootstrap-datepicker/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/bootstrap-maxlength/bootstrap-maxlength.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/timepicker/jquery-timepicker.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/jquery-strength/jquery-strength.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/multi-select/multi-select.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/typeahead-js/typeahead.css">
+    <link rel="stylesheet" href="~/Content/assets/examples/css/forms/advanced.css">
+
+    <link rel="stylesheet" href="~/Content/global/vendor/bootstrap-table/bootstrap-table.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="~/Content/global/fonts/font-awesome/font-awesome.css">
+    <link rel="stylesheet" href="~/Content/global/fonts/7-stroke/7-stroke.css">
+    <link rel="stylesheet" href="~/Content/global/fonts/ionicons/ionicons.css">
+    <link rel="stylesheet" href="~/Content/global/fonts/mfglabs/mfglabs.css">
+    <link rel="stylesheet" href="~/Content/global/fonts/open-iconic/open-iconic.css">
+    <link rel="stylesheet" href="~/Content/global/fonts/themify/themify.css">
+    <link rel="stylesheet" href="~/Content/global/fonts/weather-icons/weather-icons.css">
+    <link rel="stylesheet" href="~/Content/global/fonts/glyphicons/glyphicons.css">
+    <link rel="stylesheet" href="~/Content/global/fonts/web-icons/web-icons.css">
+    <link rel="stylesheet" href="~/Content/global/fonts/octicons/octicons.css">
+    <link rel="stylesheet" href="~/Content/global/fonts/material-design/material-design.min.css">
+    <link rel="stylesheet" href="~/Content/global/fonts/brand-icons/brand-icons.min.css">
+
+    <!--[if lt IE 9]>
+    <script src="~/Content/global/vendor/html5shiv/html5shiv.min.js"></script>
+    <![endif]-->
+    <!--[if lt IE 10]>
+    <script src="~/Content/global/vendor/media-match/media.match.min.js"></script>
+    <script src="~/Content/global/vendor/respond/respond.min.js"></script>
+    <![endif]-->
+    <!-- Scripts -->
+    <script src="~/Content/global/vendor/breakpoints/breakpoints.js"></script>
+    <script>
+        Breakpoints();
+    </script>
+
+
+
+
+</head>
+
+<body>
+
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+            <a href="index.html" class="logo d-flex align-items-center">
+                <img src="~/Content/Page/img/core-img/logoAUTO.png" />
+            </a>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="@Url.Action("Index","Cotizador")">Inicia Tu Crédito</a></li>
+                    <li><a class="nav-link scrollto" href="#about">Contacto</a></li>
+
+
+                    @Html.Partial("_LoginPartial")
+
+
+
+
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+
+        </div>
+    </header><!-- End Header -->
+    <!-- ======= Hero Section ======= -->
+
+
+    <div>
+        @RenderBody()
+    </div>
+
+
+
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+
+
+        <div class="footer-top">
+            <div class="container">
+                <div class="row gy-4">
+                    <div class="col-lg-5 col-md-12 footer-info">
+                        <a href="index.html" class="logo d-flex align-items-center">
+                            <img src="~/Content/assetsv2/img/logo.png" alt="">
+                            <span>Auto y Varo</span>
+                        </a>
+                        <p>Queremos que tu vida siga su curso sin problemas financieros. Hemos creado un crédito para que obtengas el financiamiento que buscas garantizado con tu auto. Lo obtienes de manera rápida y con muchos beneficios para ti. Y lo mejor, sin necesidad de empeño de tu auto ya que se queda contigo.</p>
+                      
+                    </div>
+
+                
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright <strong><span>Auto y Varo</span></strong>. All Rights Reserved
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+
+    <!-- Core  -->
+    <script src="~/Content/global/vendor/babel-external-helpers/babel-external-helpers.js"></script>
+    <script src="~/Content/global/vendor/jquery/jquery.js"></script>
+    <script src="~/Content/global/vendor/popper-js/umd/popper.min.js"></script>
+    <script src="~/Content/global/vendor/bootstrap/bootstrap.js"></script>
+    <script src="~/Content/global/vendor/animsition/animsition.js"></script>
+    <script src="~/Content/global/vendor/mousewheel/jquery.mousewheel.js"></script>
+    <script src="~/Content/global/vendor/asscrollbar/jquery-asScrollbar.js"></script>
+    <script src="~/Content/global/vendor/asscrollable/jquery-asScrollable.js"></script>
+    <script src="~/Content/global/vendor/ashoverscroll/jquery-asHoverScroll.js"></script>
+    <script src="~/Content/global/vendor/waves/waves.js"></script>
+
+    <!-- Plugins -->
+    <script src="~/Content/global/vendor/switchery/switchery.js"></script>
+    <script src="~/Content/global/vendor/intro-js/intro.js"></script>
+    <script src="~/Content/global/vendor/screenfull/screenfull.js"></script>
+    <script src="~/Content/global/vendor/slidepanel/jquery-slidePanel.js"></script>
+    <script src="~/Content/global/vendor/formvalidation/formValidation.js"></script>
+    <script src="~/Content/global/vendor/formvalidation/framework/bootstrap.js"></script>
+    <script src="~/Content/global/vendor/matchheight/jquery.matchHeight-min.js"></script>
+    <script src="~/Content/global/vendor/jquery-wizard/jquery-wizard.js"></script>
+
+
+    <!-- Bootstrap Table  -->
+    <script src="~/Content/global/vendor/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="~/Content/global/vendor/bootstrap-table/extensions/editable/bootstrap-table-editable.js"></script>
+    <script src="~/Content/global/vendor/bootstrap-table/extensions/export/bootstrap-table-export.js"></script>
+    <script src="~/Content/global/vendor/bootstrap-table/extensions/export/tableExport.js"></script>
+    <script src="~/Content/global/vendor/bootstrap-table/extensions/filter-control/bootstrap-table-filter-control.js"></script>
+    <script src="~/Content/global/vendor/bootstrap-table/extensions/mobile/bootstrap-table-mobile.js"></script>
+
+
+    <script src="~/Content/global/vendor/jquery-ui/jquery-ui.min.js"></script>
+    <script src="~/Content/global/vendor/moment/moment.min.js"></script>
+    <script src="~/Content/global/vendor/fullcalendar/fullcalendar.js"></script>
+
+    <script src="~/Content/global/vendor/select2/select2.full.min.js"></script>
+    <script src="~/Content/global/vendor/bootstrap-tokenfield/bootstrap-tokenfield.min.js"></script>
+    <script src="~/Content/global/vendor/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+    <script src="~/Content/global/vendor/bootstrap-select/bootstrap-select.js"></script>
+    <script src="~/Content/global/vendor/icheck/icheck.min.js"></script>
+    <script src="~/Content/global/vendor/switchery/switchery.js"></script>
+    <script src="~/Content/global/vendor/asrange/jquery-asRange.min.js"></script>
+    <script src="~/Content/global/vendor/ionrangeslider/ion.rangeSlider.min.js"></script>
+    <script src="~/Content/global/vendor/asspinner/jquery-asSpinner.min.js"></script>
+    <script src="~/Content/global/vendor/clockpicker/bootstrap-clockpicker.min.js"></script>
+    <script src="~/Content/global/vendor/ascolor/jquery-asColor.min.js"></script>
+    <script src="~/Content/global/vendor/asgradient/jquery-asGradient.min.js"></script>
+    <script src="~/Content/global/vendor/ascolorpicker/jquery-asColorPicker.min.js"></script>
+    <script src="~/Content/global/vendor/bootstrap-maxlength/bootstrap-maxlength.js"></script>
+    <script src="~/Content/global/vendor/jquery-knob/jquery.knob.js"></script>
+    <script src="~/Content/global/vendor/bootstrap-touchspin/bootstrap-touchspin.min.js"></script>
+    <script src="~/Content/global/vendor/jquery-labelauty/jquery-labelauty.js"></script>
+    <script src="~/Content/global/vendor/bootstrap-datepicker/bootstrap-datepicker.js"></script>
+    <script src="~/Content/global/vendor/timepicker/jquery.timepicker.min.js"></script>
+    <script src="~/Content/global/vendor/datepair/datepair.min.js"></script>
+    <script src="~/Content/global/vendor/datepair/jquery.datepair.min.js"></script>
+    <script src="~/Content/global/vendor/jquery-strength/password_strength.js"></script>
+    <script src="~/Content/global/vendor/jquery-strength/jquery-strength.min.js"></script>
+    <script src="~/Content/global/vendor/multi-select/jquery.multi-select.js"></script>
+    <script src="~/Content/global/vendor/typeahead-js/bloodhound.min.js"></script>
+    <script src="~/Content/global/vendor/typeahead-js/typeahead.jquery.min.js"></script>
+    <script src="~/Content/global/vendor/jquery-placeholder/jquery.placeholder.js"></script>
+
+
+
+
+
+    <!-- Vendor JS Files -->
+    @Scripts.Render("~/bundles/JSFiles")
+
+
+    <!-- Template Main JS File -->
+    <script src="~/Content/assetsv2/js/main.js"></script>
+
+    @RenderSection("scripts", required: false)
+    <!-- Código de instalación Cliengo para Miguel Angel Huerta Guerrero -->
+
+
+    <script>
+        function initFreshChat() {
+            window.fcWidget.init({
+                token: "7b439fcc-99f6-497b-bfe1-d345ae051bb4",
+                host: "https://wchat.freshchat.com"
+            });
+        }
+        function initialize(i, t) { var e; i.getElementById(t) ? initFreshChat() : ((e = i.createElement("script")).id = t, e.async = !0, e.src = "https://wchat.freshchat.com/js/widget.js", e.onload = initFreshChat, i.head.appendChild(e)) } function initiateCall() { initialize(document, "Freshdesk Messaging-js-sdk") } window.addEventListener ? window.addEventListener("load", initiateCall, !1) : window.attachEvent("load", initiateCall, !1);
+    </script>
+
+
+    <!--StartofautoyvaroZendeskWidgetscript-->
+    @*// <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=90054c88-26e2-493f-b1c6-4e215bb6cae3"></script>*@
+    <!--EndofautoyvaroZendeskWidgetscript-->
+</body>
+
+</html>

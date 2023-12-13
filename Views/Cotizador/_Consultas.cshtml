@@ -1,0 +1,34 @@
+﻿@model List<AutoyVaro.Models.ListaCounsultasLA>
+
+
+<table class="table table-inverse">
+    <thead>
+        <tr>
+            <th>Año</th>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Version</th>
+            <th>Compra</th>
+            <th>Venta</th>            
+        </tr>
+    </thead>
+    <tbody id="tbodyEBC">
+
+        @foreach (var item in Model)
+        {
+
+            <tr>
+                <td>@item.Anio</td>
+                <td>@item.Marca</td>
+                <td>@item.Modelo</td>
+                <td>@item.Version</td>
+                <td>@((item.Compra ?? 0).ToString("C"))</td>
+                <td>@((item.Venta ?? 0).ToString("C"))</td>
+                
+            </tr>
+
+        }
+
+    </tbody>
+</table>
+

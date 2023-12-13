@@ -1,0 +1,603 @@
+﻿
+@model AutoyVaro.Models.ViewModelSolicitudCredito
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAPP.cshtml";
+}
+
+<style>
+    .bg-blue-9000 {
+        background-color: #030734 !important;
+    }
+
+    .breadcrumb-wrap-blue {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: 10px 0 !important;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    .bg-spring-blue {
+        background-color: #111542;
+    }
+</style>
+
+<!-- Breadcrumb Start -->
+<div class="breadcrumb-wrap  breadcrumb-wrap-blue bg-spring-blue">
+    <img src="~/Content/assets3/img/breadcrumb/br-shape-1.png" alt="Image" class="br-shape-one xs-none">
+    <img src="~/Content/assets3/img/breadcrumb/br-shape-2.png" alt="Image" class="br-shape-two xs-none">
+    <img src="~/Content/assets3/img/breadcrumb/br-shape-3.png" alt="Image" class="br-shape-three moveHorizontal sm-none">
+    <img src="~/Content/assets3/img/breadcrumb/br-shape-4.png" alt="Image" class="br-shape-four moveVertical sm-none">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7 col-md-8 col-sm-8">
+                <div class="breadcrumb-title">
+                    <h3 class="text-white">Solicitud de Crédito</h3>
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-4 col-sm-4 xs-none">
+                <div class="breadcrumb-img">
+                    <img src="~/Content/assets3/img/breadcrumb/br-shape-5.png" alt="Image" class="br-shape-five animationFramesTwo">
+                    <img src="~/Content/assets3/img/breadcrumb/br-shape-6.png" alt="Image" class="br-shape-six bounce">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Breadcrumb End -->
+<!-- ##### Features Area Start ###### -->
+<section class="service-wrap ptb-40">
+    <div class="container">
+        <div class="row justify-content-center">
+
+
+            <div class="col-md-4">
+                <div class="service-card style4">
+                    <div class="service-info">
+                        <div class="service-title">
+                            <span><i class="flaticon-payment-method"></i></span>
+                            <h3><a href="#">Detalles de tu préstamo</a></h3>
+                        </div>
+                        <div class="service-content">
+
+                            <div class="pricing-header bg-blue-9000">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="pricing-title text-white">Monto del préstamo:</div>
+                                        <div class="pricing-price">
+                                            <span class="pricing-amount text-white" style="font-size: 2rem;">@((Model.creditos.EntregaLiquida).ToString("C"))</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="pricing-title text-white">Plazo hasta:</div>
+                                        <div class="pricing-price">
+                                            <span class="pricing-amount text-white" style="font-size: 2rem;">@Model.creditos.getPlazoEnMeses() Meses</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <p>
+                                <br />
+                                <span class="font-size-24">Pago mensual:</span>  <strong class="font-size-24">@Model.creditos.GetAmortizacion.FirstOrDefault().PagoTotalMensual.ToString("C")</strong>
+                                <ul class="pricing-features">
+
+                                    <li>
+                                        <strong class="text-blue">Apertura del Crédito:</strong> @Model.creditos.AperturaCredito.ToString("C")
+                                    </li>
+
+                                    <li>
+                                        <strong class="text-blue">Pago GPS:</strong>  @Model.creditos.Esquema.GastosAdministrativosPostEntregaLiquida.ToString("C")
+                                    </li>
+
+                                    <li>
+                                        <strong class="text-blue">Pago Mensual:</strong> @Model.creditos.GetAmortizacion.FirstOrDefault().PagoTotalMensual.ToString("C")
+                                    </li>
+
+                                </ul>
+                            </p>
+
+                        </div>
+                        <a href="#LinDocumentos" class="link style1">Ver más<i class="flaticon-right-arrow-1"></i></a>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="col-md-8">
+
+
+                <section class="goal-wrap">
+                    <div class="container">
+                        <div class="row gx-5 align-items-center">
+
+                            <div class="col-lg-6">
+                                <div class="goal-content">
+                                    <div class="content-title style1">
+                                        <span>Auto y Varo</span>
+                                        <h4>Su solicitud fue recibida</h4>
+                                        <p>
+                                            ¡Todo salió bien!<br />
+                                            Hemos recibido su solicitud de crédito.<br /><br />
+
+                                            Nos encontramos revisando su información, para agilizar la autorización de su crédito le recomendamos nos comparta sus documentos.<br /><br />
+
+                                        </p>
+
+                                        <div>
+                                            <a class="link" onclick="$('#ModalNoty').modal('show')" href="@Url.Action("EnviarMailDocumentos","Solicitud", new {id = Model.solicitud.Id })">Subir despues</a>
+                                            <a class="btn style1 btn-outline float-right" href="@Url.Action("AddFile","Solicitud", new {id = Model.solicitud.Id })"><i class="fa fa-upload"></i>Subir Documentación</a>
+                                        </div>
+
+                                        <br />
+                                        <br />
+                                        <p>
+                                            Si requiere asistencia en su trámite pónganse en contacto con uno de nuestros asesores.<br /><br />
+                                        </p>
+
+                                    </div>
+
+
+
+
+                                    <ul class="content-feature-list style1 list-style">
+                                        <li><span><i class="flaticon-call"></i></span><a href="tel:2281384284">(228) 138 4284</a></li>
+                                        <li><span><i class="flaticon-email-1"></i></span><a href="mailto:asesor@autoyvaro.com">asesor@autoyvaro.com</a></li>
+                                    </ul>
+
+                                    <a href="#LinDocumentos" class="link style1">Ver documentación necesaria.<i class="flaticon-right-arrow-1"></i></a>
+
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="goal-img-wrap">
+                                    <img src="~/Content/assets3/img/goal/goal-shape-1.png" alt="Image" class="goal-shape-three">
+                                    <img src="~/Content/assets3/img/goal/goal-shape-2.png" alt="Image" class="goal-shape-one">
+                                    <img src="~/Content/assets3/img/goal/goal-shape-3.png" alt="Image" class="goal-shape-two">
+                                    <img src="~/Content/assets3/img/shopping-1.png" alt="Image">
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+
+
+                <div class="panel panel-primary panel-line" id="exampleWizardFormContainer" style="box-shadow: grey 0px 0px 8px -1px; display:none;">
+                    <div class="panel-heading">
+
+                    </div>
+                    <div class="panel-body">
+
+
+                        <div class="alert alert-info">
+                            Su solicitud fue recibida por uno de nuestros asesores.
+                        </div>
+
+
+                        @if (Model.solicitud.tipoDeSeguiniento == 1)
+                        {
+                            <div class="col-lg-12 col-md-12">
+                                <div class="contact-item">
+                                    <span class="contact-icon">
+                                        <i class="flaticon-phone-call"></i>
+                                    </span>
+                                    <div class="contact-info">
+                                        <h3 class="text-justify">
+                                            En un momento uno de nuestros asesores se pondrá en contacto con usted, o si lo prefiere contáctenos a uno de los siguientes números
+                                        </h3>
+                                        <a href="tel:2283111999">(282) 587-1565</a>
+                                        <a href="tel:2283111999">(228) 311-1999</a>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+
+
+                        <h4>Resumen de su solicitud</h4>
+                        <!-- Example Tabs Line -->
+                        <div class="example-wrap m-xl-0">
+                            <div class="nav-tabs-horizontal" data-plugin="tabs">
+                                <ul class="nav nav-tabs nav-tabs-line" role="tablist">
+                                    <li class="nav-item" role="presentation"><a class="nav-link nav-datos-personales active" data-toggle="tab" href="javascript:mostrarDatosPersonales()" aria-controls="exampleTabsLineOne" role="tab" aria-selected="false">Datos Personales</a></li>
+                                    <li class="nav-item" role="presentation"><a class="nav-link nav-datos-vehiculo" data-toggle="tab" href="javascript:mostrarDatosVehiculo()" aria-controls="exampleTabsLineTwo" role="tab" aria-selected="false">Datos de su Vehículo</a></li>
+                                    <li class="nav-item" role="presentation"><a class="nav-link nav-documentos" data-toggle="tab" href="javascript:mostrarDocumentos()" aria-controls="exampleTabsLineTwo" role="tab" aria-selected="false">Subir Documentos</a></li>
+                                </ul>
+                                <div class="tab-content pt-20">
+                                    <div class="tab-pane active show" id="DivContenedorTemporal" role="tabpanel">
+                                        @Html.Action("Edit", "Cliente", new { id = Model.solicitud.IdCliente })
+                                    </div>
+
+
+                                    <div class="tab-pane" id="DivArchivos" role="tabpanel">
+
+
+
+                                        <div class="row">
+
+                                            <div class="col-md-12">
+
+
+                                                <h4>Documentación requerida</h4>
+
+                                                <p>
+                                                    Tener la siguiente documentación a la mano le permitirá disfrutar de su crédito en menos tiempo.
+                                                </p>
+
+
+
+                                                <ul>
+                                                    <li>
+                                                        Facturas y refacturas;
+                                                        <ul>
+                                                            <li>Si su auto es refacturado; Se requiere copia de la factura de origen y de todas las refacturas hasta la actual.</li>
+                                                            <li>Si auto es legalizado; Se requiere copia de factura original y/o refacturas, pedimento original y títute;tulo de propiedad.</li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>Tenencias pagadas (&uacute;ltima); si tiene adeudo se puede pagar del mismo cr&eacute;dito, como pago a terceros o dem&eacute;rito.</li>
+                                                    <li>Tarjeta de circulaci&oacute;n a nombre del cliente; Si requiere cambio de propietario, revisar el Proceso de autorizaci&oacute;n de Tr&aacute;mite de Cambio de Propietario.</li>
+                                                    <li>Tal&oacute;n de verificaci&oacute;n vehicular (vigente). En caso de NO estar vigente, el costo se demerita en el sistema.</li>
+                                                    <li>Comprobante de domicilio con antig&uuml;edad no mayor a 3 meses (agua, luz o tel&eacute;fono con qr). Si el comprobante no est&aacute; a nombre del cliente, el titular deber&aacute; ser una de las referencias personales.</li>
+                                                </ul>
+
+
+                                                <ul>
+                                                    <li>Identificaci&oacute;n oficial INE o Pasaporte (vigente) acompa&ntilde;ado de; c&eacute;dula profesional, licencia de conducir, cartilla del servicio militar, certificaci&oacute;n de matr&iacute;cula consular o INAPAM.</li>
+                                                </ul>
+
+                                                <ul>
+                                                    <li>Copia de estado de cuenta bancario a nombre del cliente (cta. CLABE interbancaria).</li>
+                                                    <li>Duplicado de llaves, con chip y/o alarma seg&uacute;n sea el caso (que apaguen alarma, abran y arranquen el auto).</li>
+                                                </ul>
+
+
+
+
+
+
+
+
+                                            </div>
+
+
+
+
+                                            @if (Model.solicitud.IdEstadoSolicitud == 4)
+                                            {
+                                                if (Model.solicitud.Fin_Cita.Count == 0)
+                                                {
+
+                                                    <span class="btn btn-info btn-outline">Solicitud preautorizada</span>
+
+                                                    <p>Puede solicitar una visita domiciliaria donde uno de nuestros asesores lo apoyara para continuar con el proceso de su solicitud de su crédito. </p>
+
+                                                    <div class="col-md-12 text-right">
+
+                                                        <a class="btn btn-primary" href="@Url.Action("Create", "Cita", new { Id = Model.solicitud.Id })">Agendar visita</a>
+
+                                                    </div>
+
+                                                }
+                                                else
+                                                {
+
+                                                    <h1>Tienes una cita</h1>
+                                                    <p>@Model.solicitud.Fin_Cita.FirstOrDefault().FechaRegistro</p>
+
+                                                }
+                                            }
+
+
+
+
+
+
+
+                                        </div>
+
+
+                                        <table id="table"
+                                               data-toggle="table"
+                                               data-height="auto"
+                                               data-id-field="EmpleadoID"
+                                               data-click-to-select="true"
+                                               data-toolbar="#toolbar"
+                                               data-footer-style="footerStyle"
+                                               data-url="@Url.Action("ListaDocumentos", "Documentacion", new {IdSolicitud = Model.solicitud.Id})"
+                                               data-detail-view="true"
+                                               data-detail-formatter="detailFormatterDocumentos">
+                                            <thead>
+                                                <tr>
+                                                    <th data-field="nombre">Documento</th>
+                                                    <th data-field="descripción">Descripcion</th>
+                                                    <th data-formatter="formatterOption"></th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Example Tabs Line -->
+
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+</section> <!-- ##### Features Area End ###### -->
+
+
+
+<section class="goal-wrap ptb-30" id="LinDocumentos">
+    <div class="container">
+        <div class="row gx-5 align-items-center">
+            <div class="col-lg-6">
+                <div class="goal-img-wrap">
+                    <img src="~/Content/assets3/img/goal/goal-shape-1.png" alt="Image" class="goal-shape-three bounce">
+                    <img src="~/Content/assets3/img/goal/goal-shape-2.png" alt="Image" class="goal-shape-one">
+                    <img src="~/Content/assets3/img/goal/goal-shape-3.png" alt="Image" class="goal-shape-two">
+                    <img src="~/Content/assets3/img/Documentos.jpg" alt="Image">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="goal-content">
+                    <div class="content-title style1">
+                        <span>Requisitos</span>
+                        <h2>Documentos y requisitos nesesarios</h2>
+                        <p>Recuerde tener su documentación a la mano esto acelera la dispersión de su crédito</p>
+                    </div>
+                    <ul class="content-feature-list style1 list-style">
+                        <li><span><i class="flaticon-tick"></i></span>Factura original o refactura</li>
+                        <li><span><i class="flaticon-tick"></i></span>Ultima Tenencias pagada</li>
+                        <li><span><i class="flaticon-tick"></i></span>Tarjeta de circulación a nombre del cliente</li>
+                        <li><span><i class="flaticon-tick"></i></span>Comprobante de domicilio con antigüedad no mayor a 3 meses (agua, luz o teléfono con qr)</li>
+                        <li><span><i class="flaticon-tick"></i></span>Identificación oficial INE o Pasaporte (vigente)</li>
+                        <li><span><i class="flaticon-tick"></i></span>3 referencias personales (Nombre, teléfono, dirección)</li>
+                        <li><span><i class="flaticon-tick"></i></span>Copia de estado de cuenta bancario a nombre del cliente (cta. CLABE interbancaria)</li>
+                        <li><span><i class="flaticon-tick"></i></span>Duplicado de llaves, con chip y/o alarma según sea el caso.</li>
+                        <li><span><i class="flaticon-tick"></i></span>Estado de cuenta</li>
+                        <li><span><i class="flaticon-tick"></i></span>Licencia de conducir</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="ModalTittle">...</h4>
+            </div>
+
+            <div class="modal-body" id="ModalBody">
+                ...
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="alert alert-info hidden" role="alert" id="validacionTipoArchivo">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="ModalNoty" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="ModalTittle">Auto y Varo</h4>
+            </div>
+
+            <div class="modal-body" id="ModalBody23">
+                <h5>Te enviamos un correo con un link para que subas tus documentos</h5>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+      function addDocumento(id, archivo) {
+          $("#ModalTittle").html(archivo);
+        $("#ModalBody").html("loading...");
+        var URL = "@Url.Action("AddArchivoExpediente", "Documentacion")";
+        $.get(URL, {id: id}).done(function (data) {
+            $("#ModalBody").html(data);
+        });
+        $("#myModal").modal("show");
+    }
+
+    function formatterOption(value, row, index) {
+        return '<a class="btn btn-success btn-xs" data-content="' + row.descripción + '"' +
+              'data-trigger="hover" href="javascript:addDocumento(' + row.Id + ', \'' + row.nombre + '\')" data-toggle="popover" data-original-title="Nuevo(a) ' + row.nombre + '"' +
+              'tabindex="0" title="" ><i class="fa fa-upload" aria-hidden="true"></i></a>';
+
+    }
+
+    function formatterEstado(value, row, index) {
+        if (row.NumeroArchivos > 0) {
+            return "Subido"
+        }
+        if (value == 2) {
+            return "Validado"
+        }
+        if (value == 3) {
+            return "Poco ligible"
+        }
+        return "Sin subir"
+
+    }
+
+    function detailFormatterDocumentos(index, row, $detail) {
+        return buildTableDocumentos($detail.html('<table></table>').find('table'), row.Id);
+    }
+
+
+    var MapatableUpdate = new Map();
+
+
+    function buildTableDocumentos($el, IdDC) {
+        MapatableUpdate.set(IdDC, $el);
+        $tableUpdate = $el;
+        var columns = []
+        var data = []
+        columns.push({ field: 'Fecha', title: 'Fecha', formatter: "formatofechaDiaMesAnio" });
+        columns.push({ field: 'Documento', title: 'Documento' });
+        columns.push({ field: 'Version', title: 'Versión' });
+        columns.push({ title: 'Opciones', formatter: 'opcionesDocumentosFormat' });
+
+
+        $el.bootstrapTable({
+            columns: columns,
+            theadClasses: "thead-light",
+            url: '/Documentacion/ListaDocumentosPorTipoDocumento?IdDC=' + IdDC,
+            onLoadSuccess: function () {
+                $('[data-toggle="popover"]').popover();
+            }
+        });
+    }
+
+    function formatofechaDiaMesAnio(value, row, index) { // return MM-YYYY
+        if (value == null || value == "") {
+            return "-"
+        }
+        var fecha = value.replace("/Date(", "").replace(")/", "");// /Date(1385013600000)/
+        var date = new Date(parseInt(fecha));
+        return pad((date.getDate()), 2) + "/" + pad((date.getMonth() + 1), 2) + "/" + date.getFullYear();
+    }
+
+    function pad(str, max) {
+        str = str.toString();
+        return str.length < max ? pad("0" + str, max) : str;
+    }
+
+
+    function refrescar() {
+        $("#table").bootstrapTable("refresh");
+    }
+
+     function opcionesDocumentosFormat(value, row, index) {
+        if (row.IdEstadoDocumentoCredito == 4 || row.IdEstadoDocumentoCredito == 5) {
+            return "-";
+        }
+
+
+        var URL_File = '@Url.Action("ViewFile", "Documentacion")' + '?ruta=' + row.Ruta + '&nombre=' + row.Nombre;
+
+        var btnVerArchivo = '<td><a href="' + URL_File + '" target="_blank" class="btn btn-success btn-xs" data-content="Permite descargar el archivo para su revisión."' +
+        'data-trigger="hover" data-toggle="popover" data-original-title="Ver Archivo"' +
+        'tabindex="0" title="" type="button"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a></td>';
+
+
+        if (row.IdEstadoDocumentoCredito == 3) {
+            btnAceptarDocumento = "";
+        }
+
+        return "<table><tr>" +  btnVerArchivo  + "</tr></table>";
+    }
+
+
+    function mostrarDatosPersonales() {
+
+        $(".nav-datos-personales").addClass("active")
+        $(".vav-datos-vehiculo").removeClass("active")
+        $(".nav-documentos").removeClass("active")
+        $("#DivContenedorTemporal").addClass("active")
+        $("#DivContenedorTemporal").addClass("show")
+        $("#DivArchivos").removeClass("active")
+        $("#DivArchivos").removeClass("show")
+
+        var urlDatosPersonales = '@Url.Action("Edit","Cliente", new {id = Model.solicitud.IdCliente })'
+        $.get(urlDatosPersonales).done(function(data) {
+            $("#DivContenedorTemporal").html(data);
+        });
+    }
+    function mostrarDatosVehiculo() {
+
+        $(".nav-datos-personales").addClass("active")
+        $(".vav-datos-vehiculo").removeClass("active")
+        $(".nav-documentos").removeClass("active")
+        $("#DivContenedorTemporal").addClass("active")
+        $("#DivContenedorTemporal").addClass("show")
+        $("#DivArchivos").removeClass("active")
+        $("#DivArchivos").removeClass("show")
+
+        var urlDatosPersonales = '@Url.Action("Edit","Vehiculo", new { id= Model.solicitud.Fit_Vehiculo.Id})'
+        $.get(urlDatosPersonales).done(function(data) {
+            $("#DivContenedorTemporal").html(data);
+        });
+    }
+
+    function mostrarDocumentos() {
+        $(".nav-datos-personales").removeClass("active")
+        $(".vav-datos-vehiculo").removeClass("active")
+        $(".nav-documentos").addClass("active")
+        $("#DivContenedorTemporal").removeClass("active")
+        $("#DivContenedorTemporal").removeClass("show")
+        $("#DivArchivos").addClass("active")
+        $("#DivArchivos").addClass("show")
+
+    }
+
+    mostrarDatosPersonales();
+</script>

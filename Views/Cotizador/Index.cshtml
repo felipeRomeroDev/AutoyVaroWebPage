@@ -1,0 +1,959 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout3.cshtml";
+}
+
+<style>
+
+    .content-beneficios {
+        color: white;
+    }
+
+    .popover-body {
+        padding: 10px 10px;
+        color: white !important;
+    }
+
+    .popover {
+        background: #030734;
+    }
+
+
+
+    .content-wrapper-margin {
+        margin-top: 90px !important;
+    }
+
+    .bg-squeeze {
+        background-color: #ffffff;
+    }
+
+    .bg-indigo-9000 {
+        background-color: #030734;
+    }
+
+    .hero-wrap.style3 .hero-img-wrap:after {
+        position: absolute;
+        top: 25%;
+        right: 30px;
+        content: "";
+        width: 80px;
+        height: 80px;
+        border-radius: 50px;
+        background-color: #edf9f969;
+        z-index: -1111;
+    }
+
+    .hero-wrap.style3 .hero-img-wrap:before {
+        position: absolute;
+        top: 57%;
+        left: 0;
+        content: "";
+        width: 80px;
+        height: 80px;
+        border-radius: 50px;
+        background-color: #edf9f95c;
+        z-index: 1;
+    }
+
+    .panel-22 {
+        position: relative;
+        background-color: #fff;
+        z-index: 1;
+        border-radius: 5px;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+        -webkit-box-shadow: 0 0 15px rgb(0 0 0 / 7%);
+        box-shadow: 0 0 15px rgb(0 0 0 / 7%);
+    }
+</style>
+
+<style type="text/css">
+
+    .blog-slider-three2.owl-carousel .owl-nav {
+        margin-top: 0px;
+    }
+
+        .blog-slider-three2.owl-carousel .owl-nav button.owl-prev, .blog-slider-three2.owl-carousel .owl-nav button.owl-next {
+            position: relative;
+            width: 38px;
+            height: 38px;
+            top: auto;
+            bottom: 0;
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+        }
+
+            .blog-slider-three2.owl-carousel .owl-nav button.owl-prev i, .blog-slider-three2.owl-carousel .owl-nav button.owl-next i {
+                font-size: 11px;
+                top: 0;
+            }
+
+        .blog-slider-three2.owl-carousel .owl-nav button.owl-prev {
+            left: calc(50% - 25px);
+        }
+
+        .blog-slider-three2.owl-carousel .owl-nav button.owl-next {
+            left: calc(50% + 0px);
+            right: auto;
+        }
+</style>
+
+
+
+<!-- Hero Section Start -->
+<section class="hero-wrap style3" id="seccionCotizador">
+
+    <img src="~/Content/assets3/img/hero/hero-shape-15.png" alt="Image" class="hero-shape-two">
+    <img src="~/Content/assets3/img/hero/hero-shape-14.png" alt="Image" class="hero-shape-three">
+    <img src="~/Content/assets3/img/hero/hero-shape-11.png" alt="Image" class="hero-shape-four animationFramesTwo">
+    <div class="content">
+        <div class="row gx-5 align-items-center">
+            <div class="col-md-12">
+                @Html.Action("Principal", "Publicidad")
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-- Hero Section End -->
+<!-- Testimonial Section Start -->
+<section class="testimonial-wrap ptb-100  bg-albastor">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 offset-xl-3 col-lg-8 offset-lg-2">
+                <div class="section-title style1 text-center mb-40">
+                    <span>Auto y Varo</span>
+                    <h1>¿Quiénes somos?</h1>
+                </div>
+            </div>
+        </div>
+        <div class="testimonial-slider-three owl-carousel">
+            <div class="testimonial-card style3">
+                <h4 class="client-quote">Somos una empresa mexicana con 9 años de experiencia en el mercado financiero.</h4>
+            </div>
+            <div class="testimonial-card style3">
+                <h4 class="client-quote">En Auto y Varo, nos dedicamos a brindar un préstamo de hasta el 75% del valor de su auto sin tener que dejarlo.</h4>
+
+            </div>
+            <div class="testimonial-card style3">
+                <h4 class="client-quote">Diferenciándose por la rapidez, facilidad y seguridad en nuestro servicio.</h4>
+
+            </div>
+            <div class="testimonial-card style3">
+                <h4 class="client-quote">Nuestra misión es seguir apoyando a las personas con un préstamo transparente y confiable, de manera que te sientas seguro.</h4>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Testimonial Section End -->
+
+
+
+
+
+<section class="hero-wrap style2 bg-black">
+    <div class="container">
+        <div class="row gx-5 align-items-center">
+            <div class="col-md-4">
+                <div class="hero-img-wrap">
+                    <img src="~/IMG/Auto.png" alt="Image" class="hero-img">
+                    <div class="container mt-3" data-speed="0.10" data-revert="true">
+                        <a href="#exampleWizardFormContainer" class="btn style1">Cotiza aquí</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-3">
+
+                <div class="sidebar">
+                    <div class="category-box style4">
+                        <font face="Monserrat" SIZE=6 COLOR="white">
+                            Requisitos
+                        </font>
+                        <div class="category-box style2">
+                            <ul class="list-style">
+                                <li>
+                                    <a href="service-category.html">
+                                        Factura o refactura original
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="service-category.html">
+                                        INE o pasaporte
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="service-category.html">
+                                        Comprobante de domicilio vigente
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="service-category.html">
+                                        Comprobante bancario vigente
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="service-category.html">
+                                        Tenencias (ayudamos a regularizarlas)
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="service-category.html">
+                                        Licencia de conducir vigente.
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-5 text-center">
+
+
+                <div class="quien-slider-three owl-carousel">
+                    <div class="testimonial-card style3">
+
+
+                        <div class="blog-card style1">
+                            <div class="blog-img">
+                                <img src="~/IMG/1.png" alt="Image">
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                    <div class="testimonial-card style3">
+                        <div class="blog-card style1">
+                            <div class="blog-img">
+                                <img src="~/IMG/2.png" alt="Image">
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="testimonial-card style3">
+                        <div class="blog-card style1">
+                            <div class="blog-img">
+                                <img src="~/IMG/3.png" alt="Image">
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Hero Section End -->
+
+
+
+
+<section class="why-choose-wrap style1 pb-100 pt-100 bg-albastor">
+    <div class="container-lg">
+        <div class="row gx-5 align-items-center">
+            <div class="col-lg-5">
+                <div class="wh-img-wrap">
+                    <img src="~/IMG/Requisitos/conocenos.png" />
+                    <img class="wh-shape-one bounce" src="~/Content/assets3/img/why-choose-us/wh-shape-1.png" alt="Image">
+                    <img class="wh-shape-two animationFramesTwo" src="~/Content/assets3/img/why-choose-us/wh-shape-2.png" alt="Image">
+                </div>
+            </div>
+            <div class="col-lg-7">
+
+
+
+                <div class="wh-content">
+                    <div class="content-title style1">
+                        <span>Auto y Varo</span>
+                        <h2>CONOCENOS</h2>
+                        <p class="text-justify">
+                            Somos una empresa mexicana con más de 8 años de experiencia en el sector financiero que brinda
+                            una solución inmediata y segura, a través de un proceso ágil y transparente para financiar un
+                            préstamo por tu auto con esquemas de liquidación flexibles. Actualmente, nos encontramos en los
+                            estados de Monterrey, Puebla, Veracruz, Estado de México, Querétaro y Guadalajara.
+                        </p>
+                    </div>
+
+
+
+                    <div class="row justify-content-center">
+                        <div class="col-xl-4 col-lg-6 col-md-6">
+                            <div class="project-card"
+                                 tabindex="0"
+                                 data-bs-toggle="popover"
+                                 data-bs-placement="top"
+                                 data-bs-html="true"
+                                 data-bs-trigger="hover focus"
+                                 data-bs-content="<p style='color:white;' class='content-beneficios'>Te ofrecemos un préstamo desde $20, 000.00 hasta $500, 000.00 por tu unidad sin dejarla en garantía.</p>">
+                                <img src="~/IMG/Requisitos/2.png" alt="Image">
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6 col-md-6">
+                            <div class="project-card"
+                                 tabindex="0"
+                                 data-bs-toggle="popover"
+                                 data-bs-placement="top"
+                                 data-bs-html="true"
+                                 data-bs-trigger="hover focus"
+                                 data-bs-content="<p class='content-beneficios'>Entre nuestros principales requisitos se encuentran:</p><ul class='content-feature-list list-style4' style='list-style-type: circle;'>
+                                    <li><i class='ri-check-double-line'></i>Modelo 2011 en adelante.</li>
+                                    <li><i class='ri-check-double-line'></i>Factura o Refactura Original.</li>
+                                    <li><i class='ri-check-double-line'></i>Tarjeta de Circulaci&oacute;n.<br>INE o Pasaporte.</li>
+                                    <li><i class='ri-check-double-line'></i>Comprobante de Domicilio.</li>
+                                    <li><i class='ri-check-double-line'></i>Comprobante Bancario.</li>
+                                    <li><i class='ri-check-double-line'></i>Pago de tenencia actualizado.</li>
+                                    </ul>">
+                                <img src="~/IMG/Requisitos/1.png" alt="Image">
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6 col-md-6">
+                            <div class="project-card"
+                                 tabindex="0"
+                                 data-bs-toggle="popover"
+                                 data-bs-placement="top"
+                                 data-bs-html="true"
+                                 data-bs-trigger="hover focus"
+                                 data-bs-content="<p style='color:white;' class='content-beneficios'>Con nosotros estos puntos no son impedimento para obtener un crédito por tu auto.</p>">
+                                <img src="~/IMG/Requisitos/3.png" alt="Image">
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6 col-md-6">
+                            <div class="project-card"
+                                 tabindex="0"
+                                 data-bs-toggle="popover"
+                                 data-bs-placement="top"
+                                 data-bs-html="true"
+                                 data-bs-trigger="hover focus"
+                                 data-bs-content="<p style='color:white;' class='content-beneficios'>Con nosotros estos puntos no son impedimento para obtener un crédito por tu auto.</p>">
+                                <img src="~/IMG/Requisitos/4.png" alt="Image">
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6 col-md-6">
+                            <div class="project-card"
+                                 tabindex="0"
+                                 data-bs-toggle="popover"
+                                 data-bs-placement="top"
+                                 data-bs-html="true"
+                                 data-bs-trigger="hover focus"
+                                 data-bs-content="<p style='color:white;' class='content-beneficios'>Realiza Abonos directos a capital</p>">
+                                <img src="~/IMG/Requisitos/5.png" alt="Image">
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6 col-md-6">
+                            <div class="project-card"
+                                 tabindex="0"
+                                 data-bs-toggle="popover"
+                                 data-bs-placement="top"
+                                 data-bs-html="true"
+                                 data-bs-trigger="hover focus"
+                                 data-bs-content="<p style='color:white;' class='content-beneficios'>A partir del tercer mes puedes liquidar tu crédito sin penalizaciones ni reajustes de intereses.</p>">
+                                <img src="~/IMG/Requisitos/6.png" alt="Image">
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6 col-md-6">
+                            <div class="project-card"
+                                 tabindex="0"
+                                 data-bs-toggle="popover"
+                                 data-bs-placement="top"
+                                 data-bs-html="true"
+                                 data-bs-trigger="hover focus"
+                                 data-bs-content="<p style='color:white;' class='content-beneficios'>Te ofrecemos un plazo máximo de 24 meses con cómodas mensualidades que se ajustan a tu presupuesto.</p>">
+                                <img src="~/IMG/Requisitos/7.png" alt="Image">
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6 col-md-6">
+                            <div class="project-card"
+                                 tabindex="0"
+                                 data-bs-toggle="popover"
+                                 data-bs-placement="top"
+                                 data-bs-html="true"
+                                 data-bs-trigger="hover focus"
+                                 data-bs-content="<p style='color:white;' class='content-beneficios'>Nosotros no te cobramos al generar una línea de crédito. ¡Nuestra misión es apoyarte!</p>">
+                                <img src="~/IMG/Requisitos/8.png" alt="Image">
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6 col-md-6">
+                            <div class="project-card"
+                                 tabindex="0"
+                                 data-bs-toggle="popover"
+                                 data-bs-placement="top"
+                                 data-bs-html="true"
+                                 data-bs-trigger="hover focus"
+                                 data-bs-content="<p style='color:white;' class='content-beneficios'>Todos nuestros procesos están optimizados para darte la mejor atención y que obtengas tu crédito lo más rápido posible.</p>">
+                                <img src="~/IMG/Requisitos/9.png" alt="Image">
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<section class="security-wrap ptb-100  bg-black">
+    <div class="container">
+        <div class="row gx-5 align-items-center">
+            <div class="col-lg-6 col-12 order-lg-1 order-2">
+
+                <div class="hero-img">
+
+                    <!-- Panel Wizard Form Container -->
+                    <div class="panel" id="exampleWizardFormContainer" style="box-shadow: 0 5px 15px rgb(0 0 0 / 10%); background-color: #ffffff; ">
+                        <div class="panel-heading" id="INICIOSIMULACION">
+                            <h4 style="color: #161942;">Tramita aquí tu crédito</h4>
+                        </div>
+                        <div class="panel-body">
+                            <!-- Steps -->
+                            <div class="pearls row" style="margin: 0 0 1px;">
+                                <div class="pearl current col-4">
+                                    <div class="pearl-icon"><i class="icon md-car" aria-hidden="true"></i></div>
+                                    <span class="pearl-title">TU AUTO</span>
+                                </div>
+                                <div class="pearl col-4">
+                                    <div class="pearl-icon"><i class="icon md-pin-account" aria-hidden="true"></i></div>
+                                    <span class="pearl-title">TUS DATOS</span>
+                                </div>
+                                <div class="pearl col-4">
+                                    <div class="pearl-icon"><i class="icon md-check" aria-hidden="true"></i></div>
+                                    <span class="pearl-title">VALIDACIÓN</span>
+                                </div>
+                            </div>
+                            <!-- End Steps -->
+                            <!-- Wizard Content -->
+                            <form id="exampleFormContainer" style=" border-top: 1px solid #ee7e3c;">
+                                <div class="wizard-content">
+
+                                    <div class="wizard-pane active" id="DivAuto" role="tabpanel">
+                                        <h5 style="color: #161942;">¿Qué auto tienes?</h5>
+                                        <div class="row">
+
+                                            <div class="col-md-6 col-xl-4">
+                                                <div class="form-group">
+                                                    <label for="IdAnio" class="text-blue">Año de tu auto</label>
+                                                    @Html.DropDownList("IdAnio", (IEnumerable<SelectListItem>)ViewBag.IdAnio, new { @class = "form-control select2", id = "IdAnio", @dataplugin = "select2" })
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6 col-xl-4">
+                                                <div class="form-group">
+                                                    <label for="IdMarca" class="text-blue">Marca</label>
+                                                    <select class="form-control select2" id="IdMarca" required="required" name="IdMarca" data-plugin="select2">
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6 col-xl-4">
+                                                <div class="form-group">
+                                                    <label for="IdModelo" class="text-blue">Modelo</label>
+                                                    <select class="form-control select2" id="IdModelo" name="IdModelo" required="required" data-plugin="select2">
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label for="IdVersion" class="text-blue">Versión</label>
+                                                    <select class="form-control select2" id="IdVersion" required="required" name="IdVersion" data-plugin="select2">
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+
+
+
+                                    <div class="wizard-pane" id="DivDatosContacto" role="tabpanel">
+                                        <h3>Cuéntanos un poco sobre ti</h3>
+
+                                        <div class="row">
+
+                                            <div class="form-group col-md-4">
+                                                <label class="floating-label text-blue">Nombre</label>
+                                                <input type="text" name="Nombre" id="Nombre" required="required" class="form-control" />
+                                            </div>
+
+                                            <div class="form-group col-md-4">
+                                                <label class="floating-label text-blue">Apellido paterno</label>
+                                                <input type="text" name="ApellidoPaterno" id="ApellidoPaterno" required="required" class="form-control" />
+                                            </div>
+
+                                            <div class="form-group col-md-4">
+                                                <label class="floating-label text-blue">Apellido materno</label>
+                                                <input type="text" name="ApellidoMaterno" id="ApellidoMaterno" class="form-control" />
+                                            </div>
+
+
+
+                                            <div class="form-group col-md-6">
+
+                                                <label class="floating-label text-blue">Teléfono celular</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">MX(+52)</span>
+                                                    </div>
+                                                    <input type="text" name="Telefono" id="Telefono" required="required" class="form-control" maxlength="10" />
+                                                </div>
+
+                                            </div>
+
+                                            <div class="form-group col-md-6">
+                                                <label class="floating-label text-blue">Email</label>
+                                                <input type="text" name="Email" id="Email" required="required" class="form-control" />
+                                            </div>
+
+
+                                            <div class="col-md-12">
+                                                <div class="checkbox-custom checkbox-primary">
+                                                    <input type="checkbox" name="AvisoPrivacidad" required="required">
+                                                    <label></label>
+                                                    Estoy de acuerdo con las <a style="color: #ee7e3c;" href="javascript:MostrarAvisoGlobal();"><strong>Aviso de Privacidad</strong></a>  y <a style="color: #ee7e3c;" href="javascript:MostrarTerminosGlobal();"><strong>Términos y Condiciones</strong></a>
+                                                </div>
+                                            </div>
+
+
+
+
+                                        </div>
+
+
+
+                                    </div>
+
+
+                                    <div class="wizard-pane" id="DivValidacion" role="tabpanel">
+
+                                        <h3>Código de verificación.</h3>
+
+                                        <p>Ingresa el código de verificación que hemos enviado vía mensaje de texto al:</p>
+
+                                        <div class="row">
+
+                                            <div class="form-group col-md-4">
+                                                <label class="floating-label text-blue">Nombre</label>
+                                                <input type="text" name="NombreInfo" id="NombreInfo" class="form-control" readonly />
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label class="floating-label text-blue">Apellido paterno</label>
+                                                <input type="text" name="ApellidoPaternoInfo" id="ApellidoPaternoInfo" class="form-control" readonly />
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label class="floating-label text-blue">Apellido materno</label>
+                                                <input type="text" name="ApellidoMaternoInfo" id="ApellidoMaternoInfo" class="form-control" readonly />
+                                            </div>
+
+
+                                            <div class="form-group col-md-6">
+
+                                                <label class="floating-label text-blue">Teléfono celular</label>
+
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">MX(+52)</span>
+                                                    </div>
+                                                    <input type="text" name="TelefonoInfo" id="TelefonoInfo" class="form-control" readonly />
+                                                </div>
+
+                                            </div>
+
+                                            <div class="form-group col-md-6">
+                                                <label class="floating-label text-blue">Código</label>
+                                                <input type="text" name="Codigo" id="Codigo" required="required" class="form-control" maxlength="4" />
+                                                <small class="invalid-feedback" id="validCodigo">Código incorrecto</small>
+                                            </div>
+
+                                            <div class="col-12 text-center" id="loading" style="display:none;">
+                                                Estamor preparando tu propuesta.
+                                                <div class="text-center">
+                                                    <div class="spinner-border" role="status">
+                                                        <span class="visually-hidden">Loading...</span>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- Wizard Content -->
+                        </div>
+                    </div>
+                    <!-- End Panel Wizard Form Container -->
+
+
+                </div>
+
+            </div>
+            <div class="col-lg-6 col-12 order-lg-2 order-1">
+                <div class="security-img-wrap">
+                    <img src="~/Content/assets3/img/security/security-shape-1.png" alt="Image" class="security-shape-one">
+                    <img src="~/Content/assets3/img/security/security-shape-2.png" alt="Image" class="security-shape-two">
+                    <img src="~/IMG/Slider-Principal/cinco.png" alt="Image" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<!-- Carrucel Facebook Start -->
+@Html.Action("CarrucelFacebook", "Publicidad", new { id = 1 })
+<!-- Carrucel Facebook End -->
+<!-- ##### Newsletter Area End ###### -->
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script src="~/Scripts/AutoYvaro/home.js"></script>
+
+    <script>
+
+
+
+    var mapSimulacion = [];
+
+    function GetMarcaSelect(IdAnio) {
+        fillComboBox("IdMarca", "Cotizador", "GetMarcaSelect", { IdAnio: IdAnio }, null);
+    }
+
+    function GetModeloSelect(IdAnio, IdMarca)
+    {
+        fillComboBox("IdModelo", "Cotizador", "GetModeloSelect", { IdAnio: IdAnio, IdMarca: IdMarca }, null);
+    }
+
+    function GetVersionSelect(IdAnio, IdMarca, IdModelo)
+    {
+        fillComboBox("IdVersion", "Cotizador", "GetVersionComboBox", { IdAnio: IdAnio, IdMarca: IdMarca, IdModelo: IdModelo, Marca: $("#IdMarca option:selected").text(), Modelo: $("#IdModelo option:selected").text() }, null);
+
+        //var url = '@Url.Action("GetVersionSelect", "Cotizador")';
+        //$.get(url, { IdAnio: IdAnio, IdMarca: IdMarca, IdModelo: IdModelo, Marca: $("#IdMarca option:selected").text(), Modelo: $("#IdModelo option:selected").text() }).done(function (data) {
+        //    $("#divVersiones").html(data);
+        //})
+    }
+
+    $("#IdAnio").change(function () {
+        var IdAnio = $("#IdAnio").val();
+        GetMarcaSelect(IdAnio);
+        clearComboBox("IdModelo", "Seleccionar", -1)
+        clearComboBox("IdVersion", "Seleccionar", -1)
+        updateSelect();
+    })
+
+    $("#IdMarca").change(function () {
+        var IdAnio = $("#IdAnio").val();
+        var IdMarca = $("#IdMarca").val();
+        GetModeloSelect(IdAnio, IdMarca);
+        clearComboBox("IdVersion", "Seleccionar", -1)
+
+    })
+
+    $("#IdModelo").change(function () {
+        var IdAnio = $("#IdAnio").val();
+        var IdMarca = $("#IdMarca").val();
+        var IdModelo = $("#IdModelo").val();
+        GetVersionSelect(IdAnio, IdMarca, IdModelo);
+
+    })
+
+    function clearComboBox(select, Label, DefaulValue) {
+        $('#' + select + ' option').remove();
+        $('#' + select).append('<option value="' + DefaulValue + '">' + Label + '</option>');
+    }
+
+    function CalcularSimulacion() {
+        var Clave = $("#IdVesion").val();
+        var Nombre = $('#IdVesion option:selected').text();
+        var url = '@Url.Action("Simulacion","Page")';
+        var Data = mapSimulacion[Clave];
+        window.location = url + '?Clave=' + Clave + '&Nombre=' + Nombre + '&Compra=' + Data.Compra + '&Moneda=' + Data.Moneda + '&Venta=' + Data.Venta;
+    }
+
+    function fillComboBox(select, controlador, metodo, parametros, value) {
+        var url = '/' + controlador + '/' + metodo
+        $.ajax({
+            async: true,
+            cache: false,
+            dataType: "html",
+            type: 'GET',
+            url: url,
+            data: parametros,
+            success: function (data) {
+                var Data = JSON.parse(data)
+
+                console.log(Data);
+
+                $('#' + select + ' option').remove();
+                if (Data.length == 0) {
+                    $('#' + select).append('<option value=""-1""></option>');
+                }
+                else {
+                    //Se agrega el elemento vacio para poder desplegar que seleccione una opcion
+                    datas = Data;
+                    var id_res = 0;
+                    mapSimulacion = [];
+                    $.each(Data, function (i, item) {
+                        $('#' + select).append('<option value="' + item.Clave + '">' +
+                            item.Nombre + '</option>');
+                    });
+                    $('#' + select).val(value);
+                }
+
+            },
+            beforeSend: function () { },
+            error: function (objXMLHttpRequest) { }
+        });
+    }
+
+    function MostrarPrecio(Clave, version) {
+        var url = '@Url.Action("GetPrecioDeCompra", "Cotizador")';
+        $.get(url, { Clave: Clave, version: version}).done(function (data) {
+            $("#DivPreciosTemp").html(data);
+        })
+        }
+
+        var defaults = {
+            step: '.steps .step, .pearls .pearl',
+            templates: {
+                buttons: function buttons() {
+                    var options = this.options;
+                    return "<div class=\"wizard-buttons\"><a class=\"btn btn-default btn-outline\" href=\"#".concat(this.id, "\" data-wizard=\"back\" role=\"button\">").concat("Atras", "</a><a class=\"btn style1 btn-outline float-right\" href=\"#").concat(this.id, "\" data-wizard=\"next\" role=\"button\">").concat("Seguir", "</a><a class=\"btn style1 btn-outline float-right\" href=\"#").concat(this.id, "\" data-wizard=\"finish\" role=\"button\">").concat("Continuá tu solicitud", "</a></div>");
+                }
+            },
+            classes: {
+                step: {
+                    active: 'active'
+                },
+                button: {
+                    hide: 'hidden-xs-up',
+                    disabled: 'disabled'
+                }
+            }
+        };
+        var options = $.extend(true, {}, defaults,
+            {
+                onInit: function onInit() {
+                    $('#exampleFormContainer').formValidation({
+                        framework: 'bootstrap',
+                        fields: {
+                            Nombre: {
+                                validators: {
+                                    notEmpty: {
+                                        message: 'El nombre es requerida.'
+                                    }
+                                }
+                            },
+                            ApellidoPaterno: {
+                                validators: {
+                                    notEmpty: {
+                                        message: 'El appelido paterno es requerida.'
+                                    }
+                                }
+                            },
+                            IdMarca: {
+                                validators: {
+                                    notEmpty: {
+                                        message: 'La año es requerida.'
+                                    }
+                                }
+                            },
+                            IdModelo: {
+                                validators: {
+                                    notEmpty: {
+                                        message: 'El modelo es requerido.'
+                                    }
+                                }
+                            },
+                            IdVesion: {
+                                validators: {
+                                    notEmpty: {
+                                        message: 'La versión es requerido.'
+                                    }
+                                }
+                            },
+                            password: {
+                                validators: {
+                                    notEmpty: {
+                                        message: 'The password is required'
+                                    }
+                                }
+                            },
+                            AvisoPrivacidad: {
+                                validators: {
+                                    notEmpty: {
+                                        message: 'Aceptar los terminos y condiciones'
+                                    }
+                                }
+                            },
+                            number: {
+                                validators: {
+                                    notEmpty: {
+                                        message: 'The credit card number is not valid'
+                                    }
+                                }
+                            },
+                            Codigo: {
+                                validators: {
+                                    notEmpty: {
+                                        message: 'Ingresa el código'
+                                    }
+                                }
+                            }
+                        },
+                        err: {
+                            clazz: 'invalid-feedback'
+                        },
+                        control: {
+                            // The CSS class for valid control
+                            valid: 'is-valid',
+                            // The CSS class for invalid control
+                            invalid: 'is-invalid'
+                        },
+                        row: {
+                            invalid: 'has-danger'
+                        }
+                    });
+                },
+                validator: function validator() {
+                    var fv = $('#exampleFormContainer').data('formValidation');
+                    var $this = $(this); // Validate the container
+
+                    fv.validateContainer($this);
+                    var isValidStep = fv.isValidContainer($this);
+
+                    if (isValidStep === false || isValidStep === null) {
+                        return false;
+                    }
+
+                    if ($this.attr("id") === "DivDatosContacto") {
+                        $("#TelefonoInfo").val($("#Telefono").val());
+                        $("#NombreInfo").val($("#Nombre").val());
+                        $("#ApellidoPaternoInfo").val($("#ApellidoPaterno").val());
+                        $("#ApellidoMaternoInfo").val($("#ApellidoMaterno").val());
+                        GenerarCodigo();
+                    };
+
+                    return true;
+                },
+                onFinish: function onFinish() {// $('#exampleFormContainer').submit();
+                    validarCodigo();
+                },
+                buttonsAppendTo: '.panel-body'
+            });
+
+
+        $(function () {
+
+            $("#IdAnio").val(null);
+            $("#exampleWizardFormContainer").wizard(options);
+        }); // Example Wizard Pager
+  // --------------------------
+
+        var datosTemp = {};
+        function GenerarCodigo() {
+
+            var URLCODIGO = '@Url.Action("CreateSolicitud", "Cotizador")';
+
+            var data = {
+                Telefono: $("#Telefono").val(),
+                Email: $("#Email").val(),
+                IdAnioLA: $("#IdAnio").val(),
+                IdMarcaLA: $("#IdMarca").val(),
+                IdModeloLA: $("#IdModelo").val(),
+                ClaveVercion: $("#IdVersion").val(),
+                Compra: 0,
+                Venta: 0,
+                Nombre: $("#Nombre").val(),
+                ApellidoPaterno: $("#ApellidoPaterno").val(),
+                ApellidoMaterno: $("#ApellidoMaterno").val(),
+                NombreCopleto: $("#Nombre").val() + " " + $("#ApellidoPaterno").val() + " " + $("#ApellidoMaterno").val()
+            };
+            console.log(data);
+            $.post(URLCODIGO, data)
+                .done(function (data) {
+                    console.log("Algo", data);
+                    datosTemp = data;
+            });
+
+
+
+        }
+
+        $("#Codigo").keyup(function () {
+            $("#validCodigo").hide();
+        });
+
+        function validarCodigo() {
+             var URLCODIGO = '@Url.Action("ValidarSolicitud", "Cotizador")';
+            var data = datosTemp;
+            data.CodigoValidacionNumero = $("#Codigo").val();
+
+            $.post(URLCODIGO, data)
+                .done(function (data) {
+                    if (data.Error) {
+                        $("#validCodigo").show();
+                        $("#Codigo").addClass("is-invalid");
+                    } else {
+                        $("#validCodigo").hide();
+                        $("#loading").show();
+                        window.location = '@Url.Action("Index","Simulador")' + '?telefono=' + $("#Telefono").val() + '&codigo=' + $("#Codigo").val();
+                    }
+
+            });
+        }
+
+        function updateSelect() {
+            $('#IdAnio').select2({
+                placeholder: 'Selecciona año',
+                width: '100%'
+            });
+            $('#IdMarca').select2({
+                placeholder: 'Selecciona marca',
+                width: '100%'
+            });
+            $('#IdModelo').select2({
+                placeholder: 'Selecciona modelo',
+                width: '100%'
+            });
+            $('#IdVersion').select2({
+                placeholder: 'Selecciona versión',
+                width: '100%'
+            });
+        }
+        updateSelect();
+
+
+
+        $(document).ready(function () {
+            $('[data-bs-toggle="popover"]').popover();
+        })
+
+    </script>
+
+}
+

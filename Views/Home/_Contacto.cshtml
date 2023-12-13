@@ -1,0 +1,309 @@
+﻿@model AutoyVaro.ContactoWeb
+
+<style type="text/css">
+    .form-group input, .form-group select {
+        height: 50px;
+    }
+
+    #contactForm .form-group input, #contactForm .form-group textarea, #contactForm .form-group select {
+        padding: 10px 15px 10px 15px;
+    }
+
+    #contactForm .form-group input, #contactForm .form-group select {
+        height: 60px;
+    }
+
+    #contactForm .form-group input, #contactForm .form-group textarea, #contactForm .form-group select {
+        width: 100%;
+        background: #fff;
+        border: none;
+        padding: 10px 15px 10px 20px;
+        border-radius: 0;
+    }
+
+    .select2-container--default .select2-selection--single {
+        background-color: #fff;
+        border: 0px solid #e0e0e0;
+        border-radius: 0.215rem;
+        height: 3.573rem;
+        line-height: 1.57142857;
+        padding: 0.429rem 1.93rem 0.429rem 1.072rem;
+    }
+</style>
+
+
+@using (Html.BeginForm("CreateContactoWeb", "Home", FormMethod.Post, new { id = "formComentario", autocomplete = "off" }))
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal row" id="contactForm">
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+    <h4>Sobre ti:</h4>
+
+    <div class="col-md-6">
+        <div class="form-group">
+            @Html.EditorFor(model => model.NombreCopleto, new { htmlAttributes = new { @class = "form-control", placeholder = "Nombre*", required = "required" } })
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="form-group">
+            @Html.EditorFor(model => model.Telefono, new { htmlAttributes = new { @class = "form-control", placeholder = "Telefono*", required = "required" } })
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="form-group">
+            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", placeholder = "Email*", required = "required", type = "email" } })
+        </div>
+    </div>
+
+    <div class="col-md-6"></div>
+
+    <h4>Sobre tu Auto:</h4>
+    <div class="col-md-6" style="display:none;">
+        <div class="form-group">
+            @Html.EditorFor(model => model.FechaSolicitud, new { htmlAttributes = new { @class = "" } })
+        </div>
+    </div>
+
+
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="IdAnio" class="text-blue">Año de tu auto</label>
+            @Html.DropDownList("IdAnioLA", (IEnumerable<SelectListItem>)ViewBag.IdAnioLA, new { @class = "form-control select2", id = "IdAnioLA", @dataplugin = "select2", required = "required" })
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="IdMarcaLA" class="text-blue">Marca</label>
+            <select class="form-control select2" id="IdMarcaLA" required="required" name="IdMarcaLA" data-plugin="select2">
+            </select>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="IdModeloLA" class="text-blue">Modelo</label>
+            <select class="form-control select2" id="IdModeloLA" name="IdModeloLA" required="required" data-plugin="select2">
+            </select>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="ClaveVercion" class="text-blue">Versión</label>
+            <select class="form-control select2" id="ClaveVercion" required="required" name="ClaveVercion" data-plugin="select2">
+            </select>
+        </div>
+    </div>
+
+
+
+
+    <div class="col-md-6" style="display:none;">
+        <div class="form-group">
+            @Html.DropDownList("IdUsuarioSolicitud", null, htmlAttributes: new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <div class="form-group v1">
+            <textarea name="Comentario" id="Comentario" placeholder="Su mensaje.."
+                      cols="30" rows="10" required
+                      data-error="Por favor ingrese su mensaje"></textarea>
+            <div class="help-block with-errors"></div>
+        </div>
+    </div>
+
+
+    <div class="col-md-12 text-center">
+        <button type="submit" class="btn style1">Enviar Mensaje</button>
+        <div id="msgSubmit" class="h3 text-center hidden"></div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+}
+
+
+
+<script type="text/javascript">
+
+     var __RequestVerificationToken = $("input[name=__RequestVerificationToken]").val();
+    $("#formComentario").submit(function (event) {
+        event.preventDefault();
+        var actionurl = '@Url.Action("CreateContactoWeb", "Home")';
+        var formData = new FormData($(this)[0]);
+        $.ajax({
+            url: actionurl,
+            type: 'POST',
+            success: SuccessOkForm,
+            error: SuccessNotForm,
+            data: formData,
+            cache: false,
+            contentType: false,
+            processData: false
+        });
+    });
+    $(".form-control").change(function () {
+        DesmarcarErrorForm($(this).attr("id"));
+    });
+
+
+    function LimpiarFormulario() {        
+        clearComboBoxContacto("IdMarcaLA", "Seleccionar", -1)
+        clearComboBoxContacto("IdModeloLA", "Seleccionar", -1)
+        clearComboBoxContacto("ClaveVercion", "Seleccionar", -1)
+        document.getElementById("formComentario").reset();
+    }
+
+    function ValidadorForm(Data) {
+        $.each(Data, function (index, value) {
+            $("#" + value.Id).addClass("is-invalid");
+            $("#" + value.Id).attr("data-toggle", "tooltip");
+            $("#" + value.Id).attr("data-placement", "top");
+            $("#" + value.Id).attr("title", value.Mensaje);
+            $("#" + value.Id).attr("data-original-title", value.Mensaje);
+            $("#" + value.Id).tooltip()
+        });
+    }
+    function DesmarcarErrorForm(Id) {
+        $("#" + Id).removeClass("is-invalid");
+        $("#" + Id).removeAttr("data-toggle");
+        $("#" + Id).removeAttr("data-placement");
+        $("#" + Id).removeAttr("data-original-title");
+
+    }
+
+    function SuccessOkForm(Data) {
+        if (!Data.Error) {
+            notie.alert({ type: 1, text: Data.Mensaje, time: 5 })            
+            LimpiarFormulario();
+        } else {
+            notie.alert({ type: 3, text: Data.Mensaje, time: 5 })
+            ValidadorForm(Data.data);
+        }
+    }
+    function SuccessNotForm(Data) {
+
+    }
+    function CancelarEdicion() {
+        $("[id*=Modal]").modal("hide");
+    }
+
+    var mapSimulacion = [];
+
+    function GetMarcaSelectContacto(IdAnio) {
+        fillComboBoxContacto("IdMarcaLA", "Cotizador", "GetMarcaSelect", { IdAnio: IdAnio }, null);
+    }
+
+    function GetModeloSelectContacto(IdAnio, IdMarca) {
+        fillComboBoxContacto("IdModeloLA", "Cotizador", "GetModeloSelect", { IdAnio: IdAnio, IdMarca: IdMarca }, null);
+    }
+
+    function GetVersionSelectContacto(IdAnio, IdMarca, IdModelo) {
+        fillComboBoxContacto("ClaveVercion", "Cotizador", "GetVersionComboBox", { IdAnio: IdAnio, IdMarca: IdMarca, IdModelo: IdModelo, Marca: $("#IdMarcaLA option:selected").text(), Modelo: $("#IdModeloLA option:selected").text() }, null);
+    }
+
+    $("#IdAnioLA").change(function () {
+        var IdAnio = $("#IdAnioLA").val();
+        GetMarcaSelectContacto(IdAnio);
+        clearComboBoxContacto("IdModeloLA", "Seleccionar", -1)
+        clearComboBoxContacto("ClaveVercion", "Seleccionar", -1)
+        updateSelectContacto();
+    })
+
+    $("#IdMarcaLA").change(function () {
+        var IdAnio = $("#IdAnioLA").val();
+        var IdMarca = $("#IdMarcaLA").val();
+        GetModeloSelectContacto(IdAnio, IdMarca);
+        clearComboBoxContacto("ClaveVercion", "Seleccionar", -1)
+
+    })
+
+    $("#IdModeloLA").change(function () {
+        var IdAnio = $("#IdAnioLA").val();
+        var IdMarca = $("#IdMarcaLA").val();
+        var IdModelo = $("#IdModeloLA").val();
+        GetVersionSelectContacto(IdAnio, IdMarca, IdModelo);
+
+    })
+
+    function clearComboBoxContacto(select, Label, DefaulValue) {
+        $('#' + select + ' option').remove();
+        $('#' + select).append('<option value="' + DefaulValue + '">' + Label + '</option>');
+    }
+
+
+
+    function fillComboBoxContacto(select, controlador, metodo, parametros, value) {
+        var url = '/' + controlador + '/' + metodo
+        $.ajax({
+            async: true,
+            cache: false,
+            dataType: "html",
+            type: 'GET',
+            url: url,
+            data: parametros,
+            success: function (data) {
+                var Data = JSON.parse(data)
+
+                $('#' + select + ' option').remove();
+                if (Data.length == 0) {
+                    $('#' + select).append('<option value=""-1""></option>');
+                }
+                else {
+                    //Se agrega el elemento vacio para poder desplegar que seleccione una opcion
+                    datas = Data;
+                    var id_res = 0;
+                    mapSimulacion = [];
+                    $.each(Data, function (i, item) {
+                        $('#' + select).append('<option value="' + item.Clave + '">' +
+                            item.Nombre + '</option>');
+                    });
+                    $('#' + select).val(value);
+                }
+
+            },
+            beforeSend: function () { },
+            error: function (objXMLHttpRequest) { }
+        });
+    }
+
+
+    $(function () {
+
+        $("#IdAnioLA").val(null);
+        $("#exampleWizardFormContainer").wizard(options);
+    }); // Example Wizard Pager
+    // --------------------------
+
+    var datosTemp = {};
+
+
+
+    function updateSelectContacto() {
+        $('#IdAnioLA').select2({
+            placeholder: 'Selecciona año',
+            width: '100%'
+        });
+        $('#IdMarcaLA').select2({
+            placeholder: 'Selecciona marca',
+            width: '100%'
+        });
+        $('#IdModeloLA').select2({
+            placeholder: 'Selecciona modelo',
+            width: '100%'
+        });
+        $('#ClaveVercion').select2({
+            placeholder: 'Selecciona versión',
+            width: '100%'
+        });
+    }
+    updateSelectContacto();
+
+</script>

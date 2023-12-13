@@ -1,0 +1,195 @@
+﻿@model AutoyVaro.Fit_Vehiculo
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutBase.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Fit_Vehiculo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Compra)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Compra)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Venta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Venta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroDeSerie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroDeSerie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroDeMotor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroDeMotor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Placas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Placas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TarjetaDeCirculacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TarjetaDeCirculacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaSolicitud)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaSolicitud)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Color)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Color)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RFCFactura)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RFCFactura)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroFactura)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroFactura)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaFactura)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaFactura)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroDeTarjetaDeCirculacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroDeTarjetaDeCirculacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroDePuertas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroDePuertas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroDeAsientos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroDeAsientos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroDeCilindros)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroDeCilindros)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fit_Cliente.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fit_Cliente.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LA_Anios.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LA_Anios.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LA_Version.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LA_Version.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LA_Marcas.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LA_Marcas.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LA_Modelos.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LA_Modelos.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoTransmision.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoTransmision.Descripcion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

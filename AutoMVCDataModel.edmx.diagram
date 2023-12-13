@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="611593072f5d41cf9cfc3286003d153d" Name="Diagram1">
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.C__MigrationHistory" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.AcuerdoPago" Width="1.5" PointX="12.75" PointY="47.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.AjusteDocumental" Width="1.5" PointX="12.75" PointY="51.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.AjusteFisico" Width="1.5" PointX="12.75" PointY="65" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.AlertaDocumentoCredito" Width="1.5" PointX="24" PointY="63.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.AplicacionPago" Width="1.5" PointX="15.75" PointY="69.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Archivo" Width="1.5" PointX="12.75" PointY="54.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.AspNetRoles" Width="1.5" PointX="5.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.AspNetUserClaims" Width="1.5" PointX="10.25" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.AspNetUserLogins" Width="1.5" PointX="10.25" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.AspNetUsers" Width="1.5" PointX="8" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.AvaluoCastigo" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Banco" Width="1.5" PointX="8.25" PointY="50.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Cargo" Width="1.5" PointX="24" PointY="71.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Cita" Width="1.5" PointX="18.75" PointY="71.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Ciudad" Width="1.5" PointX="5.25" PointY="86" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Cliente" Width="1.5" PointX="3" PointY="66" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.ClienteSesion" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.ClienteWeb" Width="1.5" PointX="5.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.ComentarioEventos" Width="1.5" PointX="15.75" PointY="66.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.ComentariosCredito" Width="1.5" PointX="15.75" PointY="76.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.CompaniaSeguro" Width="1.5" PointX="19.5" PointY="83.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Condonacion" Width="1.5" PointX="27" PointY="67.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Credito" Width="1.5" PointX="10.5" PointY="62.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.CrucePagoMensualidad" Width="1.5" PointX="27" PointY="71.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.CuentasPagos" Width="1.5" PointX="13.5" PointY="61.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.DetalleDePago" Width="1.5" PointX="24" PointY="67.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.dias_no_laborales" Width="1.5" PointX="7.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.DispositivoDeInmovilizacion" Width="1.5" PointX="18.75" PointY="67.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Dispositivos" Width="1.5" PointX="18.75" PointY="75.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.DocumentacionCredito" Width="1.5" PointX="18.75" PointY="63.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.DocumentacionCreditoDetalle" Width="1.5" PointX="24" PointY="59.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.DocumentacionRequerida" Width="1.5" PointX="16.5" PointY="58.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.EmpresaInmovilizadora" Width="1.5" PointX="16.5" PointY="54.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.EmpresaUbicacion" Width="1.5" PointX="8.25" PointY="53.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Esquema" Width="1.5" PointX="8.25" PointY="56.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Estado" Width="1.5" PointX="0.75" PointY="71.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Estado_civil" Width="1.5" PointX="0.75" PointY="68.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.EstadoAlertaDocumento" Width="1.5" PointX="21.75" PointY="55.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.EstadoDocumentoCredito" Width="1.5" PointX="21.75" PointY="58.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.EstadoSolicitudCotizacion" Width="1.5" PointX="8.25" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.EstatusCobranza" Width="1.5" PointX="8.25" PointY="60.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.EstatusCondonacion" Width="1.5" PointX="24.75" PointY="56.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.EstatusDispositivo" Width="1.5" PointX="16.5" PointY="84.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.EstatusPolitica" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Etiqueta" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.EtiquetasPolitica" Width="1.5" PointX="5.25" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.EventoCredito" Width="1.5" PointX="8.25" PointY="63.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Expediente" Width="1.5" PointX="12.75" PointY="101.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.FacturaInteresesDebengados" Width="1.5" PointX="19.5" PointY="59" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.HistorialDeCobro" Width="1.5" PointX="12.75" PointY="103.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.HistorialEstadoCobranza" Width="1.5" PointX="15.75" PointY="61.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.HistoricoAnalisisDeCartera" Width="1.5" PointX="12.75" PointY="114" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.InteresAplazado" Width="1.5" PointX="19.5" PointY="80.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.LA_Anios" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.LA_ControlPorcentajeAvaluo" Width="1.5" PointX="5.25" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.LA_HistotialConsulastas" Width="1.5" PointX="10.5" PointY="51.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.LA_Marcas" Width="1.5" PointX="0.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.LA_MarcasPorAnio" Width="1.5" PointX="3" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.LA_Modelos" Width="1.5" PointX="3" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.LA_ModelosXMarcaAnio" Width="1.5" PointX="5.25" PointY="22.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.LA_PaqueteConsultas" Width="1.5" PointX="8.25" PointY="43" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.LA_Version" Width="1.5" PointX="8.25" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.ListaNegra" Width="1.5" PointX="5.25" PointY="69.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Manuales" Width="1.5" PointX="10.5" PointY="91.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Marca" Width="1.5" PointX="6" PointY="66.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Mensualidad" Width="1.5" PointX="21.75" PointY="68.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.MensualidadPago" Width="1.5" PointX="12.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Modelo" Width="1.5" PointX="6" PointY="63.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Mora" Width="1.5" PointX="24" PointY="75.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Municipio" Width="1.5" PointX="3" PointY="86" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Observacion" Width="1.5" PointX="12.75" PointY="80.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.ObservacionDocumentoArchivoDetalle" Width="1.5" PointX="26.25" PointY="59.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.PagoSeguro" Width="1.5" PointX="24" PointY="79.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Pension" Width="1.5" PointX="7.5" PointY="85" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Pensionado" Width="1.5" PointX="15.75" PointY="80.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Politica" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.PromesaPago" Width="1.5" PointX="12.75" PointY="134.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Promocion" Width="1.5" PointX="6" PointY="46.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.PromocionSucursal" Width="1.5" PointX="8.25" PointY="46.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Referencia" Width="1.5" PointX="12.75" PointY="137.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Renovacion" Width="1.5" PointX="12.75" PointY="143.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.ReporteEsperanzaDeCobro" Width="1.5" PointX="21.75" PointY="62.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.RepresentanteLegal" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Right" Width="1.5" PointX="10.5" PointY="88.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Role" Width="1.5" PointX="8.25" PointY="97" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.SeguimientoPolitica" Width="1.5" PointX="10.5" PointY="47.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Seguro" Width="1.5" PointX="21.75" PointY="77.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Settings" Width="1.5" PointX="12.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.SolicitudCotizacion" Width="1.5" PointX="10.5" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Submarca" Width="1.5" PointX="6" PointY="60.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Sucursal" Width="1.5" PointX="8.25" PointY="65.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.sysdiagrams" Width="1.5" PointX="9.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Tbl_Candidato" Width="1.5" PointX="13.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.tbl_categoria" Width="1.5" PointX="9.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Tbl_estatus" Width="1.5" PointX="14.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Tbl_Oferta" Width="1.5" PointX="14.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Tbl_perfilLaboral" Width="1.5" PointX="14.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Tbl_User" Width="1.5" PointX="14.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Temp_pagos" Width="1.5" PointX="15.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.test" Width="1.5" PointX="2.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.TipoCargo" Width="1.5" PointX="21.75" PointY="83.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.TipoCondonacion" Width="1.5" PointX="24.75" PointY="83" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.TipoDeArchivo" Width="1.5" PointX="4.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.TipoDeCliente" Width="1.5" PointX="0.75" PointY="75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.TipoDeCredito" Width="1.5" PointX="8.25" PointY="77.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.TipoDetallePago" Width="1.5" PointX="21.75" PointY="80.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.TipoEstatusCredito" Width="1.5" PointX="8.25" PointY="80.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.TipoPago" Width="1.5" PointX="13.5" PointY="84.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.TipoRegitroListaNegra" Width="1.5" PointX="3" PointY="48.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.TipoReporteListaNegra" Width="1.5" PointX="3" PointY="50.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.TipoTransmision" Width="1.5" PointX="6" PointY="82.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.User" Width="1.5" PointX="8.25" PointY="89.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.UsuarioRecomendados" Width="1.5" PointX="5.25" PointY="77.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Vehiculo" Width="1.5" PointX="8.25" PointY="69.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.ISR" Width="1.5" PointX="16.75" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Acuerdo_Credito" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_AjusteDocumental_Credito" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_AjusteFisico_Credito" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__AlertaDoc__IdDoc__40BA7AC1" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__AlertaDoc__IdEst__42A2C333" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__AlertaDoc__IdUsu__41AE9EFA" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__Cargo__idAplicac__53433F50" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__DetalleDe__IdPag__388F4914" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Aplicacion_Credito" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_cruce_pago" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_CuentasPagosPagos" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Pago_TipoDePago" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Archivo_Credito" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Credito_Banco" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Pension_Banco" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Cargo_Enum" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Cargo_Mensualidad" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Cita_Credito" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Cita_EmpresaInmovilizadora" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Ciudad_Municipio" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Pension_Ciudad" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__UsuarioRe__IdCli__7A5D0C71" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Cliente_Estado_civil" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Cliente_Estado1" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.fk_cliente_EstadoEistrumentoPubico" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.fk_cliente_estadonotaria" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Cliente_TipoDeCliente" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_ClienteListaNegra" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Vehiculo_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_ComentarioUsur" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_CreditoComentarioEvento" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__Comentari__idCre__6F556E19" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__Comentari__idUsu__70499252" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Seguro_CompaniaSeguro" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Condonacion_Enum" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Condonacion_Estatus" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Condonacion_Mensualidad" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__Credito__IdEmpre__08E035F2" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__Credito__IdEstat__035C66C6" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__Dispositi__IdCre__5A5A5133" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__Historial__IdCre__6FDF7DFE" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__Historico__idCre__37661AB1" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__PromesaPa__idCre__7325FEFD" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__ReporteEs__IdCre__4C2C2D6D" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Credito_Esquema" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Credito_Sucursal" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Credito_Sucursal_Promocion" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Credito_TipoDeCredito" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Credito_TipoEstatusCredito" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Credito_TipoEstatusCredito2" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Credito_User" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Credito_User1" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Credito_Vehiculo" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_CreditoCreditoReestructura" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_CreditoEvento" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.fk_DC_Credito" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_DispositivoDeInmovilizacion_Credito" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Expediente_Credito" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_HistorialDeCobro_Credito" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Mensualidad_Credito" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Observacion_Credito" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Pensionado_Credito" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_PersonOrder" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Referencia_Credito" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Renovacion_Credito" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Seguro_Credito" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_cruce_mensualidad" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__DetalleDe__IdMen__39836D4D" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__DetalleDe__IdTip__3A779186" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_DispositivoDeInmovilizacion_EmpresaInmovilizadora" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__Dispositi__IdEmp__5C4299A5" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__Dispositi__IdEst__5B4E756C" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.fk_DC_DocumentacionRequerida" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.fk_DC_DocuymentacionCreditoDetalle" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__Documenta__IdEst__33607FA3" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__Observaci__IdDoc__382534C0" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Municipio_Estado" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Vehiculo_Estado" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_SolicitudCotizacion_Estatus" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__Historial__IdEst__70D3A237" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__Politica__Estatu__6EB64F9B" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__Etiquetas__Etiqu__75634D2A" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__Etiquetas__Polit__746F28F1" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__Mensualid__IdFac__6B1AC8E1" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__Historial__IdMen__71C7C670" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__Historial__IdUsu__72BBEAA9" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__Historial__IdUsu__73B00EE2" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__Mensualid__IdInt__0D6FE0E5" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_ControlPorcentajeAvaluo_AnioLA" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.fk_HistotialConsulastasLA_AniosLA" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.fk_LA_ModelosXMarcaAnio_AniosLA" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.fk_MarcasPorAnioLA_AniosLA" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.fk_SolicitudCotizacionLA_AniosLA" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.fk_VersionLA_AniosLA" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_ControlPorcentajeAvaluo_MarcasLA" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_ControlPorcentajeAvaluo_ModelosLA" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FA_LA_HistotialConsulastas_USER" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.fk_HistotialConsulastasLA_marcasLA" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.fk_HistotialConsulastasLA_modelosLA" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_LA_HistotialConsulastas_LA_Version" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_LA_HistotialConsulastas_PaqueteConsulast" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.fk_LA_ModelosXMarcaAnio_marcasLA" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.fk_MarcasPorAnioLA_marcasLA" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.fk_ModelosLA_marcasLA" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.fk_SolicitudCotizacionLA_marcasLA" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.fk_VersionLA_MarcasLA" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.fk_LA_ModelosXMarcaAnio_modelosLA" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.fk_SolicitudCotizacionLA_modelosLA" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.fk_VersionLA_ModelosLA" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_SolicitudCotizacion_LA_Version" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__ListaNegr__IdTip__0DA4EB0F" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_ListaNegraUser" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_SucursalListaNegra" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_TipoClienteListaNegra" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_TipoReporteListaNegra" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.fk_Manual_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Modelo_Marca" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Submarca_Marca" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Vehiculo_Marca" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Mora_Mensualidad" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Vehiculo_Modelo" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Observacion_User" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__Observaci__IdUsu__391958F9" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_PagoSeguro_Seguro" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Pensionado_Pension" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__Politica__Politi__6FAA73D4" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__Seguimien__Polit__783FB9D5" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Promocion_Sucursal" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Sucursal_Promocion" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__ReporteEs__IdSuc__4D2051A6" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Right_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Right_User" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__Seguimien__Usuar__7933DE0E" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Vehiculo_Submarca" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_User_Sucursal" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Vehiculo_TipoTransmision" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.AspNetUserRoles" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Fin_EstadoSolicitud" Width="1.5" PointX="10.5" PointY="32.625" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Fin_TipoSolicitud" Width="1.5" PointX="10.5" PointY="23.75" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Fit_Cliente" Width="1.5" PointX="10.5" PointY="26.25" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Fit_Vehiculo" Width="1.5" PointX="10.5" PointY="39" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.PagosFactoring" Width="1.5" PointX="12.75" PointY="87" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__PagosFact__IdCre__6D58170E" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Fit_Cliente_Estado" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Fit_Vehiculo_Estado" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.fk_Fit_Vehiculo_AniosLA" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Fit_Vehiculo_LA_Version" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.fk_Fit_Vehiculo_marcasLA" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.fk_Fit_Vehiculo_modelosLA" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__PagosFact__IdUsu__6E4C3B47" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Fin_SolicitudCotizacion_AspNetUsers" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Fin_Cliente_AspNetUsers" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Fit_Vehiculo_Vehiculo" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Fin_Solicitud" Width="1.5" PointX="12.75" PointY="31.125" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Fin_Solicitud_AspNetUsers" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Fin_Solicitud_IdEsquema" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Fin_Solicitud_EstatoSolicitud" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Fin_Solicitud_Cliente" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Fin_Solicitud_TipoSolicitud" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Fin_Solicitud_Vehiculo" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Calendario" Width="1.5" PointX="15.375" PointY="16.75" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Fin_Cita" Width="1.5" PointX="17.375" PointY="6.75" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Fin_DocumentacionSolicitud" Width="1.5" PointX="18.75" PointY="45" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.Fin_DocumentacionSolicitudDetalle" Width="1.5" PointX="21" PointY="44.625" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.fk_DS_DocumentacionRequerida" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.fk_DS_DocuymentacionSolicitudDetalle" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.fk_DS_Solicitud" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.fk_DS_CitaSolicitudDetalle" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.fk_DS_CitaCalendario" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Fit_Cliente_Estado_civil" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_vehiculo_TipoTransmisionAutoFIT" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.ControlDeCambios" Width="1.5" PointX="18.75" PointY="86.5" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.TipoCambio" Width="1.5" PointX="16.5" PointY="87.625" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_ControlDeCambios_Cliente" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_ControlDeCambios_Credito" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_ControlDeCambios_TipoCambio" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_ControlDeCambios_User" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_ControlDeCambios_Vehiculo" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.ContactoWeb" Width="1.5" PointX="13.5" PointY="19.875" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.ObservacionSolicitud" Width="1.5" PointX="19" PointY="55.375" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_Fin_ContactoWeb_AspNetUsers" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_ContactoWeb_LA_Version" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.fk_ContactoWebLA_AniosLA" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.fk_ContactoWebLA_marcasLA" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.fk_ContactoWebLA_modelosLA" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_ObservacionSolicitud_Solicitud_Fit" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_ObservacionSolicitud_User" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.ObservacionCotizacion" Width="1.5" PointX="15.75" PointY="50.625" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_ObservacionCotizacion_SolicitudCotizacion" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_ObservacionCotizacion_User" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.CuentasTerceros" Width="1.5" PointX="10.5" PointY="58.375" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.PagosFactoringDescuentoCartera" Width="1.5" PointX="21.75" PointY="86.5" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.PagosTerceros" Width="1.5" PointX="12.75" PointY="58.25" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.TipoNotificacion" Width="1.5" PointX="8.25" PointY="99.625" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.UserNotificacion" Width="1.5" PointX="10.5" PointY="95.375" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_CuentasTerceros_Banco" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__Cliente__IdSolic__7C655074" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__Credito__IdSolic__7D5974AD" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__PagosFact__IdCre__237F1D95" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_PagosTerceros_Credito" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK_PagosTerceros_CuentaTerceros" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__PagosFact__IdUsu__247341CE" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__UserNotif__TipoN__63649880" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__UserNotif__UserI__62707447" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.PlantillaWeb" Width="1.5" PointX="19.5" PointY="11.375" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.PlantillaWebItem" Width="1.5" PointX="21.75" PointY="10.75" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.PlantillaWebItemDetalle" Width="1.5" PointX="24" PointY="11.375" />
+        <EntityTypeShape EntityType="SQL2012_962560_creseautodbModel.TipoItemWeb" Width="1.5" PointX="19.5" PointY="19.5" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__Plantilla__Plant__758348BB" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__Plantilla__Plant__7D246A83" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__Plantilla__Plant__7E188EBC" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__Plantilla__TipoI__748F2482" />
+        <AssociationConnector Association="SQL2012_962560_creseautodbModel.FK__Plantilla__Plant__01E91FA0" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

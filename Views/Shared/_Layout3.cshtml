@@ -1,0 +1,651 @@
+﻿
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="en">
+<head>
+
+    <style>
+        .loader div {
+            width: 12px;
+            height: 12px;
+            margin: 0 10px 0 0;
+            border-radius: 50px;
+            -webkit-transform-origin: 50% 0;
+            transform-origin: 50% 0;
+            display: inline-block;
+            -webkit-animation: bouncing 1.4s linear infinite;
+            animation: bouncing 1.4s linear infinite;
+        }
+
+            .loader div:last-child {
+                margin: 0;
+            }
+
+            .loader div:nth-child(1) {
+                background: #ee7e3cd9;
+            }
+
+            .loader div:nth-child(2) {
+                background: #ee7e3cd9;
+                -webkit-animation-delay: 0.2s;
+                animation-delay: 0.2s;
+            }
+
+            .loader div:nth-child(3) {
+                background: #ee7e3cd9;
+                -webkit-animation-delay: 0.4s;
+                animation-delay: 0.4s;
+            }
+
+        .linkFooter {
+            color: #ee7e3c;
+            font-weight: 600;
+        }
+
+        
+
+    </style>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title -->
+    <title>Auto y Varo SA de CV</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="~/Content/global/css/bootstrap.min.css">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="~/Content/assets/css/site.css">
+
+    <link rel="stylesheet" href="~/Content/Page/style.css">
+
+    <!-- Link of CSS files -->
+    <link rel="stylesheet" href="~/Content/assets3/css/bootstrap.min.css">
+    <link href="~/Content/assets/css/bootstrap-extend.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/assets3/css/flaticon.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/ladda/ladda.css">
+    <link rel="stylesheet" href="~/Content/assets/examples/css/uikit/buttons.css">
+    <link rel="stylesheet" href="~/Content/assets3/css/remixicon.css">
+    <link rel="stylesheet" href="~/Content/assets3/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/Content/assets3/css/odometer.min.css">
+    <link rel="stylesheet" href="~/Content/assets3/css/fancybox.css">
+    <link rel="stylesheet" href="~/Content/assets3/css/aos.css">
+    <link rel="stylesheet" href="~/Content/assets3/css/style2.css">
+    <link rel="stylesheet" href="~/Content/assets3/css/dark-theme.css">
+    <link rel="stylesheet" href="~/Content/assets3/css/responsive.css">
+    <link rel="icon" type="image/png" href="~/Content/assets3/img/icon.png">
+
+
+    <link rel="stylesheet" href="~/Content/global/vendor/fullcalendar/fullcalendar.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/select2/select2.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/bootstrap-tokenfield/bootstrap-tokenfield.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/bootstrap-tagsinput/bootstrap-tagsinput.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/bootstrap-select/bootstrap-select.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/icheck/icheck.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/switchery/switchery.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/asrange/asRange.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/ionrangeslider/ionrangeslider.min.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/asspinner/asSpinner.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/clockpicker/clockpicker.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/ascolorpicker/asColorPicker.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/bootstrap-touchspin/bootstrap-touchspin.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/jquery-labelauty/jquery-labelauty.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/bootstrap-datepicker/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/bootstrap-maxlength/bootstrap-maxlength.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/timepicker/jquery-timepicker.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/jquery-strength/jquery-strength.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/multi-select/multi-select.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/typeahead-js/typeahead.css">
+    <link rel="stylesheet" href="~/Content/assets/examples/css/forms/advanced.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/asscrollable/asScrollable.css">
+
+    <link rel="stylesheet" href="~/Content/assets/examples/css/uikit/modals.css">
+
+    <link rel="stylesheet" href="~/Content/global/vendor/jquery-wizard/jquery-wizard.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/formvalidation/formValidation.css">
+    <link rel="stylesheet" href="~/Content/assets/examples/css/structure/ribbon.css">
+
+
+    <link rel="stylesheet" href="~/Content/global/vendor/alertify/alertify.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/notie/notie.css">
+    <link rel="stylesheet" href="~/Content/assets/examples/css/advanced/alertify.css">
+
+    <link rel="stylesheet" href="~/Content/global/vendor/bootstrap-table/bootstrap-table.css">
+
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="~/Content/global/fonts/font-awesome/font-awesome.css">
+    <link rel="stylesheet" href="~/Content/global/fonts/7-stroke/7-stroke.css">
+    <link rel="stylesheet" href="~/Content/global/fonts/ionicons/ionicons.css">
+    <link rel="stylesheet" href="~/Content/global/fonts/mfglabs/mfglabs.css">
+    <link rel="stylesheet" href="~/Content/global/fonts/open-iconic/open-iconic.css">
+    <link rel="stylesheet" href="~/Content/global/fonts/themify/themify.css">
+    <link rel="stylesheet" href="~/Content/global/fonts/weather-icons/weather-icons.css">
+    <link rel="stylesheet" href="~/Content/global/fonts/glyphicons/glyphicons.css">
+    <link rel="stylesheet" href="~/Content/global/fonts/web-icons/web-icons.css">
+    <link rel="stylesheet" href="~/Content/global/fonts/octicons/octicons.css">
+    <link rel="stylesheet" href="~/Content/global/fonts/material-design/material-design.min.css">
+    <link rel="stylesheet" href="~/Content/global/fonts/brand-icons/brand-icons.min.css">
+
+    <link href="~/Content/assets3/css/whatsapp.css" rel="stylesheet" />
+
+    <style>
+        #ModalLoggin {
+            background-color: #eeeeeee3 !important;
+        }
+    </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-951753375"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'AW-951753375');</script>
+
+    <!-- Event snippet for Contacto conversion page -->
+    <script>gtag('event', 'conversion', { 'send_to': 'AW-951753375/m1nJCN7a34MYEJ-16sUD' });</script>
+
+</head>
+
+<body>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <a target="_blank" href="https://api.whatsapp.com/send?phone=525561214897&text=Hola, deseo informes sobre: " class="float">
+        <i class="fa fa-whatsapp my-float"></i>
+    </a>
+
+
+    <!--Preloader starts-->
+    <div class="loader js-preloader">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <!--Preloader ends-->
+    <!-- Theme Switcher Start -->
+    <div class="switch-theme-mode hidden" style="display:none;">
+        <label id="switch" class="switch">
+            <input type="checkbox" onchange="toggleTheme()" id="slider">
+            <span class="slider round"></span>
+        </label>
+    </div>
+    <!-- Theme Switcher End -->
+    <!-- Page Wrapper End -->
+    <div class="page-wrapper">
+
+        <!-- Header Section Start -->
+        <header class="header-wrap style1" style="box-shadow: 0 5px 15px rgb(0 0 0 / 10%);">
+            <div class="header-top">
+                <button type="button" class="close-sidebar">
+                    <i class="ri-close-fill"></i>
+                </button>
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-8 col-md-12">
+                            <div class="header-top-left">
+                                <ul class="contact-info list-style">
+                                    <li><i class="flaticon-call"></i> <a href="tel:2281384284">(228) 138 4284</a></li>
+                                    <li><i class="flaticon-email-1"></i> <a href="mailto:ayuda@autoyvaro.com">ayuda@autoyvaro.com</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12">
+                            <div class="header-top-right">
+                                <ul class="header-top-menu list-style">
+                                    <li><a href="@Url.Action("Contacto","Home")">Soporte</a></li>
+                                    <li><a href="@Url.Action("Contacto","Home")">Ayuda</a></li>
+                                </ul>
+                                <div class="select-lang">
+                                    <i class="ri-global-line"></i>
+                                    <div class="navbar-option-item navbar-language dropdown language-option">
+                                        <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                                aria-haspopup="true" aria-expanded="false">
+                                            <span class="lang-name"></span>
+                                        </button>
+                                        <div class="dropdown-menu language-dropdown-menu">
+                                            <a class="dropdown-item" href="#">
+                                                <img src="~/Content/assets3/img/uk.png" alt="flag">
+                                                Español
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-bottom">
+                <div class="container">
+                    <nav class="navbar navbar-expand-md navbar-light">
+                        <a class="navbar-brand" href="@Url.Action("Index", "Cotizador")">
+                            <img class="logo-light" style="width: 160px;" src="~/Content/IMG/Logo.png" alt="logo">
+                        </a>
+                        <div class="collapse navbar-collapse main-menu-wrap" id="navbarSupportedContent">
+                            <div class="menu-close xl-none">
+                                <a href="javascript:void(0)"> <i class="ri-close-line"></i></a>
+                            </div>
+                            <ul class="navbar-nav ms-auto">
+                                <li class="nav-item">
+                                    <a href="@Url.Action("Index", "Cotizador")" class="nav-link active">Inicio</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="@Url.Action("Requisitos", "Home")" class="nav-link">Requisitos</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="@Url.Action("Index", "Blog")" class="nav-link">Auto Tips</a>
+                                </li>
+
+                                <li class="nav-item has-dropdown">
+                                    <a href="#" class="nav-link">
+                                        Sucursales
+                                        <i class="ri-arrow-down-s-line"></i>
+                                    </a>
+
+                                    @Html.Action("SucursalesList", "Home")
+
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="@Url.Action("Index", "EstadoDeCuenta")" class="nav-link">Estado de Cuenta</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="@Url.Action("Contacto", "Home")" class="nav-link">Contacto</a>
+                                </li>
+
+
+                                @Html.Partial("_LoginPartial")
+
+
+
+                            </ul>
+
+                        </div>
+                    </nav>
+                    <div class="mobile-bar-wrap">
+                        <div class="mobile-sidebar">
+                            <i class="ri-menu-4-line"></i>
+                        </div>
+                        <button class="searchbtn xl-none" type="button">
+                            <i class="flaticon-search"></i>
+                        </button>
+                        <div class="mobile-menu xl-none">
+                            <a href="javascript:void(0)"><i class="ri-menu-line"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="search-area">
+                    <div class="container">
+                        <form action="#">
+                            <div class="form-group">
+                                <input type="search" placeholder="Search Here" autofocus>
+                            </div>
+                        </form>
+                        <button type="button" class="close-searchbox">
+                            <i class="ri-close-line"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Header Section End -->
+
+    </div>
+
+
+
+    <!-- Page -->
+    @RenderSection("featured", required: false)
+    <div class="content-wrapper">
+        @RenderBody()
+    </div>
+    <!-- End Page -->
+    <!-- Footer Section Start -->
+    <footer class="footer-wrap bg-rock">
+        <div class="container">
+
+            <div class="row pt-10">
+                <div class="col-sm-12 text-center">
+
+                    <ul class="social-profile list-style style1">
+                        <li>
+                            <a target="_blank" href="https://www.facebook.com/Autoyvaroprestamos/?ref=pages_you_manage">
+                                <i class="ri-facebook-fill"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://www.youtube.com/channel/UCBoHsDnADGZdPS_nz8KlcYw">
+                                <i class="ri-youtube-fill"></i>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a target="_blank" href="https://www.instagram.com/accounts/login/?next=/autoyvaromx/">
+                                <i class="ri-instagram-fill"></i>
+                            </a>
+                        </li>
+
+                    </ul>
+
+                    <a class="link style2" href="@Url.Action("AvisoPrivacidad", "Home")">
+                        Aviso de Privacidad
+                    </a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    |
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a class="link style2" href="@Url.Action("TerminosyCondiciones", "Home")">
+                        Términos y Condiciones
+                    </a>
+
+
+                </div>
+
+            </div>
+            <div class="copyright-text">
+                <p>
+                    <i class="ri-copyright-line"></i>
+                    <script>document.write(new Date().getFullYear())</script>. All Rights Reserved By <a href="https://autoyvaro.mx/" target="_blank">Auto y Varo SA de CV</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+    <!-- Page Wrapper End -->
+    <!-- Back-to-top button Start -->
+    <!-- Modal -->
+    <div class="modal fade" id="ModalLoggin" aria-hidden="true" aria-labelledby="examplePositionCenter"
+         role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-simple modal-center">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <!-- Example Tabs In The Panel -->
+                    <div class="panel nav-tabs-horizontal" data-plugin="tabs">
+
+                        <ul class="nav nav-tabs nav-tabs-line" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="LinktabLogin" data-toggle="tab" href="javascript:LoginUser()"
+                                   aria-controls="exampleTopHome" role="tab"><i class="icon fa-sign-in" aria-hidden="true"></i>Iniciar Sesión</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="LinktabRegistro" data-toggle="tab" href="javascript:RegistroUser()"
+                                   aria-controls="exampleTopComponents" role="tab"><i class="icon fa-user-plus" aria-hidden="true"></i>Registrarse</a>
+                            </li>
+                        </ul>
+                        <div class="panel-body">
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="tabLogin" role="tabpanel">
+                                    <div class="text-center">
+                                        <div class="spinner-border" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="tabRegistro" role="tabpanel">
+                                    <div class="text-center">
+                                        <div class="spinner-border" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Example Tabs In The Panel -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Modal -->
+    <!-- Modal -->
+    <div class="modal fade" id="ModalGlobal" aria-hidden="true" aria-labelledby="ModalGlobal"
+         role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-simple modal-lg">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    ..
+                    <button type="button" onclick="$('#ModalGlobal').modal('hide');" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body" id="ModalGlobalBody">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- End Modal -->
+
+
+
+    <a href="javascript:void(0)" class="back-to-top bounce"><i class="ri-arrow-up-s-line"></i></a>
+
+
+    <script>
+        gtag('config', 'AW-951753375');
+    </script>
+
+    <script>
+        !function (w, d, t) {
+            w.TiktokAnalyticsObject = t; var ttq = w[t] = w[t] || []; ttq.methods = ["page", "track", "identify", "instances", "debug", "on", "off", "once", "ready", "alias", "group", "enableCookie", "disableCookie"], ttq.setAndDefer = function (t, e) { t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } }; for (var i = 0; i < ttq.methods.length; i++)ttq.setAndDefer(ttq, ttq.methods[i]); ttq.instance = function (t) {
+                for (var e = ttq._i[t] || [], n = 0; n < ttq.methods.length; n++
+                )ttq.setAndDefer(e, ttq.methods[n]); return e
+            }, ttq.load = function (e, n) { var i = "https://analytics.tiktok.com/i18n/pixel/events.js"; ttq._i = ttq._i || {}, ttq._i[e] = [], ttq._i[e]._u = i, ttq._t = ttq._t || {}, ttq._t[e] = +new Date, ttq._o = ttq._o || {}, ttq._o[e] = n || {}; n = document.createElement("script"); n.type = "text/javascript", n.async = !0, n.src = i + "?sdkid=" + e + "&lib=" + t; e = document.getElementsByTagName("script")[0]; e.parentNode.insertBefore(n, e) };
+
+            ttq.load('CE2GP9BC77U71PH434L0');
+            ttq.page();
+        }(window, document, 'ttq');
+    </script>
+
+
+    <!-- Back-to-top button End -->
+    <!-- Link of JS files -->
+    <script src="~/Content/assets3/js/jquery.min.js"></script>
+    <script src="~/Content/assets3/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/assets3/js/form-validator.min.js"></script>
+    <script src="~/Content/assets3/js/contact-form-script.js"></script>
+    <script src="~/Content/assets3/js/aos.js"></script>
+    <script src="~/Content/assets3/js/owl.carousel.min.js"></script>
+    <script src="~/Content/assets3/js/odometer.min.js"></script>
+    <script src="~/Content/assets3/js/fancybox.js"></script>
+    <script src="~/Content/assets3/js/jquery.appear.js"></script>
+    <script src="~/Content/assets3/js/tweenmax.min.js"></script>
+    <script src="~/Content/assets3/js/main.js"></script>
+
+
+    <script src="~/Content/global/vendor/formvalidation/formValidation.js"></script>
+    <script src="~/Content/global/vendor/formvalidation/framework/bootstrap.js"></script>
+    <script src="~/Content/global/vendor/matchheight/jquery.matchHeight-min.js"></script>
+    <script src="~/Content/global/vendor/jquery-wizard/jquery-wizard.js"></script>
+
+
+    <script src="~/Content/global/vendor/jquery-ui/jquery-ui.min.js"></script>
+    <script src="~/Content/global/vendor/moment/moment.min.js"></script>
+    <script src="~/Content/global/vendor/fullcalendar/fullcalendar.js"></script>
+
+    <script src="~/Content/global/vendor/select2/select2.full.min.js"></script>
+    <script src="~/Content/global/vendor/bootstrap-tokenfield/bootstrap-tokenfield.min.js"></script>
+    <script src="~/Content/global/vendor/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+    <script src="~/Content/global/vendor/bootstrap-select/bootstrap-select.js"></script>
+    <script src="~/Content/global/vendor/icheck/icheck.min.js"></script>
+    <script src="~/Content/global/vendor/switchery/switchery.js"></script>
+    <script src="~/Content/global/vendor/asrange/jquery-asRange.min.js"></script>
+    <script src="~/Content/global/vendor/ionrangeslider/ion.rangeSlider.min.js"></script>
+    <script src="~/Content/global/vendor/asspinner/jquery-asSpinner.min.js"></script>
+    <script src="~/Content/global/vendor/clockpicker/bootstrap-clockpicker.min.js"></script>
+    <script src="~/Content/global/vendor/ascolor/jquery-asColor.min.js"></script>
+    <script src="~/Content/global/vendor/asgradient/jquery-asGradient.min.js"></script>
+    <script src="~/Content/global/vendor/ascolorpicker/jquery-asColorPicker.min.js"></script>
+    <script src="~/Content/global/vendor/bootstrap-maxlength/bootstrap-maxlength.js"></script>
+    <script src="~/Content/global/vendor/jquery-knob/jquery.knob.js"></script>
+    <script src="~/Content/global/vendor/bootstrap-touchspin/bootstrap-touchspin.min.js"></script>
+    <script src="~/Content/global/vendor/jquery-labelauty/jquery-labelauty.js"></script>
+    <script src="~/Content/global/vendor/bootstrap-datepicker/bootstrap-datepicker.js"></script>
+    <script src="~/Content/global/vendor/timepicker/jquery.timepicker.min.js"></script>
+    <script src="~/Content/global/vendor/datepair/datepair.min.js"></script>
+    <script src="~/Content/global/vendor/datepair/jquery.datepair.min.js"></script>
+    <script src="~/Content/global/vendor/jquery-strength/password_strength.js"></script>
+    <script src="~/Content/global/vendor/jquery-strength/jquery-strength.min.js"></script>
+    <script src="~/Content/global/vendor/multi-select/jquery.multi-select.js"></script>
+    <script src="~/Content/global/vendor/typeahead-js/bloodhound.min.js"></script>
+    <script src="~/Content/global/vendor/typeahead-js/typeahead.jquery.min.js"></script>
+    <script src="~/Content/global/vendor/jquery-placeholder/jquery.placeholder.js"></script>
+
+    <script src="~/Content/global/vendor/ladda/spin.min.js"></script>
+    <script src="~/Content/global/vendor/ladda/ladda.min.js"></script>
+
+
+
+    <!-- Popper js -->
+    <script src="~/Content/Page/js/bootstrap/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    @*<script src="~/Content/Page/js/bootstrap/bootstrap.min.js"></script>*@
+    @*<link href="~/Content/assets/css/bootstrap.min.css" rel="stylesheet" />*@
+
+
+    <!-- All Plugins js -->
+    <script src="~/Content/Page/js/plugins/plugins.js"></script>
+
+    
+
+    <!-- Active js -->
+    <script src="~/Content/Page/js/active.js"></script>
+
+
+
+
+
+
+
+    <!-- Bootstrap Table  -->
+    <script src="~/Content/global/vendor/bootstrap-table/bootstrap-table.js"></script>
+    <script src="~/Content/global/vendor/bootstrap-table/extensions/editable/bootstrap-table-editable.js"></script>
+    <script src="~/Content/global/vendor/bootstrap-table/extensions/export/bootstrap-table-export.js"></script>    
+    <script src="~/Content/global/vendor/bootstrap-table/extensions/filter-control/bootstrap-table-filter-control.js"></script>
+    <script src="~/Content/global/vendor/bootstrap-table/extensions/mobile/bootstrap-table-mobile.js"></script>
+
+    <script src="~/Content/global/vendor/alertify/alertify.js"></script>
+    <script src="~/Content/global/vendor/notie/notie.js"></script>
+
+    <script src="~/Content/global/vendor/asprogress/jquery-asProgress.js"></script>
+    <script src="~/Content/global/vendor/draggabilly/draggabilly.pkgd.js"></script>
+    <script src="~/Content/global/vendor/raty/jquery.raty.js"></script>
+
+    <script>
+
+        function IniciarSesionPrincipal() {
+            $("#ModalLoggin").modal("show");
+            RegistroUser();
+        }
+        function LoginUser() {
+            $("#tabRegistro").html("");
+            $("#tabLogin").removeClass("active");
+            $("#tabRegistro").removeClass("active");
+            $("#tabLogin").addClass("active");
+            $("#LinktabLogin").removeClass("active");
+            $("#LinktabRegistro").removeClass("active");
+            $("#LinktabLogin").addClass("active");
+
+            var urlLogin ='@Url.Action("Login", "Account")';
+            $.get(urlLogin).done(function (data) {
+                $("#tabLogin").html(data);
+
+            });
+        }
+
+        function RegistroUser() {
+            $("#tabLogin").html("");
+            $("#tabRegistro").removeClass("active");
+            $("#tabLogin").removeClass("active");
+            $("#tabRegistro").addClass("active");
+            $("#LinktabRegistro").removeClass("active");
+            $("#LinktabLogin").removeClass("active");
+            $("#LinktabRegistro").addClass("active");
+            var urlLogin ='@Url.Action("Register", "Account")';
+            $.get(urlLogin).done(function (data) {
+                $("#tabRegistro").html(data);
+
+            });
+        }
+
+        function MostrarTerminosGlobal() {
+            $.get('@Url.Action("TerminosPartial", "Home")').done(function (data) {
+                $("#ModalGlobalBody").html(data);
+                $("#ModalGlobal").modal("show");
+            });
+        }
+        function MostrarAvisoGlobal() {
+            $.get('@Url.Action("AvisoPartial", "Home")').done(function (data) {
+                $("#ModalGlobalBody").html(data);
+                $("#ModalGlobal").modal("show");
+            });
+        }
+
+        $('.back-to-top-inicio').on('click', function () {
+            $('html, body').animate({
+                scrollTop: 0
+            }, 100);
+            return false;
+        });
+
+
+
+    </script>
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/5d7af8ee9f6b7a4457e16f6c/default';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '792198008496764');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1"
+             src="https://www.facebook.com/tr?id=792198008496764&ev=PageView
+        &noscript=1" />
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+
+
+    <noscript>
+        <img height="1" width="1"
+             src="https://www.facebook.com/tr?id=792198008496764&ev=PageView
+        &noscript=1" />
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+
+
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>
+

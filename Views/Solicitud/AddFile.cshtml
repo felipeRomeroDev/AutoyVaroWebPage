@@ -1,0 +1,413 @@
+﻿@model AutoyVaro.Models.ViewModelSolicitudCredito
+
+@{
+    ViewBag.Title = "AddFile";
+    Layout = "~/Views/Shared/_LayoutAPP.cshtml";
+}
+
+<style>
+    .bg-blue-9000 {
+        background-color: #030734 !important;
+    }
+
+    .breadcrumb-wrap-blue {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: 10px 0 !important;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    .bg-spring-blue {
+        background-color: #111542;
+    }
+</style>
+
+
+<!-- Breadcrumb Start -->
+<div class="breadcrumb-wrap  breadcrumb-wrap-blue bg-spring-blue">
+    <img src="~/Content/assets3/img/breadcrumb/br-shape-1.png" alt="Image" class="br-shape-one xs-none">
+    <img src="~/Content/assets3/img/breadcrumb/br-shape-2.png" alt="Image" class="br-shape-two xs-none">
+    <img src="~/Content/assets3/img/breadcrumb/br-shape-3.png" alt="Image" class="br-shape-three moveHorizontal sm-none">
+    <img src="~/Content/assets3/img/breadcrumb/br-shape-4.png" alt="Image" class="br-shape-four moveVertical sm-none">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7 col-md-8 col-sm-8">
+                <div class="breadcrumb-title">
+                    <h3 class="text-white">Envío de documentos</h3>
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-4 col-sm-4 xs-none">
+                <div class="breadcrumb-img">                    
+                    <img src="~/Content/assets3/img/breadcrumb/br-shape-5.png" alt="Image" class="br-shape-five animationFramesTwo">
+                    <img src="~/Content/assets3/img/breadcrumb/br-shape-6.png" alt="Image" class="br-shape-six bounce">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Breadcrumb End -->
+
+
+<section class="service-wrap ptb-40">
+    <div class="container">
+        <div class="row justify-content-center">
+
+            <div class="col-md-4">
+                <div class="service-card style4">
+                    <div class="service-info">
+                        <div class="service-title">
+                            <span><i class="flaticon-payment-method"></i></span>
+                            <h3><a href="#">Detalles de tu préstamo</a></h3>
+                        </div>
+                        <div class="service-content">
+
+                            <div class="pricing-header bg-blue-9000">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="pricing-title text-white">Monto del préstamo:</div>
+                                        <div class="pricing-price">
+                                            <span class="pricing-amount text-white" style="font-size: 2rem;">@((Model.creditos.EntregaLiquida).ToString("C"))</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="pricing-title text-white">Plazo hasta:</div>
+                                        <div class="pricing-price">
+                                            <span class="pricing-amount text-white" style="font-size: 2rem;">@Model.creditos.getPlazoEnMeses() Meses</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <p>
+                                <br />
+                                <span class="font-size-24">Pago mensual:</span>  <strong class="font-size-24">@Model.creditos.GetAmortizacion.FirstOrDefault().PagoTotalMensual.ToString("C")</strong>
+                                <ul class="pricing-features">
+
+                                    <li>
+                                        <strong class="text-blue">Apertura del Crédito:</strong> @Model.creditos.AperturaCredito.ToString("C")
+                                    </li>
+
+                                    <li>
+                                        <strong class="text-blue">Pago GPS:</strong>  @Model.creditos.Esquema.GastosAdministrativosPostEntregaLiquida.ToString("C")
+                                    </li>
+
+                                    <li>
+                                        <strong class="text-blue">Pago Mensual:</strong> @Model.creditos.GetAmortizacion.FirstOrDefault().PagoTotalMensual.ToString("C")
+                                    </li>
+
+                                </ul>
+                            </p>
+
+                        </div>
+                        <a href="#LinDocumentos" class="link style1">Ver más<i class="flaticon-right-arrow-1"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                <div class="panel panel-primary panel-line">
+                    <div class="panel-heading">
+                        <h1>Envío de documentos</h1>
+                    </div>
+                    <div class="panel-body">
+
+                        <table id="table"
+                               data-toggle="table"
+                               data-height="auto"
+                               data-search="true"
+                               data-id-field="EmpleadoID"
+                               data-click-to-select="true"
+                               data-toolbar="#toolbar"
+                               data-footer-style="footerStyle"                               
+                               data-show-custom-view="true"
+                               data-icons-prefix="fa"
+                               data-icons="icons"
+                               data-custom-view="customViewFormatter"                               
+                               data-url="@Url.Action("ListaDocumentosLite", "Documentacion", new {IdSolicitud = Model.solicitud.Id})">
+                            <thead>
+                                <tr>
+                                    <th data-field="nombre">Documento</th>
+                                    <th data-field="descripción">Descripcion</th>
+                                    <th data-formatter="formatterOption"></th>
+                                </tr>
+                            </thead>
+                        </table>                        
+
+                    </div>
+
+                    <div class="panel-footer" id="DivEventosSolicitud">
+
+                        @Html.Action("EventosSolicitud", "Solicitud", new {id = Model.solicitud.Id })
+                        
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" onclick="$('#myModal').modal('hide')">&times;</span></button>
+                <h4 class="modal-title" id="ModalTittle">...</h4>
+            </div>
+
+            <div class="modal-body" id="ModalBody">
+                ...
+            </div>                    
+        </div>
+    </div>
+</div>
+
+
+<template id="profileTemplate">
+    <div class="col-12 mt-3" style="box-shadow: 0 0 15px rgb(0 0 0 / 7%);">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12 col-lg-12 col-md-6">
+                        <h3 class="mb-0 text-truncated">%NAME%</h3>
+                        <p>
+                            %DESCRIPCION%
+                        </p>                        
+                    </div>
+
+                    <div class="col-12 col-lg-4">
+                        <a id="BtnVerDoc-%rowid%" class="link style1" title="Ver Archivos" style="color: #ee7e3c;" onclick="MostrarAdjuntos(%rowid%)">%NUMERO% Archivos adjuntos, ver.  <span class="fa fa-eye"></span></a>
+                        <a id="BtnCerDoc-%rowid%" class="link style1" title="Ocultar Archivos" style="color: #ee7e3c; display:none;" onclick="OcultarAdjuntos(%rowid%)">%NUMERO% Archivos adjuntos. Ocultar <span class="fa fa-eye"></span></a>
+                    </div>
+                    <div class="col-12 col-lg-4">
+
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        @*<h3 class="mb-0">%SNIPPETS%</h3>*@
+                        <a class="btn style1 btn-outline float-right" href="javascript:addDocumento(%rowid%, %row.nombre%)">Adjuntar archivo<span class="fa fa-upload"></span></a>
+                    </div>
+
+                    <div class="col-12 col-lg-12" id="FilesDoc-%rowid%" data-id="%rowid%">
+                        
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+
+<script>
+
+      function addDocumento(id, archivo) {
+          $("#ModalTittle").html("Seleccione su: " + archivo);
+        $("#ModalBody").html("loading...");
+        var URL = "@Url.Action("AddArchivoExpediente", "Documentacion")";
+        $.get(URL, {id: id}).done(function (data) {
+            $("#ModalBody").html(data);
+        });
+        $("#myModal").modal("show");
+    }
+
+    function formatterOption(value, row, index) {
+        return '<a class="btn btn-success btn-xs" data-content="' + row.descripción + '"' +
+              'data-trigger="hover" href="javascript:addDocumento(' + row.Id + ', \'' + row.nombre + '\')" data-toggle="popover" data-original-title="Nuevo(a) ' + row.nombre + '"' +
+              'tabindex="0" title="" ><i class="fa fa-upload" aria-hidden="true"></i></a>';
+
+    }
+
+    function formatterEstado(value, row, index) {
+        if (row.NumeroArchivos > 0) {
+            return "Subido"
+        }
+        if (value == 2) {
+            return "Validado"
+        }
+        if (value == 3) {
+            return "Poco ligible"
+        }
+        return "Sin subir"
+
+    }
+
+
+    function formatofechaDiaMesAnio(value, row, index) { // return MM-YYYY
+        if (value == null || value == "") {
+            return "-"
+        }
+        var fecha = value.replace("/Date(", "").replace(")/", "");// /Date(1385013600000)/
+        var date = new Date(parseInt(fecha));
+        return pad((date.getDate()), 2) + "/" + pad((date.getMonth() + 1), 2) + "/" + date.getFullYear();
+    }
+
+    function pad(str, max) {
+        str = str.toString();
+        return str.length < max ? pad("0" + str, max) : str;
+    }
+
+
+    function refrescar() {
+        $("#table").bootstrapTable("refresh");
+    }
+
+     function opcionesDocumentosFormat(value, row, index) {
+        if (row.IdEstadoDocumentoCredito == 4 || row.IdEstadoDocumentoCredito == 5) {
+            return "-";
+        }
+
+         var icon = "fa-image";
+         if (row.Nombre.split(".")[row.Nombre.split(".").length - 1] == "pdf" || row.Nombre.split(".")[row.Nombre.split(".").length - 1] == "PDF") {
+             icon = "fa-file-pdf-o";
+         }
+
+
+        var URL_File = '@Url.Action("ViewFile", "Documentacion")' + '?ruta=' + row.Ruta + '&nombre=' + row.Nombre;
+
+        var btnVerArchivo = '<td><a href="' + URL_File + '" target="_blank" class="" data-content="Permite descargar el archivo para su revisión."' +
+        'data-trigger="hover" data-toggle="popover" data-original-title="Ver Archivo"' +
+        'tabindex="0" title=""><i class="fa '+icon+'" aria-hidden="true"></i></a></td>';
+
+
+        if (row.IdEstadoDocumentoCredito == 3) {
+            btnAceptarDocumento = "";
+        }
+
+        return "<table><tr>" +  btnVerArchivo  + "</tr></table>";
+    }
+
+
+    function mostrarDatosPersonales() {
+
+        $(".nav-datos-personales").addClass("active")
+        $(".vav-datos-vehiculo").removeClass("active")
+        $(".nav-documentos").removeClass("active")
+        $("#DivContenedorTemporal").addClass("active")
+        $("#DivContenedorTemporal").addClass("show")
+        $("#DivArchivos").removeClass("active")
+        $("#DivArchivos").removeClass("show")
+
+        var urlDatosPersonales = '@Url.Action("Edit","Cliente", new {id = Model.solicitud.IdCliente })'
+        $.get(urlDatosPersonales).done(function(data) {
+            $("#DivContenedorTemporal").html(data);
+        });
+    }
+    function mostrarDatosVehiculo() {
+
+        $(".nav-datos-personales").addClass("active")
+        $(".vav-datos-vehiculo").removeClass("active")
+        $(".nav-documentos").removeClass("active")
+        $("#DivContenedorTemporal").addClass("active")
+        $("#DivContenedorTemporal").addClass("show")
+        $("#DivArchivos").removeClass("active")
+        $("#DivArchivos").removeClass("show")
+
+        var urlDatosPersonales = '@Url.Action("Edit","Vehiculo", new { id= Model.solicitud.Fit_Vehiculo.Id})'
+        $.get(urlDatosPersonales).done(function(data) {
+            $("#DivContenedorTemporal").html(data);
+        });
+    }
+
+    function mostrarDocumentos() {
+        $(".nav-datos-personales").removeClass("active")
+        $(".vav-datos-vehiculo").removeClass("active")
+        $(".nav-documentos").addClass("active")
+        $("#DivContenedorTemporal").removeClass("active")
+        $("#DivContenedorTemporal").removeClass("show")
+        $("#DivArchivos").addClass("active")
+        $("#DivArchivos").addClass("show")
+
+    }
+    mostrarDatosPersonales();
+
+
+    function customViewFormatter(data) {
+        var template = $('#profileTemplate').html()
+        var view = ''
+        $.each(data, function (i, row) {
+            view += template.replace('%NAME%', row.nombre)
+                .replace('%DESCRIPCION%', row.descripción)
+                .replace('%IMAGE%', "/Content/assets3/img/china.png")
+                .replaceAll('%rowid%', row.Id)
+                .replaceAll('%NUMERO%', row.NumArchivosAdjuntos)
+                .replace('%row.nombre%', "'" + row.nombre + "'" );
+        })
+        return `<div class="row mx-0">${view}</div>`
+    }
+
+    window.icons = {
+        paginationSwitchDown: 'fa-caret-square-down',
+        paginationSwitchUp: 'fa-caret-square-up',
+        refresh: 'fa-sync',
+        toggleOff: 'fa-toggle-off',
+        toggleOn: 'fa-toggle-on',
+        columns: 'fa-th-list',
+        detailOpen: 'fa-plus',
+        detailClose: 'fa-minus',
+        fullscreen: 'fa-arrows-alt',
+        search: 'fa-search',
+        clearSearch: 'fa-trash'
+    }
+
+    function MostrarAdjuntos(id) {
+        $("#BtnVerDoc-" + id).hide();
+        $("#BtnCerDoc-" + id).show();
+        detailDocumentos($("#FilesDoc-" + id), id);
+    }
+
+    function OcultarAdjuntos(id) {
+        $("#BtnVerDoc-" + id).show();
+        $("#BtnCerDoc-" + id).hide();
+        $("#FilesDoc-" + id).html("");
+    }
+
+    function detailDocumentos($detail, id) {
+        return buildTableDocumentosDoc($detail.html('<table></table>').find('table'), id);
+    }
+
+
+    var MapatableUpdateDoc = new Map();
+
+
+    function buildTableDocumentosDoc($el, IdDC) {
+        var columns = []
+        var data = []
+        columns.push({ field: 'Fecha', title: 'Fecha', formatter: "formatofechaDiaMesAnio" });
+        columns.push({ field: 'Descripcion', title: 'Documento' });
+        columns.push({ title: 'Opciones', formatter: 'opcionesDocumentosFormat' });
+        $el.bootstrapTable({
+            columns: columns,
+            url: '/Documentacion/ListaDocumentosPorTipoDocumento?IdDC=' + IdDC,
+            onLoadSuccess: function () {
+                $('[data-toggle="popover"]').popover();
+            }
+        });
+    }
+
+
+    function actualizarEventos() {
+        var urlEvento = "@Url.Action("EventosSolicitud", "Solicitud", new { id = Model.solicitud.Id })";
+            $.get(urlEvento).done(function (data) {
+                $("#DivEventosSolicitud").html(data);
+            })
+    }
+
+    function IniciarValidacion() {
+        var urlValidacion = "@Url.Action("IniciarValidacion", "Solicitud", new { id = Model.solicitud.Id })";
+        $.get(urlValidacion).done(function (data) {
+            notie.alert({ type: 1, text: data.Mensaje, time: 3 })
+        })
+
+    }
+
+</script>

@@ -1,0 +1,343 @@
+﻿@model AutoyVaro.Credito
+@using AutoyVaro.Enums;
+@using AutoyVaro.Extenciones;
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+
+    <itext creationdate="@DateTime.Now.ToString()" producer="RazorPDF">
+
+        <table width="100%" widths="50;30;20">
+            <row>
+                <cell><chunk style="align-items: left; font-family:Tahoma;font-size:14; color:#2E9AFE">AUTO Y VARO SA DE CV</chunk></cell>
+                <cell></cell>
+                <cell align="right"><chunk style="align-items: right;"><img src="@Context.Server.MapPath("~/Content/assets3/img/logo3.png")" width="150" height="75" /></chunk></cell>
+            </row>
+            <row>
+                <cell></cell>
+                <cell colspan="2" align="right"><chunk style="align-items: right; font-family:Tahoma; font-size:10; text-align:right;">Xalapa,Ver., @DateTime.Now.ToLongDateString()</chunk><br /><br /></cell>
+            </row>
+        </table>
+
+
+        <table width="100%" widths="40;10;50">
+
+            <row>
+                <cell>
+                    <p style="align-items: left; font-family:tahoma;font-size:8;">
+                        RFC: CME1406178C1<br />
+                        Cliente: @(Model.Vehiculo.Cliente.SociedadMercantil ?? (Model.Vehiculo.Cliente.Nombre + " " + Model.Vehiculo.Cliente.ApellidoPaterno + " " + Model.Vehiculo.Cliente.ApellidoMaterno) )
+                        <br />
+                        <h6>OPCIONES DE PAGO:</h6>
+                        <span style="font-weight:bold;">Pago por convenio CIE</span><br />
+                        Banco BBVA Bancomer <br />
+                        Convenio CIE: 001292722
+                        Referncia: @Model.ReferenciaCIE.
+                        <br />
+                        <br />
+                        <span style="font-weight:bold;">Pago por tranferencia electrónica a cuenta CLABE</span><br />
+                        Tranferencia a la cuenta CLABE <span style="font-weight:bold;">01 28 40 00 19 68 03 45 85</span> del Banco BBVA Bancomer,
+                        se deberá indicar en el campo de concepto la referencia @Model.ReferenciaCIE más nombre.
+                    </p>
+                </cell>
+                <cell>
+
+                </cell>
+
+                <cell>
+
+                    <table width="100%" widths="50;50">
+                        <row>
+                            <cell><chunk style="align-items: left; font-family:Tahoma;font-size:10;">Número de Crédito:</chunk></cell>
+                            <cell><chunk style="align-items: left; font-family:Tahoma;font-size:10;">@Model.id</chunk></cell>
+                        </row>
+                        <row>
+                            <cell><chunk style="align-items: left; font-family:Tahoma;font-size:10;">Número de Cliente:</chunk></cell>
+                            <cell><chunk style="align-items: left; font-family:Tahoma;font-size:10;">@Model.Vehiculo.Cliente.Id</chunk></cell>
+                        </row>
+                        <row>
+                            <cell><chunk style="align-items: left; font-family:Tahoma;font-size:10;">Cantidad a Pagar:</chunk></cell>
+                            <cell><chunk style="align-items: left; font-family:Tahoma;font-size:10;">@Model.getCantidadAPagar.ToString("C2")</chunk></cell>
+                        </row>
+                        <row>
+                            <cell><chunk style="align-items: left; font-family:Tahoma;font-size:10;">Pagar antes del:</chunk></cell>
+                            <cell><chunk style="align-items: left; font-family:Tahoma;font-size:10;">@Model.getFechaDeCortePDF.AddDays(10).ToShortDateString()</chunk></cell>
+                        </row>
+                        <row>
+                            <cell><chunk style="align-items: left; font-family:Tahoma;font-size:10;">Fecha de corte:</chunk></cell>
+                            <cell><chunk style="align-items: left; font-family:Tahoma;font-size:10;">@Model.getFechaDeCortePDF.ToShortDateString()</chunk></cell>
+                        </row>
+                        <row>
+                            <cell><chunk style="align-items: left; font-family:Tahoma;font-size:10;">Pagos vencidos:</chunk></cell>
+                            <cell><chunk style="align-items: left; font-family:Tahoma;font-size:10;">@Model.getPagosVencidos</chunk></cell>
+                        </row>
+
+
+                        <row>
+                            <cell><chunk style="align-items: left; font-family:Tahoma;font-size:10;">Monto Para Solicitar Ampliación o Reestructura:</chunk></cell>
+                            <cell><chunk style="align-items: left; font-family:Tahoma;font-size:10;">@((Model.CapitalDeudorEstadoCuenta + Model.getCantidadAPagar).ToString("C2"))</chunk></cell>
+                        </row>
+
+
+                    </table>
+
+
+                </cell>
+            </row>
+        </table>
+
+
+        <paragraph style="font-family:Tahoma;font-size:10;" align="center">
+            <chunk>
+                <br />
+                <u>
+                    MENSUALIDADES DEVENGADAS
+                </u>
+            </chunk>
+        </paragraph>
+
+        @if (Model.TipoDeCredito.Pensiona)
+        {
+
+            <table width="100%" cellpadding="0" cellspacing="0" widths="2;4;4;4;4;4;4;4;4">
+                <tr>
+                    <td borderwidth="0.5" left="false" right="false" top="false" bottom="true"><chunk style="font-size:8;">#M</chunk></td>
+                    <td borderwidth="0.5" left="false" right="false" top="false" bottom="true"><chunk style="font-size:8;">Fecha de corte</chunk></td>
+                    <td borderwidth="0.5" left="false" right="false" top="false" bottom="true" horizontalalign="right"><chunk style="font-size:8;">Capital deudor</chunk></td>
+                    <td borderwidth="0.5" left="false" right="false" top="false" bottom="true" horizontalalign="right"><chunk style="font-size:8;">Pensión</chunk></td>
+                    <td borderwidth="0.5" left="false" right="false" top="false" bottom="true" horizontalalign="right"><chunk style="font-size:8;">Seguro</chunk></td>
+                    <td borderwidth="0.5" left="false" right="false" top="false" bottom="true" horizontalalign="right"><chunk style="font-size:8;">Interes</chunk></td>
+                    <td borderwidth="0.5" left="false" right="false" top="false" bottom="true" horizontalalign="right"><chunk style="font-size:8;">Amortización</chunk></td>
+
+                    <td borderwidth="0.5" left="false" right="false" top="false" bottom="true" horizontalalign="right"><chunk style="font-size:8;">Mora</chunk></td>
+
+                    <td borderwidth="0.5" left="false" right="false" top="false" bottom="true" horizontalalign="right"><chunk style="font-size:8;">Pago del Mes</chunk></td>
+                </tr>
+                @foreach (var item in Model.Mensualidad)
+                {
+                    if (item.FechaPago <= DateTime.Today.AddDays(20))
+                    {
+                        <tr>
+                            <td><chunk style="font-size:7;">@item.Mensualidad1 / @item.Credito.getPlazoMes</chunk></td>
+                            <td><chunk style="font-size:7;">@item.FechaPago.ToShortDateString()</chunk></td>
+                            <td horizontalalign="right"><chunk style="font-size:7;">@item.CapitalDeudor.ToString("C2")</chunk></td>
+
+                            @if (item.GetTotalPension == 0)
+                            {
+                                <td horizontalalign="right" bgcolor="#A9DFBF"><chunk style="font-size:7;">@item.GetTotalPension.ToString("C2")</chunk></td>
+                            }
+                            else
+                            {
+                                <td horizontalalign="right" bgcolor="#FADBD8"><chunk style="font-size:7;">@item.GetTotalPension.ToString("C2")</chunk></td>
+                            }
+
+                            @if (@item.GetTotalSeguro == 0)
+                            {
+                                <td horizontalalign="right" bgcolor="#A9DFBF"><chunk style="font-size:7;">@item.GetTotalSeguro.ToString("C2")</chunk></td>
+                            }
+                            else
+                            {
+                                <td horizontalalign="right" bgcolor="#FADBD8"><chunk style="font-size:7;">@item.GetTotalSeguro.ToString("C2")</chunk></td>
+                            }
+                            @if (@item.GetTotalInteres == 0)
+                            {
+                                <td horizontalalign="right" bgcolor="#A9DFBF"><chunk style="font-size:7;">@item.GetTotalInteres.ToString("C2")</chunk></td>
+                            }
+                            else
+                            {
+                                <td horizontalalign="right" bgcolor="#FADBD8"><chunk style="font-size:7;">@item.GetTotalInteres.ToString("C2")</chunk></td>
+                            }
+                            @if (@item.GetTotalAmortización == 0)
+                            {
+                                <td horizontalalign="right" bgcolor="#A9DFBF"><chunk style="font-size:7;">@item.GetTotalAmortización.ToString("C2")</chunk></td>
+                            }
+                            else
+                            {
+                                <td horizontalalign="right" bgcolor="#FADBD8"><chunk style="font-size:7;">@item.GetTotalAmortización.ToString("C2")</chunk></td>
+                            }
+
+                            @if (@item.getMoraTotal == 0)
+                            {
+                                <td horizontalalign="right" bgcolor="#A9DFBF"><chunk style="font-size:7;">@item.getMoraTotal.ToString("C2")</chunk></td>
+                            }
+                            else
+                            {
+                                <td horizontalalign="right" bgcolor="#FADBD8"><chunk style="font-size:7;">@item.getMoraTotal.ToString("C2")</chunk></td>
+                            }
+                            @if (@item.GetPagoMensualNeto == 0)
+                            {
+                                <td horizontalalign="right" bgcolor="#A9DFBF"><chunk style="font-size:7;">@item.GetPagoMensualNeto.ToString("C2")</chunk></td>
+                            }
+                            else
+                            {
+                                <td horizontalalign="right" bgcolor="#FADBD8"><chunk style="font-size:7;">@item.GetPagoMensualNeto.ToString("C2")</chunk></td>
+                            }
+
+                        </tr>
+                    }
+                }
+
+            </table>
+
+        }
+        else
+        {
+
+            <table width="100%" cellpadding="0" cellspacing="0" widths="2;4;4;4;4;4;4;4;4">
+                <tr>
+                    <td borderwidth="0.5" left="false" right="false" top="false" bottom="true"><chunk style="font-size:8;">#M</chunk></td>
+                    <td borderwidth="0.5" left="false" right="false" top="false" bottom="true"><chunk style="font-size:8;">Fecha de corte</chunk></td>
+                    <td borderwidth="0.5" left="false" right="false" top="false" bottom="true" horizontalalign="right"><chunk style="font-size:8;">Capital deudor</chunk></td>
+                    <td borderwidth="0.5" left="false" right="false" top="false" bottom="true" horizontalalign="right"><chunk style="font-size:8;">Gps</chunk></td>
+                    <td borderwidth="0.5" left="false" right="false" top="false" bottom="true" horizontalalign="right"><chunk style="font-size:8;">Seguro</chunk></td>
+                    <td borderwidth="0.5" left="false" right="false" top="false" bottom="true" horizontalalign="right"><chunk style="font-size:8;">Interes</chunk></td>
+                    <td borderwidth="0.5" left="false" right="false" top="false" bottom="true" horizontalalign="right"><chunk style="font-size:8;">Amortización</chunk></td>
+
+                    <td borderwidth="0.5" left="false" right="false" top="false" bottom="true" horizontalalign="right"><chunk style="font-size:8;">Mora</chunk></td>
+
+
+                    <td borderwidth="0.5" left="false" right="false" top="false" bottom="true" horizontalalign="right"><chunk style="font-size:8;">Pago del Mes</chunk></td>
+                </tr>
+                @foreach (var item in Model.Mensualidad)
+                {
+                    if (item.FechaPago <= DateTime.Today.AddDays(20))
+                    {
+                        <tr>
+                            <td><chunk style="font-size:7;">@item.Mensualidad1 / @item.Credito.getPlazoMes</chunk></td>
+                            <td><chunk style="font-size:7;">@item.FechaPago.ToShortDateString()</chunk></td>
+                            <td horizontalalign="right"><chunk style="font-size:7;">@item.CapitalDeudor.ToString("C2")</chunk></td>
+                            @if (@item.GetTotalGps == 0)
+                            {
+                                <td horizontalalign="right" bgcolor="#A9DFBF"><chunk style="font-size:7;">@item.GetTotalGps.ToString("C2")</chunk></td>
+                            }
+                            else
+                            {
+                                <td horizontalalign="right" bgcolor="#FADBD8"><chunk style="font-size:7;">@item.GetTotalGps.ToString("C2")</chunk></td>
+                            }
+
+
+                            @if (@item.GetTotalSeguro == 0)
+                            {
+                                <td horizontalalign="right" bgcolor="#A9DFBF"><chunk style="font-size:7;">@item.GetTotalSeguro.ToString("C2")</chunk></td>
+                            }
+                            else
+                            {
+                                <td horizontalalign="right" bgcolor="#FADBD8"><chunk style="font-size:7;">@item.GetTotalSeguro.ToString("C2")</chunk></td>
+                            }
+                            @if (@item.GetTotalInteres == 0)
+                            {
+                                <td horizontalalign="right" bgcolor="#A9DFBF"><chunk style="font-size:7;">@item.GetTotalInteres.ToString("C2")</chunk></td>
+                            }
+                            else
+                            {
+                                <td horizontalalign="right" bgcolor="#FADBD8"><chunk style="font-size:7;">@item.GetTotalInteres.ToString("C2")</chunk></td>
+                            }
+                            @if (@item.GetTotalAmortización == 0)
+                            {
+                                <td horizontalalign="right" bgcolor="#A9DFBF"><chunk style="font-size:7;">@item.GetTotalAmortización.ToString("C2")</chunk></td>
+                            }
+                            else
+                            {
+                                <td horizontalalign="right" bgcolor="#FADBD8"><chunk style="font-size:7;">@item.GetTotalAmortización.ToString("C2")</chunk></td>
+                            }
+
+                            @if (@item.getMoraTotal == 0)
+                            {
+                                <td horizontalalign="right" bgcolor="#A9DFBF"><chunk style="font-size:7;">@item.getMoraTotal.ToString("C2")</chunk></td>
+                            }
+                            else
+                            {
+                                <td horizontalalign="right" bgcolor="#FADBD8"><chunk style="font-size:7;">@item.getMoraTotal.ToString("C2")</chunk></td>
+                            }
+
+
+                            @if (@item.GetPagoMensualNeto == 0)
+                            {
+                                <td horizontalalign="right" bgcolor="#A9DFBF"><chunk style="font-size:7;">@item.GetPagoMensualNeto.ToString("C2")</chunk></td>
+                            }
+                            else
+                            {
+                                <td horizontalalign="right" bgcolor="#FADBD8"><chunk style="font-size:7;">@item.GetPagoMensualNeto.ToString("C2")</chunk></td>
+                            }
+                        </tr>
+                    }
+                }
+
+            </table>
+
+
+
+        }
+
+
+
+        <h5>Pagos Realizados</h5>
+        <table width="100%" cellpadding="0" cellspacing="0" widths="4;4;4;4;4;4;4;4;4">
+            <tr>
+                <th borderwidth="0.5" left="false" right="false" top="false" bottom="true"><chunk style="font-size:8;">Fecha del Pago</chunk></th>
+                @if (Model.TipoDeCredito.Pensiona)
+                {
+                    <th borderwidth="0.5" left="false" right="false" top="false" bottom="true"><chunk style="font-size:8;">Pensión</chunk></th>
+
+                }
+                else
+                {
+                    <th borderwidth="0.5" left="false" right="false" top="false" bottom="true"><chunk style="font-size:8;">GPS</chunk></th>
+                }
+                <th borderwidth="0.5" left="false" right="false" top="false" bottom="true"><chunk style="font-size:8;">Seguro</chunk></th>
+                <th borderwidth="0.5" left="false" right="false" top="false" bottom="true"><chunk style="font-size:8;">Interes</chunk></th>
+                <th borderwidth="0.5" left="false" right="false" top="false" bottom="true"><chunk style="font-size:8;">Amortización</chunk></th>
+                <th borderwidth="0.5" left="false" right="false" top="false" bottom="true"><chunk style="font-size:8;">Moratorios</chunk></th>
+                <th borderwidth="0.5" left="false" right="false" top="false" bottom="true"><chunk style="font-size:8;">Gastos Administrativos</chunk></th>
+                <th borderwidth="0.5" left="false" right="false" top="false" bottom="true"><chunk style="font-size:8;">Gastos Cobranza</chunk></th>
+                <th borderwidth="0.5" left="false" right="false" top="false" bottom="true"><chunk style="font-size:8;">Pago Total</chunk></th>
+
+
+
+            </tr>
+            @foreach (var item in Model.AplicacionPago)
+            {
+                <tr>
+                    <td left="false" right="false" top="false" bottom="false"><chunk style="font-size:7;">@item.FechaPago.ToShortDateString()</chunk></td>
+                    @if (Model.TipoDeCredito.Pensiona)
+                    {
+                        <td left="false" right="false" top="false" bottom="false"><chunk style="font-size:7;">@item.Pension.ToString("C")</chunk></td>
+                    }
+                    else
+                    {
+                        <td left="false" right="false" top="false" bottom="false"><chunk style="font-size:7;">@item.GPS.ToString("C")</chunk></td>
+                    }
+
+
+                    <td left="false" right="false" top="false" bottom="false"><chunk style="font-size:7;">@item.Seguro.ToString("C")</chunk></td>
+                    <td left="false" right="false" top="false" bottom="false"><chunk style="font-size:7;">@item.Interes.ToString("C")</chunk></td>
+                    <td left="false" right="false" top="false" bottom="false"><chunk style="font-size:7;">@item.Capital.ToString("C")</chunk></td>
+                    <td left="false" right="false" top="false" bottom="false"><chunk style="font-size:7;">@item.Moratorios.ToString("C")</chunk></td>
+                    <td left="false" right="false" top="false" bottom="false"><chunk style="font-size:7;">@item.GastosAdmon.ToString("C")</chunk></td>
+                    <td left="false" right="false" top="false" bottom="false"><chunk style="font-size:7;">@item.GastosCobrenza.ToString("C")</chunk></td>
+                    <td left="false" right="false" top="false" bottom="false"><chunk style="font-size:7;">@item.Monto.ToString("C")</chunk></td>
+                </tr>
+            }
+        </table>
+
+        <br />
+
+        <p style="align-items: left; font-family:tahoma;font-size:8;">
+            <h6>Dudas, aclaraciones Y atención</h6>
+            Tel. Cobranza (22)(881-88280) ext. 107  <br />
+            Correo autoyvarocobranza@gmail.com <br />
+
+        </p>
+
+    </itext>
+</body>
+</html>
+

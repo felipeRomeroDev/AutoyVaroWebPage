@@ -1,0 +1,702 @@
+﻿@model AutoyVaro.Models.ViewModelCreditos
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAPP.cshtml";
+}
+
+<style>
+
+    .btn1 {
+        background-color: #ee7e3c;
+        color: white;
+    }
+
+    .btn-floating {
+         width: 4rem; 
+         height: 4rem; 
+         padding: 0; 
+         margin: 0; 
+         font-size: 2.572rem !important; 
+         text-align: center; 
+         border-radius: 100%; 
+         box-shadow: 0 6px 10px rgb(0 0 0 / 15%); 
+         color:white;
+    }
+
+    .panel2 {
+        position: relative;
+        background-color: #fff;
+        z-index: 1;
+        border-radius: 5px;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+        -webkit-box-shadow: 0 0 15px rgb(0 0 0 / 7%);
+        box-shadow: 0 0 15px rgb(0 0 0 / 7%);
+    }
+
+    .bg-blue-9000 {
+        background-color: #030734 !important;
+    }
+
+    .breadcrumb-wrap-blue {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: 10px 0 !important;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    .bg-spring-blue {
+        background-color: #111542;
+    }
+</style>
+<style>
+    .text-orange {
+        color: #ee7e3c !important;
+    }
+    .badge-dark {
+        color: #fff;
+        background-color: #ee7e3c;
+    }
+
+    .steps2 {
+        background-color: #4b73af00;
+        border-radius: 5px;
+        padding: 9px 20px;
+    }
+
+    .slider-container {
+        position: relative;
+    }
+
+        .slider-container .bar {
+            position: absolute;
+            z-index: 1;
+            left: 2px;
+            top: 7px;
+            width: 100%;
+            height: 10px;
+            border-radius: 5px;
+            background-color: red;
+            overflow: hidden;
+        }
+
+            .slider-container .bar .fill {
+                display: block;
+                width: 0;
+                height: 100%;
+                background-color: #ea7913;
+            }
+
+        .slider-container .slider-2 {
+            position: relative;
+            z-index: 2;
+            -webkit-appearance: none;
+            width: 100%;
+            height: 10px;
+            border-radius: 5px;
+            outline: none;
+            background-color: transparent;
+        }
+
+            .slider-container .slider-2::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                width: 30px;
+                height: 30px;
+                background-color: #ea7913;
+                border-radius: 50%;
+                cursor: pointer;
+                outline: none;
+                box-shadow: 0 0 0 0 rgba(238,126,60,.1);
+                transition: .3s ease-in-out;
+            }
+
+                .slider-container .slider-2::-webkit-slider-thumb:hover {
+                    box-shadow: 0 0 0 20px rgba(238,126,60,.1);
+                }
+
+            .slider-container .slider-2:active::-webkit-slider-thumb {
+                box-shadow: 0 0 0 40px rgba(238,126,60,.2);
+            }
+
+
+
+  
+
+    #ModalLogginSecon {
+        background-color: #eeeeeee3 !important;
+    }
+    .breadcrumb-wrap-blue {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: 10px 0 !important;
+        overflow: hidden;
+        z-index: 1;
+    }
+    .bg-spring-blue {
+        background-color: #111542;
+    }
+</style>
+
+<style>
+    .bg-indigo-9000 {
+        background-color: #030734 !important;
+    }
+    .calculator {
+        border: 1px solid #dcdee0;
+        box-shadow: 0 0.5px 1px 0 rgba(51, 77, 114, 0.1), 0px 1.6px 3.6px 0 rgba(51, 77, 114, 0.15);
+        border-radius: 10px;
+    }
+
+    .panelCal {
+        background-color: #efefef;
+    }
+
+    .steps2 {
+        background-color: #f5f7fa;
+        border-radius: 5px;
+        padding: 9px 20px;
+    }
+
+    .mr-30 {
+        margin-right: 30px;
+    }
+
+    .ml-30 {
+        margin-left: 30px;
+    }
+
+    .mt-50 {
+        margin-top: 50px;
+    }
+
+    .justify-content-between {
+        justify-content: space-between !important;
+    }
+
+    .flex-wrap {
+        flex-wrap: wrap !important;
+    }
+
+    .d-flex {
+        display: flex !important;
+    }
+
+    .range-input {
+        height: 35px;
+        border-radius: 17.5px;
+        line-height: 32px;
+        text-align: center;
+        color: #6a737c;
+        font-size: 16px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        border: 1px solid #dcdee0;
+        width: 120px;
+        margin-left: 20px;
+    }
+
+    .range {
+        display: flex;
+        width: 100%;
+    }
+
+    .range__slider {
+        width: 45%;
+    }
+
+    .range__value {
+        width: 35%;
+        margin-left: 45px;
+        text-align: center;
+        border-left: #e6e4e4 1px solid;
+    }
+
+   
+
+    .range__slider label {
+        margin-bottom: 10px;
+    }
+
+    .range__slider [type="range"] {
+        width: 100%;
+        height: 13px;
+        border-radius: 6px;
+        background: #f1f1f1;
+        outline: none;
+        padding: 0;
+        margin: 0;
+    }
+
+
+
+        .range__slider [type="range"]::-webkit-slider-thumb:hover {
+            background: #f0932b;
+        }
+
+        .range__slider [type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border: 0;
+            border-radius: 50%;
+            background: #f0932b;
+            border: #f9ca24 5px solid;
+            cursor: pointer;
+            -webkit-transition: background .15s ease-in-out;
+            transition: background .15s ease-in-out;
+        }
+
+            .range__slider [type="range"]::-moz-range-thumb:hover {
+                background: #f9ca24;
+            }
+
+    /* remove border */
+    input::-moz-focus-inner, input::-moz-focus-outer {
+        border: 0;
+    }
+</style>
+
+@if (ViewBag.IsNull)
+{
+
+
+
+
+    <div class="row">
+        <div class="col-12">
+            <div class="alert alert-info">
+                Lo siento no se encontro una propuesta con la informacion ingresada
+            </div>
+        </div>
+    </div>
+
+}
+else
+{
+    
+
+    <!-- Breadcrumb Start -->
+    <div class="breadcrumb-wrap breadcrumb-wrap-blue bg-spring-blue">
+        <img src="~/Content/assets3/img/breadcrumb/br-shape-1.png" alt="Image" class="br-shape-one xs-none">
+        <img src="~/Content/assets3/img/breadcrumb/br-shape-2.png" alt="Image" class="br-shape-two xs-none">
+        <img src="~/Content/assets3/img/breadcrumb/br-shape-3.png" alt="Image" class="br-shape-three moveHorizontal sm-none">
+        <img src="~/Content/assets3/img/breadcrumb/br-shape-4.png" alt="Image" class="br-shape-four moveVertical sm-none">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="d-flex flex-wrap justify-content-between mt-10 mr-30 mb-10 text-white">
+                    <div class="single-step mt-2 mt-sm-0">
+                        <span class="badge badge-dark badge-round">1</span>
+                        Configura tu crédito.
+                    </div>
+                    <div class="single-step mt-2 mt-sm-0">
+                        <span class="badge badge-dark badge-round">2</span>
+                        Revisa tu oferta
+
+                    </div>
+                    <div class="single-step mt-2 mt-sm-0">
+                        <span class="badge badge-dark badge-round">3</span>
+                        Verificación de documentos
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
+
+
+    <section class="inner-page ptb-40">
+
+        <div class="container">
+            <div class="row justify-content-center">
+
+                <h2 class="text-orange text-center">¡Felicidades, alcanzas una línea de crédito de hasta! <span>@(ViewBag.MontoMaximo.ToString("C"))</span></h2>
+
+                <div class="col-md-4">
+                    <div class="service-card style4">
+                        <div class="service-info">
+                            <div class="service-title">
+                                <span><i class="flaticon-payment-method"></i></span>
+                                <h3><a href="#">Detalles de tu préstamo</a></h3>
+                            </div>
+                            <div class="service-content">
+
+                                <div class="pricing-header bg-blue-9000 p-10">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="pricing-title text-white">Monto del préstamo:</div>
+                                            <div class="pricing-price text-right">
+                                                <span class="pricing-amount text-white" style="font-size: 2rem;" id="lblMontoIni">@((Model.creditos.FirstOrDefault().EntregaLiquida).ToString("C"))</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p>
+                                    <br />
+                                    <ul class="content-feature-list list-style">
+                                        <li><i class="ri-check-double-line"></i>Plazo hasta 24 meses.</li>
+                                        <li><i class="ri-check-double-line"></i>Sin comisión por apertura</li>
+                                        <li><i class="ri-check-double-line"></i>Pagos reflejados en capital e intereses.</li>
+                                        <li><i class="ri-check-double-line"></i>Liquida tu crédito desde el mes 3 al 24.</li>
+                                        <li><i class="ri-check-double-line"></i>Sin penalizaciones ni reajustes.</li>
+                                    </ul>
+                                </p>
+
+                                <div class="row">
+
+                                    <table class="text-center">
+                                        <tr>
+                                            <td><a href="mailto:ayuda@autoyvaro.com" class="btn1 btn-floating waves-effect waves-classic"><i style="color:white;" class="fa fa-envelope" aria-hidden="true"></i></a></td>
+                                            <td><a target="_blank" href="https://api.whatsapp.com/send?phone=522284235600&amp;text=Hola, deseo informes sobre mi solicitud #@Model.solicitudCotizacion.Id: " class="btn1 btn-floating waves-effect waves-classic"><i style="color:white;" class="fa fa-whatsapp" aria-hidden="true"></i></a></td>
+                                            <td><a href="tel:2284235600" class="btn1 btn-floating waves-effect waves-classic"><i style="color:white;" class="fa md-phone" aria-hidden="true"></i></a></td>
+                                        </tr>
+                                    </table>
+
+                                    
+
+                                </div>
+
+                                
+
+                                
+                                
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-8">
+
+
+                    <div class="row">
+
+
+
+
+                        <div class="col-md-12">
+
+                            <div class="owl-item active">
+                                <div class="testimonial-card style1">
+                                    <div class="client-info">
+
+                                        <br />
+                                        <h4 class="text-center">¿Cuánto dinero necesitas?</h4>
+
+                                        <div class="indigo-900">
+                                            <div class="font-size-30 text-center"><b>Monto: </b><spam id="lblMonto">@Model.creditos.FirstOrDefault().EntregaLiquida.ToString("C")</spam></div>
+                                            <p class="text-help text-center">Plazo hasta 24 Meses</p>
+                                        </div>
+
+                                        <div class="row">
+
+                                            <div class="col-md-12">
+                                                <div class="middle">
+                                                    <div class="slider-container">
+                                                        <span class="bar"><span class="fill"></span></span>
+                                                        <input type="range" class="slider-2" id="txtMonto" oninput="showVal(this.value)" onchange="ActualizarCotizacion()" value="@Model.creditos.FirstOrDefault().EntregaLiquida" name="txtMonto" step="50" min="30000" max="@ViewBag.MontoMaximo" />
+                                                    </div>
+                                                </div>
+                                                <p class="text-help text-center indigo-900">Mínimo: $30,000.00  -  Máximo @(ViewBag.MontoMaximo.ToString("C"))</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="owl-item active">
+                        <div class="testimonial-card style1">
+                            <div class="client-info">
+
+                                <h4>Documentos requeridos para gestionar su crédito.</h4>
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <ul>
+                                            <li>Factura o Refactura Original.</li>
+                                            <li>Tarjeta de Circulación.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <ul>
+                                            <li>INE o Pasaporte.</li>
+                                            <li>Última tenencia pagada</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <ul>
+                                            <li>Duplicado de llaves</li>
+                                            <li>Comprobante de Domicilio Vigente.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-12">
+                                    <div class="checkbox-custom checkbox-success">
+                                        <input class="form-check-input" type="checkbox" value="" id="chkDos" name="chkDos" required>
+                                        <label class="form-check-label" for="chkDos">
+                                            Cuento con toda la documentación requerida.
+                                        </label>
+                                        <div class="CloseError">
+                                            
+                                        </div>
+
+                                        
+
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-12">
+                                    <p class="text-center">La presente propuesta esta sujeta a las condiciones estéticas y mecánicas de tu vehículo.</p>
+
+                                    <br />
+
+                                    <div class="pricing-footer text-right">
+
+                                        @using Microsoft.AspNet.Identity
+                                        @if (Request.IsAuthenticated)
+                                        {
+                                            <a class="btn style1 btn-lg waves-effect waves-classic" href="javascript:Configurar();"><i class="icon md-long-arrow-right font-size-16 mr-15" aria-hidden="true"></i>Inicia tu Solicitud en Linea</a>
+                                        }
+                                        else
+                                        {
+                                            <a class="btn style1 btn-primary btn-lg waves-effect waves-classic" href="javascript:Registrar();"><i class="icon md-long-arrow-right font-size-16 mr-15" aria-hidden="true"></i>Inicia tu Solicitud en Linea</a>
+                                        }
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                    @*<div class="steps2 d-flex flex-wrap justify-content-between mt-50 mr-30 ml-30">
+                <div class="col-md-6">
+                    <h4>Pago mensual esperado</h4>
+                    <p class="text-help">
+                        Basado en una tasa de préstamo del 7.5%
+                    </p>
+                </div>
+
+                <div class="col-md-6">
+                    <h4 class="text-right">
+                        @Model.creditos.FirstOrDefault().GetAmortizacion.FirstOrDefault().PagoTotalMensual.ToString("C") / Mes
+                    </h4>
+                </div>
+            </div>*@
+
+                    
+                    <br />
+
+                </div>
+
+
+
+            </div>
+                    
+        </div>
+
+
+
+</section>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="ModalLogginSecon" aria-hidden="true" aria-labelledby="examplePositionCenter"
+         role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-simple modal-center">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <!-- Example Tabs In The Panel -->
+                    <div class="panel nav-tabs-horizontal" data-plugin="tabs">
+
+                        <ul class="nav nav-tabs nav-tabs-line" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="LinktabLoginSecon" data-toggle="tab" href="javascript:LoginUserSecon()"
+                                   aria-controls="exampleTopHome" role="tab"><i class="icon fa-sign-in" aria-hidden="true"></i>Iniciar Sesión</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="LinktabRegistroSecon" data-toggle="tab" href="javascript:RegistroUserSecon()"
+                                   aria-controls="exampleTopComponents" role="tab"><i class="icon fa-user-plus" aria-hidden="true"></i>Registrarse</a>
+                            </li>
+                        </ul>
+                        <div class="panel-body">
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="tabLoginSecon" role="tabpanel">
+                                    <div class="text-center">
+                                        <div class="spinner-border" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="tabRegistroSecon" role="tabpanel">
+                                    <div class="text-center">
+                                        <div class="spinner-border" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Example Tabs In The Panel -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Modal -->
+
+
+
+
+
+
+
+}
+
+
+<!-- ##### Newsletter Area End ###### -->
+@section Scripts {
+
+
+    <script type="text/javascript">
+
+        var $slider = $("#txtMonto");
+        var $fill = $(".bar .fill");
+
+        function setBar() {
+            $fill.css("width", $slider.val() + "%");
+        }
+
+        $slider.on("input", setBar);
+
+        setBar();
+
+
+
+
+        function showVal(newVal) {
+
+            var xx = new Intl.NumberFormat("en-US", {
+                style: "currency",
+                currency: "USD",
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            });
+            xx.format(newVal);
+
+            $("#lblMonto").html(xx.format(newVal));
+        }
+
+        function ActualizarCotizacion() {
+
+            var urlupdate = '@Url.Action("ActualizarCotizacion", "Simulador")';
+            urlupdate = urlupdate + "?telefono=@Model.solicitudCotizacion.Telefono" + "&codigo=@Model.solicitudCotizacion.CodigoValidacionNumero" + "&monto=" + $("#txtMonto").val() + "&montoMaximo=@ViewBag.MontoMaximo";
+            $.get(urlupdate).done(function (data) {
+
+                $("#lblMonto").html(data);
+                $("#lblMontoIni").html(data);
+
+            });
+
+            //window.location = urlupdate + "?telefono=@Model.solicitudCotizacion.Telefono" + "&codigo=@Model.solicitudCotizacion.CodigoValidacionNumero" + "&monto=" + $("#txtMonto").val() +"&montoMaximo=@ViewBag.MontoMaximo";
+
+        }
+
+        function CloseError() {
+            $(".CloseError").html("");
+        }
+        function MostrarError() {
+            var ALERT = '<div class="alert alert-warning alert-dismissible" role="alert">' +
+                        '   <button type="button" class="close" onclick="CloseError();" data-dismiss="alert" aria-label="Close">' +
+                        '       <span aria-hidden="true">×</span>' +
+                        '   </button>' +
+                        '   Por favor confirme que cuenta con todos los documentos solicitados.' +
+                        '</div>';
+
+            $(".CloseError").html(ALERT);
+        }
+
+        function Configurar() {
+
+            if (!$("#chkDos").is(":checked")) {
+                MostrarError();
+                return;
+            } else {
+                CloseError();
+            }
+
+            var url = '@Url.Action("Configurar","Simulador")'
+            window.location = url + "?IdEsquema=@Model.creditos.FirstOrDefault().Esquema.id"+ "&IdSolicitud=@Model.solicitudCotizacion.Id" + "&monto=" + $("#txtMonto").val()
+        }
+
+        function Registrar() {
+
+            if (!$("#chkDos").is(":checked")) {
+                MostrarError();
+                return;
+            }
+         else {
+            CloseError();
+        }
+
+            $("#tabRegistroSecon").removeClass("active");
+            $("#tabLoginSecon").removeClass("active");
+            $("#tabRegistroSecon").addClass("active");
+            $("#LinktabRegistroSecon").removeClass("active");
+            $("#LinktabLoginSecon").removeClass("active");
+            $("#LinktabRegistroSecon").addClass("active");
+
+            var URL_Register = '@Url.Action("RegisterPorIdSolicitud", "Account", new { IdSolicitud = Model.solicitudCotizacion.Id })';
+
+            $.get(URL_Register).done(function (data) {
+                $("#tabRegistroSecon").html(data);
+            });
+
+            $("#ModalLogginSecon").modal("show");
+        }
+
+        function RegistroUserSecon() {
+            $("#tabRegistro").removeClass("active");
+            $("#tabLogin").removeClass("active");
+            $("#tabRegistro").addClass("active");
+            $("#LinktabRegistro").removeClass("active");
+            $("#LinktabLogin").removeClass("active");
+            $("#LinktabRegistro").addClass("active");
+
+            var URL_Register = '@Url.Action("RegisterPorIdSolicitud", "Account", new { IdSolicitud = Model.solicitudCotizacion.Id })';
+
+            $.get(URL_Register).done(function (data) {
+                $("#tabRegistro").html(data);
+            });
+        }
+
+
+    </script>
+
+}

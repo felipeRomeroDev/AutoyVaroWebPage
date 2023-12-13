@@ -1,0 +1,987 @@
+﻿@using AutoyVaro.com.libroazul.www
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+ <!-- ##### Hero Area Start ##### -->
+<style type="text/css">
+    .ocultar {
+        display:none;
+    }
+    .btn-height {
+        min-height: 100%;
+        min-width:100%;
+        text-align: center;
+        
+    }
+    .avatarImageButon {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    white-space: nowrap;
+    vertical-align: bottom;
+    border-radius: 100px;
+    padding-left:15%;
+    padding-right:15%;
+}
+
+    .panel-cotizador {
+        max-height:100%;
+        min-height:100%;        
+        border-top: 3px solid #3f51b5 !important;
+    }
+
+    .col-3-pb {
+        padding-bottom: 5px;
+        min-width: 120px !important; 
+    }
+
+    .link2 {
+        color: #3949ab;
+        text-decoration: none;
+        background-color: transparent;
+        -webkit-text-decoration-skip: objects;
+        font-size: 12px;
+    }
+
+</style>
+
+
+
+<section class="container-fluid bg-gray">
+    <br>
+
+    <div class="row">
+
+
+
+        <div class="col-md-7 col-lg-8">
+
+            <div class="hero-area">
+                <div class="hero-slideshow owl-carousel">
+
+                    <!-- Single Slide -->
+                    <div class="single-slide-xs bg-img">
+                        <!-- Background Image-->
+                        <div class="slide-bg-img bg-img bg-overlay" style="background-image: url(//autoyvaro.mx/wp-content/uploads/2021/10/black-car-on-the-road-scaled-800x500.jpg);"></div>
+                        <!-- Welcome Text -->
+                        <div class="container h-100">
+                            <div class="row h-100 align-items-center justify-content-center">
+                                <div class="col-12 col-lg-9">
+                                    <div class="welcome-text text-center">
+                                        <h6 data-animation="fadeInUp" data-delay="100ms">En auto y varo</h6>
+                                        <h2 data-animation="fadeInUp" data-delay="300ms">Aceptamos modelos <span>2010</span> En adelante</h2>
+                                        <p data-animation="fadeInUp" data-delay="500ms">Contamos con plazo de hasta 24 meses</p>
+                                        <a href="#" class="btn credit-btn mt-50" data-animation="fadeInUp" data-delay="700ms">Discover</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide Duration Indicator -->
+                        <div class="slide-du-indicator"></div>
+                    </div>
+
+                    <!-- Single Slide -->
+                    <div class="single-slide-xs bg-img">
+                        <!-- Background Image-->
+                        <div class="slide-bg-img bg-img bg-overlay" style="background-image: url(https://autoyvaro.mx/wp-content/uploads/2021/10/driver-woman-of-car-waves-back-as-sign-of-farewell-on-the-street-scaled-800x500.jpg);"></div>
+                        <!-- Welcome Text -->
+                        <div class="container h-100">
+                            <div class="row h-100 align-items-center justify-content-center">
+                                <div class="col-12 col-lg-9">
+                                    <div class="welcome-text text-center">
+                                        <h6 data-animation="fadeInDown" data-delay="100ms">Auto y Varo</h6>
+                                        <h2 data-animation="fadeInDown" data-delay="300ms">Te <span>ayudamos</span> con tus planes</h2>
+                                        <p data-animation="fadeInDown" data-delay="500ms">Tu Auto es tu Garantía</p>
+                                        <a href="#" class="btn credit-btn mt-50" data-animation="fadeInDown" data-delay="700ms">Simila tu Crédito</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide Duration Indicator -->
+                        <div class="slide-du-indicator"></div>
+                    </div>
+
+                    <!-- Single Slide -->
+                    <div class="single-slide-xs bg-img">
+                        <!-- Background Image-->
+                        <div class="slide-bg-img bg-img bg-overlay" style="background-image: url(../Content/Page/img/bg-img/1.jpg);"></div>
+                        <!-- Welcome Text -->
+                        <div class="container h-100">
+                            <div class="row h-100 align-items-center justify-content-center">
+                                <div class="col-12 col-lg-9">
+                                    <div class="welcome-text text-center">
+                                        <h6 data-animation="fadeInUp" data-delay="100ms"></h6>
+                                        <h2 data-animation="fadeInUp" data-delay="300ms">Obten tu crédito en menos de <span>24 Horas</span></h2>
+                                        <p data-animation="fadeInUp" data-delay="500ms">Sin dejarnos tu auto</p>
+                                        <a href="#" class="btn credit-btn mt-50" data-animation="fadeInUp" data-delay="700ms">Simila tu Crédito</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide Duration Indicator -->
+                        <div class="slide-du-indicator"></div>
+                    </div>
+
+                    <!-- Single Slide -->
+                    <div class="single-slide-xs bg-img">
+                        <!-- Background Image-->
+                        <div class="slide-bg-img bg-img bg-overlay" style="background-image: url(../Content/Page/img/bg-img/5.jpg);"></div>
+                        <!-- Welcome Text -->
+                        <div class="container h-100">
+                            <div class="row h-100 align-items-center justify-content-center">
+                                <div class="col-12 col-lg-9">
+                                    <div class="welcome-text text-center">
+                                        <h6 data-animation="fadeInDown" data-delay="100ms">En Auto y Varo</h6>
+                                        <h2 data-animation="fadeInDown" data-delay="300ms">Creemos en tus <span>SUEÑOS</span></h2>
+                                        <p data-animation="fadeInDown" data-delay="500ms">Continúa con tu vida y tu auto</p>
+                                        <a href="#" class="btn credit-btn mt-50" data-animation="fadeInDown" data-delay="700ms">Simila tu Crédito</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide Duration Indicator -->
+                        <div class="slide-du-indicator"></div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="col-md-5 col-lg-4 cta-content">
+            
+
+            <!-- Panel Wizard Form Container -->
+            <div class="panel panel-cotizador " id="exampleWizardFormContainer">
+                <div class="panel-heading">
+                    <h3 class="panel-title text-orange">¡Cotiza tu préstamo!</h3>
+                </div>
+                <div class="panel-body">
+                    <!-- Steps -->
+                    <div class="pearls row">
+                        <div class="pearl col-3 pearlAnios" onclick="prevEvent('anios')">
+                            <div id="anioSelect" class="pearl-icon"><i class="icon wb-calendar" aria-hidden="true"></i></div>
+                            <span class="pearl-title">Año</span>
+                            <input type="hidden" id="hdnAnioSelect"/>
+                        </div>
+                        <div class="pearl col-3 pearlMarcas" onclick="prevEvent('marcas')">
+                            <div id="marcaSelect" class="pearl-icon"><i class="icon wb-bookmark" aria-hidden="true"></i></div>
+                            <span class="pearl-title">Marca</span>
+                            <input type="hidden" id="hdnMarcaSelect" />
+                        </div>
+                        <div class="pearl col-3 pearlModelos" onclick="prevEvent('modelos')">
+                            <div id="modeloSelect" class="pearl-icon"><i class="icon wb-menu" aria-hidden="true"></i></div>
+                            <span class="pearl-title">Modelo</span>
+                            <input type="hidden" id="hdnModeloSelect" />
+                        </div>
+                        <div class="pearl col-3 pearlVersiones" onclick="prevEvent('versiones')">
+                            <div id="versionSelect" class="pearl-icon"><i class="icon wb-check" aria-hidden="true"></i></div>
+                            <span class="pearl-title">Versión</span>
+                            <input type="hidden" id="hdnVersionSelect" />
+                        </div>
+                    </div>
+                    <!-- End Steps -->
+                    <!-- Wizard Content -->
+                    
+                    <div class="wizard-content">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table table-responsive">
+                                    <tbody>
+                                        <tr>
+                                            <th class="text-orange"><i class="fa fa-car" aria-hidden="true"></i></th>
+                                            <th id="lblMarca" class="text-blue"></th>
+                                            <th id="lblModelo" class="text-blue"></th>
+                                            <th id="lblAnio" class="text-blue"></th>
+                                            <th colspan="3"><span id="lblVersion" class="text-orange"></span></th>
+                                        </tr>
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="wizard-pane active" id="panelAnios" role="tabpanel">
+
+                            <div class="panel">
+                                <div class="panel-heading" style="border-top: 1px solid #3f51b5 !important;">
+                                    <button type="button" disabled="disabled" class="btn btn-outline btn-primary btn-xs"><i class="icon wb-reply" aria-hidden="true"></i>Atras</button>
+                                    <label style="width:80%;"><h5 class="text-blue text-center">¿Cual es el año de tu auto?</h5></label>                                                                        
+                                </div>
+                                <div class="panel-body">
+                                    
+                                    <div class="row" id="contenedorAnios">
+
+                                        @foreach (var item in ViewBag.Anios as Catalogo[])
+                                        {
+                                            <div class="col-3">
+                                                <label class="btn btn-default label-anios">
+                                                    <input type="radio" id="rdbAnios" name="rdbAnios" autocomplete="off" value="@item.Clave">
+                                                    <i class="icon wb-check ocultar" aria-hidden="true"></i> @item.Nombre
+                                                </label>
+                                            </div>
+                                        }
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="wizard-pane" id="panelMarcas" role="tabpanel">
+
+                            <div class="panel">
+                                <div class="panel-heading" style="border-top: 1px solid #3f51b5 !important;">
+                                    <button type="button" onclick="prevEvent('anios');" class="btn btn-outline btn-primary btn-xs"><i class="icon wb-reply" aria-hidden="true"></i>Atras</button>
+                                    <label style="width:80%;"><h5 class="text-blue text-center">¿Cual es la marca?</h5></label>                                    
+                                  </div>
+                                <div class="panel-body h-lg-250" data-plugin="scrollable" data-skin="scrollable-shadow">                                    
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" name="" placeholder="Buscar marca ...">
+                                            <span class="input-group-append">
+                                                <button type="submit" class="btn btn-primary"><i class="icon wb-search" aria-hidden="true"></i></button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div data-role="container" style="min-width: 100%;">
+                                        <div data-role="content" id="divMarcasPorAnio" style="min-width: 100%;">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+
+                        <div class="wizard-pane" id="panelModelos" role="tabpanel">
+
+                            <div class="panel">
+                                <div class="panel-heading" style="border-top: 1px solid #3f51b5 !important;">
+                                    <button type="button" onclick="prevEvent('marcas');" class="btn btn-outline btn-primary btn-xs"><i class="icon wb-reply" aria-hidden="true"></i>Atras</button>
+                                    <label style="width:80%;"><h5 class="text-blue text-center">¿Que molde lo es?</h5></label>                                    
+                                </div>
+                                <div class="panel-body h-lg-250" data-plugin="scrollable" data-skin="scrollable-shadow">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" name="" placeholder="Buscar modelo...">
+                                            <span class="input-group-append">
+                                                <button type="submit" class="btn btn-primary"><i class="icon wb-search" aria-hidden="true"></i></button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div data-role="container" style="min-width: 100%;">
+                                        <div data-role="content" id="divModelosPorAnio" style="min-width: 100%;">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="wizard-pane" id="panelVersiones" role="tabpanel">
+                            <div class="panel">
+                                <div class="panel-heading" style="border-top: 1px solid #3f51b5 !important;">
+                                    <button type="button" onclick="prevEvent('modelos');" class="btn btn-outline btn-primary btn-xs"><i class="icon wb-reply" aria-hidden="true"></i>Atras</button>
+                                    <label style="width:80%;"><h5 class="text-blue text-center">¿Que versión es?</h5></label>
+                                </div>
+                                <div class="panel-body h-lg-250" data-plugin="scrollable" data-skin="scrollable-shadow">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" name="" placeholder="Buscar versión">
+                                            <span class="input-group-append">
+                                                <button type="submit" class="btn btn-primary"><i class="icon wb-search" aria-hidden="true"></i></button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div data-role="container" style="min-width: 100%;">
+                                        <div data-role="content" id="divVersioPorAnio" style="min-width: 100%;">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="wizard-pane" id="panelPropuesta" role="tabpanel">
+                            <div class="panel">
+                                <div class="panel-heading" style="border-top: 1px solid #3f51b5 !important;">
+                                    <button type="button" onclick="prevEvent('versiones');" class="btn btn-outline btn-primary btn-xs"><i class="icon wb-reply" aria-hidden="true"></i>Atras</button>
+                                    <label style="width:80%;"><h5 class="text-blue text-center">Cuéntanos un poco sobre ti</h5></label>
+                                </div>
+                                <div class="panel-body" id="PanelDatos">
+
+                                    
+                                </div>
+                            </div>
+                        </div>
+     
+
+
+                    </div>
+
+
+
+                    <!-- Wizard Content -->
+                </div>
+            </div>
+            <!-- End Panel Wizard Form Container -->
+
+
+        </div>
+
+    
+    </div>
+
+</section>
+
+<div id="loading" class="hidden ocultar">
+
+    <div class="example-wrap">        
+        <div class="example-loading example-well h-150 vertical-align text-center">
+            <div class="loader vertical-align-middle loader-grill"></div>
+        </div>
+    </div>
+
+</div>
+
+<div class="hidden ocultar">
+    <div id="TempleteMarcas">
+        
+    </div>
+    
+</div>
+
+
+<!-- ##### Hero Area End ##### -->
+<!-- ##### Features Area Start ###### -->
+<section class="features-area section-padding-100-0">
+    <div class="container">
+        <div class="row align-items-end">
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="single-features-area mb-100 wow fadeInUp" data-wow-delay="100ms">
+                    <!-- Section Heading -->
+                    <div class="section-heading">
+                        <div class="line"></div>
+                        <p>Mira</p>
+                        <h2>Nuestros prestamos</h2>
+                    </div>
+                    <h6>Queremos que tu vida siga su curso sin problemas financieros. Hemos creado un crédito para que obtengas el financiamiento que buscas garantizado con tu auto.</h6>
+                    <a href="#" class="btn credit-btn mt-50">Mas información</a>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="single-features-area mb-100 wow fadeInUp" data-wow-delay="300ms">
+                    <img src="../Content/Page/img/bg-img/2.jpg" alt="">
+                    <h5>Te cuidamos</h5>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="single-features-area mb-100 wow fadeInUp" data-wow-delay="500ms">
+                    <img src="../Content/Page/img/bg-img/3.jpg" alt="">
+                    <h5>Asesoria inmediata</h5>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="single-features-area mb-100 wow fadeInUp" data-wow-delay="700ms">
+                    <img src="../Content/Page/img/bg-img/4.jpg" alt="">
+                    <h5>Préstamos rápidos y fáciles</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ##### Features Area End ###### -->
+<!-- ##### Call To Action Start ###### -->
+<section class="cta-area d-flex flex-wrap">
+    <!-- Cta Thumbnail -->
+    <div class="cta-thumbnail bg-img jarallax" style="background-image: url(../Content/Page/img/bg-img/5.jpg);"></div>
+
+    <!-- Cta Content -->
+    <div class="cta-content">
+        <!-- Section Heading -->
+        <div class="section-heading white">
+            <div class="line"></div>
+            <p>En Auto y Varo</p>
+            <h2>Ayudando a pequeñas empresas como la suya</h2>
+        </div>
+        <h6>
+            Obtén un <b class="text-blue">préstamo por tu Auto sin tener que dejarlo,</b> sigue con esa productividad y nunca faltes a tus compromisos. Queremos que continúes con tu calidad de vida, te ofrecemos un crédito a tu medida, contamos con variedad de plazos y opciones que se adecuan a tus necesidades. Somos la opción financiera que tiene una solución inmediata para ti.
+            Tu Auto siempre contigo… Auto y varo.
+        </h6>
+        <div class="d-flex flex-wrap mt-50">
+            <!-- Single Skills Area -->
+            
+            <!-- Single Skills Area -->
+            
+        </div>
+        <a href="#" class="btn credit-btn box-shadow btn-2">Leer mas</a>
+    </div>
+</section>
+<!-- ##### Call To Action End ###### -->
+<!-- ##### Call To Action Start ###### -->
+<section class="cta-2-area wow fadeInUp" data-wow-delay="100ms">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <!-- Cta Content -->
+                <div class="cta-content d-flex flex-wrap align-items-center justify-content-between">
+                    <div class="cta-text">
+                        <h4>¿Necesitas una lana? Póngase en contacto con nosotros.</h4>
+                    </div>
+                    <div class="cta-btn">
+                        <a href="#" class="btn credit-btn box-shadow">Leer más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ##### Call To Action End ###### -->
+<!-- ##### Services Area Start ###### -->
+<section class="services-area section-padding-100-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <!-- Section Heading -->
+                <div class="section-heading text-center mb-100 wow fadeInUp" data-wow-delay="100ms">
+                    <div class="line"></div>
+                    <p>Mira</p>
+                    <h2>Nuestros servicios</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Single Service Area -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="single-service-area d-flex mb-100 wow fadeInUp" data-wow-delay="200ms">
+                    <div class="icon">
+                        <i class="icon-profits"></i>
+                    </div>
+                    <div class="text">
+                        <h5>TASAS COMPETITIVAS</h5>
+                        <p>Las tasas más competitivas del mercado.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Service Area -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="single-service-area d-flex mb-100 wow fadeInUp" data-wow-delay="300ms">
+                    <div class="icon">
+                        <i class="icon-money-1"></i>
+                    </div>
+                    <div class="text">
+                        <h5>Respuesta fácil y rápida</h5>
+                        <p>Te solucionamos a la brevedad.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Service Area -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="single-service-area d-flex mb-100 wow fadeInUp" data-wow-delay="400ms">
+                    <div class="icon">
+                        <i class="icon-coin"></i>
+                    </div>
+                    <div class="text">
+                        <h5>Sin papeles adicionales</h5>
+                        <p>Sin necesidad de un aval.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Service Area -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="single-service-area d-flex mb-100 wow fadeInUp" data-wow-delay="500ms">
+                    <div class="icon">
+                        <i class="icon-smartphone-1"></i>
+                    </div>
+                    <div class="text">
+                        <h5>Servicios financieros seguros</h5>
+                        <p>Tu auto es tu garantía.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Service Area -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="single-service-area d-flex mb-100 wow fadeInUp" data-wow-delay="600ms">
+                    <div class="icon">
+                        <i class="icon-diamond"></i>
+                    </div>
+                    <div class="text">
+                        <h5>PLAZOS DE 24 MESES</h5>
+                        <p>Nos adaptamos a tus necesidades.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Service Area -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="single-service-area d-flex mb-100 wow fadeInUp" data-wow-delay="700ms">
+                    <div class="icon">
+                        <i class="icon-piggy-bank"></i>
+                    </div>
+                    <div class="text">
+                        <h5>Metas de acumulación</h5>
+                        <p>0% COMISIÓN POR APERTURA</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ##### Services Area End ###### -->
+<!-- ##### Miscellaneous Area Start ###### -->
+<section class="miscellaneous-area bg-gray section-padding-100-0">
+    <div class="container">
+        <div class="row align-items-end justify-content-center">
+            <!-- Add Area -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="add-area mb-100 wow fadeInUp" data-wow-delay="100ms">
+                    <a href="#"><img src="../Content/Page/img/bg-img/add.png" alt=""></a>
+                </div>
+            </div>
+
+            <!-- Contact Area -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="contact--area mb-100 wow fadeInUp" data-wow-delay="300ms">
+                    <!-- Section Heading -->
+                    <div class="section-heading mb-50">
+                        <div class="line"></div>
+                        <h2>Ponerse en contacto</h2>
+                    </div>
+                    <!-- Contact Content -->
+                    <div class="contact-content">
+                        <!-- Single Contact Content -->
+                        <div class="single-contact-content d-flex align-items-center">
+                            <div class="icon">
+                                <img src="../Content/Page/img/core-img/location.png" alt="">
+                            </div>
+                            <div class="text">
+                                <p>Avenida Orizaba 203 <br> Xalapa, 91020</p>
+                            </div>
+                        </div>
+                        <!-- Single Contact Content -->
+                        <div class="single-contact-content d-flex align-items-center">
+                            <div class="icon">
+                                <img src="../Content/Page/img/core-img/call.png" alt="">
+                            </div>
+                            <div class="text">
+                                <p>2283111999</p>
+                                <span>Lunes a Viernes , 08.am - 17.pm</span>
+                            </div>
+                        </div>
+                        <!-- Single Contact Content -->
+                        <div class="single-contact-content d-flex align-items-center">
+                            <div class="icon">
+                                <img src="../Content/Page/img/core-img/message2.png" alt="">
+                            </div>
+                            <div class="text">
+                                <p>contact@autoyvaro.com</p>
+                                <span>Respondemos antes de 24 hrs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- News Area -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="news--area mb-100 wow fadeInUp" data-wow-delay="500ms">
+                    <!-- Section Heading -->
+                    <div class="section-heading mb-50">
+                        <div class="line"></div>
+                        <h2>Noticias</h2>
+                    </div>
+
+                   
+
+                    <!-- Single News Area -->
+                    <div class="single-news-area d-flex align-items-center">
+                        <div class="news-thumbnail">
+                            <img src="../Content/Page/img/bg-img/10.jpg" alt="">
+                        </div>
+                        <div class="news-content">
+                            <span>July 18, 2018</span>
+                            <a href="#">Cómo conseguir el mejor préstamo online</a>
+                            <div class="news-meta">
+                                <a href="#" class="post-author"><img src="../Content/Page/img/core-img/pencil.png" alt=""> Juan Smith</a>
+                                <a href="#" class="post-date"><img src="../Content/Page/img/core-img/calendar.png" alt=""> April 26</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Single News Area -->
+                    <div class="single-news-area d-flex align-items-center">
+                        <div class="news-thumbnail">
+                            <img src="../Content/Page/img/bg-img/11.jpg" alt="">
+                        </div>
+                        <div class="news-content">
+                            <span>July 18, 2018</span>
+                            <a href="#">Una nueva forma de financiar la casa de sus sueños</a>
+                            <div class="news-meta">
+                                <a href="#" class="post-author"><img src="../Content/Page/img/core-img/pencil.png" alt=""> Andres Garcia</a>
+                                <a href="#" class="post-date"><img src="../Content/Page/img/core-img/calendar.png" alt=""> April 26</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Single News Area -->
+                    <div class="single-news-area d-flex align-items-center">
+                        <div class="news-thumbnail">
+                            <img src="../Content/Page/img/bg-img/12.jpg" alt="">
+                        </div>
+                        <div class="news-content">
+                            <span>July 18, 2018</span>
+                            <a href="#">consejos para conseguir el mejor préstamo para ti</a>
+                            <div class="news-meta">
+                                <a href="#" class="post-author"><img src="../Content/Page/img/core-img/pencil.png" alt=""> Romero Toro</a>
+                                <a href="#" class="post-date"><img src="../Content/Page/img/core-img/calendar.png" alt=""> April 26</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ##### Miscellaneous Area End ###### -->
+<!-- ##### Newsletter Area Start ###### -->
+<section class="newsletter-area section-padding-100 bg-img jarallax" style="background-image: url(../Content/Page/img/bg-img/6.jpg);">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-10 col-lg-8">
+                <div class="nl-content text-center">
+                    <h2>Suscríbete a nuestro boletín</h2>
+                    <form action="#" method="post">
+                        <input type="email" name="nl-email" id="nlemail" placeholder="Your e-mail">
+                        <button type="submit">Suscríbete</button>
+                    </form>
+                    <p>Curabitur elit turpis, maximus quis ullamcorper sed, maximus eu neque. Cras ultrices erat nec auctor blandit.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ##### Newsletter Area End ###### -->
+
+
+<div style="display:none">
+    <div id="loading">
+        <div class="col-md-12">
+            <div class="example-loading example-well h-150 vertical-align text-center" style="width: 100%;">
+                <div class="loader vertical-align-middle loader-bounce"></div>
+            </div>
+        </div>        
+    </div>
+</div>
+
+
+@section Scripts {
+
+<script type="text/javascript">
+
+
+
+    var listMarcas = [];
+
+    function GetMarcaSelect(IdAnio) {        
+        var urlMarasPartial = '@Url.Action("MarcarPorAnio", "Home")';        
+        $("#divMarcasPorAnio").html($("#loading").html());
+        $.get(urlMarasPartial, { IdAnio: IdAnio }).done(function (Date) {
+            $("#divMarcasPorAnio").html(Date);
+            console.log(listaMarcasTemporal);
+        });
+    }
+
+    function GetModeloSelect(IdAnio, IdMarca)
+    {
+        var urlModelosPartial = '@Url.Action("ModelosPorAnioMarca", "Home")';        
+        $("#divModelosPorAnio").html($("#loading").html());
+        $.get(urlModelosPartial, { IdAnio: IdAnio, IdMarca: IdMarca }).done(function (Date) {
+            $("#divModelosPorAnio").html(Date);
+            console.log(listaModelosTemporal);
+        });
+
+    }
+
+    function GetVersionSelect(IdAnio, IdMarca, IdModelo)
+    {
+        var urlVersionPartial = '@Url.Action("VersionPorAnioMarcaModelo", "Home")';        
+        $("#divVersioPorAnio").html($("#loading").html());
+        $.get(urlVersionPartial, { IdAnio: IdAnio, IdMarca: IdMarca, IdModelo: IdModelo }).done(function (Date) {
+            $("#divVersioPorAnio").html(Date);
+            console.log(listaVersionesTemporal);
+        });
+    }
+
+    $("#IdAnio").change(function () {
+        var IdAnio = $("#IdAnio").val();
+        GetMarcaSelect(IdAnio);
+        clearComboBox("IdModelo", "Seleccionar", -1)
+        clearComboBox("IdVersion", "Seleccionar", -1)
+    })
+
+    $("#IdMarca").change(function () {
+        var IdAnio = $("#IdAnio").val();
+        var IdMarca = $("#IdMarca").val();
+        GetModeloSelect(IdAnio, IdMarca);
+        clearComboBox("IdVersion", "Seleccionar", -1)
+    })
+
+    $("#IdModelo").change(function () {
+        var IdAnio = $("#IdAnio").val();
+        var IdMarca = $("#IdMarca").val();
+        var IdModelo = $("#IdModelo").val();
+        GetVersionSelect(IdAnio, IdMarca, IdModelo);
+    })
+
+    function clearComboBox(select, Label, DefaulValue) {
+        $('#' + select + ' option').remove();
+        $('#' + select).append('<option value="' + DefaulValue + '">' + Label + '</option>');
+    }
+
+    function CalcularSimulacion() {
+        var Clave = $("#IdVesion").val();
+        var Nombre = $('#IdVesion option:selected').text();
+        var url = '@Url.Action("Simulacion", "Home")';
+        var Data = mapSimulacion[Clave];
+        window.location = url + '?Clave=' + Clave + '&Nombre=' + Nombre + '&Compra=' + Data.Compra + '&Moneda=' + Data.Moneda + '&Venta=' + Data.Venta;
+    }
+
+    function fillComboBox(select, controlador, metodo, parametros, value) {
+        var url = '/' + controlador + '/' + metodo
+        $.ajax({
+            async: true,
+            cache: false,
+            dataType: "html",
+            type: 'GET',
+            url: url,
+            data: parametros,
+            success: function (data) {
+                var Data = JSON.parse(data)
+
+                console.log(Data);
+
+                $('#' + select + ' option').remove();
+                if (Data.length == 0) {
+                    $('#' + select).append('<option value=""-1""></option>');
+                }
+                else {
+                    //Se agrega el elemento vacio para poder desplegar que seleccione una opcion
+                    datas = Data;
+                    var id_res = 0;
+                    mapSimulacion = [];
+                    $.each(Data, function (i, item) {
+                        if (select == 'IdVesion') {
+                            mapSimulacion[item.Clave] = item.Precio.Data;
+                        }
+                        $('#' + select).append('<option value="' + item.Clave + '">' +
+                            item.Nombre + '</option>');
+                    });
+                    $('#' + select).val(value);
+                }
+            },
+            beforeSend: function () { },
+            error: function (objXMLHttpRequest) { }
+        });
+    }
+
+
+
+    $(".label-anios input").change(function () {
+        $(".label-anios").removeClass("default");
+        $(".label-anios").removeClass("btn-outline-info");
+        $(this).parent().addClass("btn-outline-info");
+        GetMarcaSelect($(this).val());
+        AddTooltip('anioSelect', $(this).val(), "right");
+        $("#hdnAnioSelect").val($(this).val());
+
+        $("#lblAnio").html($(this).val());
+
+        $("#panelAnios").removeClass("active");
+        $("#panelMarcas").addClass("active");
+        $(".pearlAnios").addClass("current");
+        //$("#colMarcas").html($("#loading").html());
+    });
+
+    
+    function selectMarca(IdMarca, Marca) {
+        $(".label-marcas").removeClass("btn-default");
+        $(".label-marcas").removeClass("btn-outline-info");
+        $("#MarcaId" + IdMarca).addClass("btn-outline-info");
+        GetModeloSelect($("#hdnAnioSelect").val(), IdMarca)
+        AddTooltip('marcaSelect', Marca, "right");
+        $("#hdnMarcaSelect").val(IdMarca);
+
+        $("#lblMarca").html(Marca);
+
+        $("#panelMarcas").removeClass("active");
+        $("#panelModelos").addClass("active");
+        $(".pearlMarcas").addClass("current");
+        
+        
+    }
+
+    function selectModelo(IdModelo, Modelo) {
+        $(".label-modelos").removeClass("btn-default");
+        $(".label-modelos").removeClass("btn-outline-info");
+        $("#ModeloId" + IdModelo).addClass("btn-outline-info");
+        GetVersionSelect($("#hdnAnioSelect").val(), $("#hdnMarcaSelect").val(), IdModelo);
+        AddTooltip('modeloSelect', Modelo, "right");
+        $("#hdnModeloSelect").val(IdModelo);
+
+        $("#lblModelo").html(Modelo);
+
+        $("#panelModelos").removeClass("active");
+        $("#panelVersiones").addClass("active");
+        $(".pearlModelos").addClass("current");
+
+        
+    }
+
+    function selectVersion(IdVersion, version) {
+        $("#PanelDatos").html($("#loading").html());
+        $(".label_version").removeClass("active");
+        $("#VersionId" + IdVersion).addClass("active");
+        //GetVersionSelect($("#hdnAnioSelect").val(), $("#hdnMarcaSelect").val(), IdModelo);
+        AddTooltip('versionSelect', version, "top");
+        $("#hdnVersionSelect").val(IdVersion);        
+        $("#panelPropuesta").addClass("active");
+        $("#panelVersiones").removeClass("active");
+        $("#lblVersion").html(version);
+        $(".pearlVersiones").addClass("current");
+        
+        $("#PanelDatos").html("");        
+        var UrlSolicitud = '@Url.Action("Solicitud", "Home")';
+        $.get(UrlSolicitud, {
+            IdAnio: $("#hdnAnioSelect").val(),
+            IdMarca: $("#hdnMarcaSelect").val(),
+            IdModelo: $("#hdnModeloSelect").val(),
+            IdVersion: $("#hdnVersionSelect").val()
+        }).done(function (Data) {
+            $("#PanelDatos").html(Data);
+        });
+        
+    }
+
+    function prevEvent(pestania) {
+        switch (pestania) {
+            case 'anios':
+                if (!$(".pearlAnios").attr("class").includes("current")) {
+                    return false;
+                }
+                $("#panelMarcas").removeClass("active");
+                $("#panelAnios").addClass("active");
+                $(".pearlAnios").addClass("current");
+                $(".pearlMarcas").removeClass("current");
+                $(".pearlModelos").removeClass("current");
+                $(".pearlVersiones").removeClass("current");
+                $("#panelPropuesta").removeClass("active");
+                RemoveTooltip("marcaSelect");
+                RemoveTooltip("modeloSelect");
+                RemoveTooltip("versionSelect");
+                break;
+            case 'marcas':
+                if (!$(".pearlMarcas").attr("class").includes("current")) {
+                    return false;
+                }
+                $("#panelModelos").removeClass("active");
+                $("#panelMarcas").addClass("active");
+                $(".panelMarcas").addClass("current");
+                $(".pearlModelos").removeClass("current");
+                $(".pearlVersiones").removeClass("current");
+                $("#panelPropuesta").removeClass("active");
+
+                RemoveTooltip("modeloSelect");
+                RemoveTooltip("versionSelect");
+                break;
+            case 'modelos':
+                if (!$(".pearlModelos").attr("class").includes("current")) {
+                    return false;
+                }
+                $("#panelVersiones").removeClass("active");
+                $("#panelModelos").addClass("active");
+                $(".panelModelos").addClass("current");
+                $(".pearlVersiones").removeClass("current");
+                $("#panelPropuesta").removeClass("active");
+                RemoveTooltip("modeloSelect");
+                RemoveTooltip("versionSelect");
+                break;
+
+            case 'versiones':
+                if (!$(".pearlVersiones").attr("class").includes("current")) {
+                    return false;
+                }
+                $("#panelVersiones").addClass("active");
+                $("#panelPropuesta").removeClass("active");
+                RemoveTooltip("versionSelect");
+                break;
+
+            default:
+                return false;
+                break;
+        }
+    }
+
+    function MostrarMarcas() {
+        var TempleteMarcas;
+    }
+
+    function refreshMarca(lista) {
+        if (listMarcas.length() > 0) {
+            $.each(lista, function (value, index) {
+
+            })
+        } else {
+
+        }
+        listMarcas
+        //logo-(item.Nombre.Replace(" ", ""))
+    }
+
+    $(function ($) {
+        $('.panelMarcas').asScrollable();
+    });
+
+
+    function AddTooltip(id, mensaje, pocision) {
+        $("#" + id).attr("data-toggle", "tooltip");
+        $("#" + id).attr("data-placement", pocision);
+        $("#" + id).attr("data-trigger", "hover");
+        $("#" + id).attr("title", mensaje);
+        $("#" + id).attr("data-original-title", mensaje);
+        $("#" + id).tooltip();
+    }
+    function RemoveTooltip(Id) {
+        $("#" + Id).tooltip('hide');
+        $("#" + Id).removeAttr("data-toggle");
+        $("#" + Id).removeAttr("data-placement");
+        $("#" + Id).removeAttr("data-trigger");
+        $("#" + Id).removeAttr("data-original-title");
+        $("#" + Id).removeAttr("title");
+    }
+
+
+    function MostrarDetalle() {
+        
+    }
+
+   
+
+</script>
+}

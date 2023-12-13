@@ -1,0 +1,57 @@
+﻿@model IEnumerable<AutoyVaro.Fin_Solicitud>
+
+@{
+    ViewBag.Title = "Solicitudes";
+    Layout = "~/Views/Shared/_Layoutv2.cshtml";
+}
+
+<section class="breadcrumbs">
+    <div class="container">
+
+
+        <h2>Solicitudes</h2>
+
+    </div>
+</section><!-- End Breadcrumbs -->
+
+<section class="inner-page">
+    <div class="container">
+        <div class="table-responsive">
+
+            <table class="table table-striped table-bordered table-hover" id="dataTablesData">
+                <tr>
+                    <th>
+                        Fecha
+                    </th>
+                    <th>
+                        Monto
+                    </th>
+
+                    <th>
+                        Modelo
+                    </th>
+                    <th></th>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FechaSolicitud)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MontoSolicitado)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Fit_Vehiculo.LA_Modelos.Nombre)
+                        </td>
+                        <td>
+                            <div class="btn-group" role="group" colspan="3">
+                                @Html.ActionLink("Seguimiento", "Index", new { IdSolicitud = item.Id }, new { @class = "btn btn-info" })
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</section>

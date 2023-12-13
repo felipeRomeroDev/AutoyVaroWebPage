@@ -1,0 +1,116 @@
+﻿@model AutoyVaro.Fin_DocumentacionSolicitud
+<div class="row">
+    <div class="col-md-12">
+        @using (Html.BeginForm("NuevoArchivoExpediente", "Documentacion", FormMethod.Post, new { id = "nuevoArchivo", enctype = "multipart/form-data" }))
+        {
+            @Html.Hidden("id")
+            @Html.AntiForgeryToken()
+            <div class="form-group">
+                @Html.Hidden("TipoArchivo", 1)
+            </div>
+
+            <p>
+                Puede subir su documentación en los siguientes formatos:
+            </p>
+            <p>
+                <span class="badge badge-info tags">JPG</span>
+                <span class="badge badge-info tags">PNG</span>
+                <span class="badge badge-info tags">PDF</span>
+            </p>
+
+            <div class="form-group">
+                <label>Descripción</label>
+                <input type="text" name="descripcion" id="descripcion" class="form-control" required />
+            </div>
+
+            <div class="form-group">
+                <!-- Example Default -->
+                <input type="file" name="ArchivoExpediente" data-filename-placement="inside"
+                       accept="application/pdf, image/*" id="ArchivoExpediente" class="" />
+                <!-- End Example Default -->
+            </div>
+
+
+            <div class="form-group text-right">
+
+                <button type="submit" class="btn style1 ladda-button btnGuardarFile" id="cargarArchivo" data-style="expand-right"
+                        data-plugin="ladda">
+                    <span class="ladda-label">
+                        <i class="icon wb-upload mr-10" aria-hidden="true"></i>Enviar documento
+                    </span>
+                </button>
+
+            </div>
+
+        }
+    </div>
+
+</div>
+
+<script>
+
+    var btnGuardarFile = Ladda.create(document.querySelector('.btnGuardarFile'));
+
+    $('#ArchivoExpediente').dropify();
+        $("#nuevoArchivo").submit(function (event) {
+            event.preventDefault();            
+            var __RequestVerificationToken = $("input[name=__RequestVerificationToken]").val();
+            var id = $("#id").val();
+            var ArchivoExpediente = $("#ArchivoExpediente");
+            var Descripcion = $("#descripcion").val();
+            var imagefile = document.getElementById("ArchivoExpediente").files[0];
+            if (imagefile === undefined) {
+                notie.alert({ type: 2, text: 'Se requiere seleccionar un archivo.', time: 3 })
+            }
+            else{
+                $( "#ModalBody" ).addClass( "hidden" );
+                $( "#loader" ).removeClass( "hidden" );
+                var formData = new FormData();
+                btnGuardarFile.start();
+                formData.append("__RequestVerificationToken",__RequestVerificationToken);
+                formData.append("id",id);
+                formData.append("ArchivoExpediente",imagefile);
+                formData.append("descripcion", Descripcion);
+                $.ajax({
+                    url: '@Url.Action("NuevoArchivoExpediente", "Documentacion")',  //Server script to process data
+                    type: 'POST',
+                    //Ajax events
+                    //beforeSend: beforeSendHandler,
+                    success: UploadComplete,
+                    error: UploadFailed,
+                    // Form data
+                    data: formData,
+                    //Options to tell jQuery not to process data or worry about content-type.
+                    cache: false,
+                    contentType: false,
+                    processData: false
+                });
+            }
+        });
+
+        function UploadComplete(evt){
+            //console.info(evt);
+            btnGuardarFile.stop();
+            $( "#loader" ).addClass( "hidden" );
+            $('#myModal').modal('hide');
+            setTimeout(function(){                
+                $("#ModalBody").removeClass("hidden");                
+            }, 2000);
+            $("#table").bootstrapTable("refresh");
+            if (evt == "False") {                
+                notie.alert({ type: 1, text: "Archivo subido correctamente", time: 2 })                
+            }else{
+                notie.alert({ type: 1, text: "Archivo subido correctamente", time: 3 })
+            }
+            actualizarEventos();
+
+        }
+        function UploadFailed(evt){
+            setTimeout(function(){
+                $('#myModal').modal('hide');
+                $( "#ModalBody" ).removeClass( "hidden" );
+            }, 1500);
+
+        }
+
+</script>

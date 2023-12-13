@@ -1,0 +1,22 @@
+﻿@model List<AutoyVaro.Models.MarcasModel>
+
+<div class="row">    
+    @foreach (var item in Model.ToList())
+    {
+        <div class="col-md-3 col-3-pb" id="logo-@(item.Nombre.Replace(" ", ""))">
+            <a class="media btn btn-default btn-outline btn-height label-marcas" id="@("MarcaId"+item.Id)" onclick="selectMarca(@item.Id, '@item.Nombre')">
+                <div class="pr-20">
+                    <div class="avatarImageButon">
+                        <img class="img-fluid" src="~/Content/Page/img/Marcas/@item.Logo">
+                    </div>
+                    <h6 class="mt-0 mb-3" style="font-size:9px;">@(item.Nombre.ToUpper())</h6>
+                </div>
+            </a>
+        </div>
+    }
+
+</div>
+
+<script type="text/javascript">
+    var listaMarcasTemporal = @Html.Raw(Json.Encode(Model));
+</script>

@@ -1,0 +1,954 @@
+﻿@model AutoyVaro.Credito
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAPP.cshtml";
+}
+
+<style>
+
+    .panel2 {
+        position: relative;
+        background-color: #fff;
+        z-index: 1;
+        border-radius: 5px;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+        -webkit-box-shadow: 0 0 15px rgb(0 0 0 / 7%);
+        box-shadow: 0 0 15px rgb(0 0 0 / 7%);
+    }
+
+    .bg-blue-9000 {
+        background-color: #030734 !important;
+    }
+    .breadcrumb-wrap-blue {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: 10px 0 !important;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    .bg-spring-blue {
+        background-color: #111542;
+    }
+</style>
+
+<div id="exampleWizardFormContainer">
+
+
+
+
+    <!-- Breadcrumb Start -->
+    <div class="breadcrumb-wrap breadcrumb-wrap-blue bg-spring-blue">
+        <img src="~/Content/assets3/img/breadcrumb/br-shape-1.png" alt="Image" class="br-shape-one xs-none">
+        <img src="~/Content/assets3/img/breadcrumb/br-shape-2.png" alt="Image" class="br-shape-two xs-none">
+        <img src="~/Content/assets3/img/breadcrumb/br-shape-3.png" alt="Image" class="br-shape-three moveHorizontal sm-none">
+        <img src="~/Content/assets3/img/breadcrumb/br-shape-4.png" alt="Image" class="br-shape-four moveVertical sm-none">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-3">
+                    <div class="breadcrumb-title">
+
+                        <h4 class="text-white">Solicitud de Crédito</h4>
+
+                    </div>
+                </div>
+                <div class="col-lg-9">
+
+                    <!-- Steps -->
+                    <div class="pearls row" style="margin: 0px! important;">
+
+
+                        @*<div class="pearl current col-3">
+                            <div class="pearl-icon"><i class="icon fa-check-square-o " aria-hidden="true"></i></div>
+                            <span class="pearl-title text-white">Requisito</span>
+                        </div>*@
+
+                        <div class="pearl current col-3">
+                            <div class="pearl-icon"><i class="icon md-pin-account" aria-hidden="true"></i></div>
+                            <span class="pearl-title text-white">Cliente</span>
+                        </div>
+                        <div class="pearl col-3">
+                            <div class="pearl-icon"><i class="icon md-car" aria-hidden="true"></i></div>
+                            <span class="pearl-title text-white">Vehículo</span>
+                        </div>
+                        <div class="pearl col-3">
+                            <div class="pearl-icon"><i class="icon md-check" aria-hidden="true"></i></div>
+                            <span class="pearl-title text-white">Confirmación</span>
+                        </div>
+                    </div>
+                    <!-- End Steps -->
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
+
+
+
+    <section class="service-wrap ptb-40">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="service-card style4">
+                        <div class="service-info">
+                            <div class="service-title">
+                                <span><i class="flaticon-payment-method"></i></span>
+                                <h3><a href="#">Detalles de tu préstamo</a></h3>
+                            </div>
+                            <div class="service-content">
+
+                                <div class="pricing-header bg-blue-9000">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="pricing-title text-white">Monto del préstamo:</div>
+                                            <div class="pricing-price">
+                                                <span class="pricing-amount text-white" style="font-size: 2rem;">@((Model.EntregaLiquida).ToString("C"))</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="pricing-title text-white">Plazo de hasta:</div>
+                                            <div class="pricing-price">
+                                                <span class="pricing-amount text-white" style="font-size: 2rem;">@Model.getPlazoEnMeses() Meses</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p>
+                                    <br />
+                                    <ul class="content-feature-list list-style">
+                                        <li><i class="ri-check-double-line"></i>Plazo hasta 24 meses.</li>
+                                        <li><i class="ri-check-double-line"></i>Sin comisión por apertura</li>
+                                        <li><i class="ri-check-double-line"></i>Pagos reflejados en capital e intereses.</li>
+                                        <li><i class="ri-check-double-line"></i>Liquida tu crédito desde el mes 3 al 24.</li>
+                                        <li><i class="ri-check-double-line"></i>Sin penalizaciones ni reajustes.</li>
+                                    </ul>
+                                </p>
+
+
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-8">
+
+
+                    <div class="panel panel-primary panel2">
+                        <div class="panel-body">
+
+                            <!-- Wizard Content -->
+                            @using (Html.BeginForm("CreateSolicitud", "Simulador", FormMethod.Post, new { @class = "form-horizontal", role = "form", id = "exampleFormContainer", enctype = "multipart/form-data" }))
+                            {
+
+
+
+
+
+                                <div class="wizard-content">
+
+                                    @*<div class="wizard-pane active row">
+
+
+
+
+                                        <div class="col-md-12">
+                                            <h4>Si su vehículo presenta fallas mecánicas en alguna de las siguientes partes su crédito no procederá.</h4>
+
+                                            <div class="row">
+
+                                                <div class="col-md-4">
+
+                                                    <ul>
+                                                        <li>
+                                                            Bolsas de aire
+                                                        </li>
+                                                        <li>
+                                                            Árbol de levas
+                                                        </li>
+                                                        <li>
+                                                            Sistema eléctrico
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <ul>
+                                                        <li>
+                                                            Transmisión
+                                                        </li>
+                                                        <li>
+                                                            Cigüeñal
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <ul>
+                                                        <li>
+                                                            Compresión cilindro
+                                                        </li>
+                                                        <li>
+                                                            Compresión aceite
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <div class="checkbox-custom checkbox-success">
+                                                    <input class="form-check-input" type="checkbox" value="" id="chkUno" name="chkUno" required>
+                                                    <label class="form-check-label" for="chkUno">
+                                                        Mi vehículo no presenta fallas mecánicas en las partes mencionadas.
+                                                    </label>
+                                                    <div class="invalid-feedback">
+                                                        Debe confirmar que su vehículo no cuenta con alguna de las fallas mencionadas
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <h4>Documentos requeridos para gestionar su crédito.</h4>
+
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <ul>
+                                                        <li>Factura o Refactura Original.</li>
+                                                        <li>Tarjeta de Circulación.</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <ul>
+                                                        <li>INE o Pasaporte.</li>
+                                                        <li>Última tenencia pagada</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <ul>
+                                                        <li>Duplicado de llaves</li>
+                                                        <li>Comprobante de Domicilio Vigente.</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-12">
+                                                <div class="checkbox-custom checkbox-success">
+                                                    <input class="form-check-input" type="checkbox" value="" id="chkDos" name="chkDos" required>
+                                                    <label class="form-check-label" for="chkDos">
+                                                        Cuento con toda la documentación requerida.
+                                                    </label>
+                                                    <div class="invalid-feedback">
+                                                        Debe confirmar que cuenta con todos los documentos solicitados.
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>*@
+
+
+                                    <div class="wizard-pane active row" id="DivDatosContacto" role="tabpanel">
+
+                                        <h4>Compártenos algunos datos para conocerte</h4>
+
+
+                                        <input type="hidden" id="IdSolicitud" name="IdSolicitud" value="@ViewBag.IdSolicitud" />
+                                        <input type="hidden" id="Monto" name="Monto" value="@Model.EntregaLiquida" />
+
+
+                                        <div class="form-group col-md-4">
+                                            <label class="form-control-label" for="inputNombre">Nombre</label>
+                                            <input type="text" class="form-control" id="Nombre" name="Nombre" value="@ViewBag.Nombre" required="required" readonly>
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label class="form-control-label" for="inputApellidoPaterno">Apellido Paterno</label>
+                                            <input type="text" class="form-control" id="ApellidoPaterno" name="ApellidoPaterno" value="@ViewBag.ApellidoPaterno" required="required" readonly>
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label class="form-control-label" for="inputUserNameOne">ApellidoMaterno</label>
+                                            <input type="text" class="form-control" id="ApellidoMaterno" name="ApellidoMaterno" value="@ViewBag.ApellidoMaterno" required="required" readonly>
+                                        </div>
+
+                                        <div class="form-group col-md-4">
+                                            <label class="form-control-label" for="inputUserNameOne">Fecha de Nacimiento</label>
+                                            @{
+                                                var fecha = DateTime.Today.AddYears(-18);
+                                                var fechaCad = fecha.ToString("yyyy-MM-dd");
+                                            }
+                                            <input type="date" class="form-control" id="FechaNacimiento" name="FechaNacimiento" required="required" max="@fechaCad">
+                                        </div>
+
+                                        <div class="form-group col-md-4">
+                                            <label class="form-control-label" for="inputUserNameOne">CURP</label>
+                                            <input type="text" class="form-control" id="CURP" name="CURP" maxlength="18"/>
+                                        </div>
+
+
+                                        <div class="form-group col-md-4">
+                                            <label class="form-control-label" for="inputUserNameOne">RFC</label>
+                                            <input type="text" class="form-control" id="RFC" name="RFC" maxlength="13">
+                                        </div>
+
+                                        <div class="form-group col-md-4">
+                                            <label class="form-control-label" for="inputUserNameOne">Tipo de Identificación</label>
+                                            <select class="form-control" id="IdTipoDeIdentificacion" name="IdTipoDeIdentificacion" required>
+                                                <option value="1">INE</option>
+                                                <option value="2">Pasaporte</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group col-md-4">
+                                            <label class="form-control-label" for="inputUserNameOne">Número de Identificación</label>
+                                            <input type="text" class="form-control" id="NumeroIdentificacion" name="NumeroIdentificacion" maxlength="20">
+                                        </div>
+
+
+                                        <div class="col-md-4">
+                                            <label class="form-control-label" for="inputUserNameOne">Estado Civil</label>
+                                            @Html.DropDownList("IdEstadoCivil", (IEnumerable<SelectListItem>)ViewBag.IdEstadoCivil, "--Seleccione una opción--", new { @class = "form-control", id = "Estado", required = "required" })
+                                        </div>
+
+
+                                        <div class="form-group col-md-4">
+                                            <label class="form-control-label" for="inputUserNameOne">Actividad preponderante</label>
+                                            <input type="text" class="form-control" id="ActividadPreponderante" name="ActividadPreponderante" maxlength="35" required="required">
+                                        </div>
+
+                                        <h4>Datos de Contacto</h4>
+
+                                        <div class="form-group col-md-4">
+                                            <label class="form-control-label" for="inputUserNameOne">Celular</label>
+                                            <input type="text" class="form-control" id="Celular" name="Celular" value="@ViewBag.Telefono" readonly required="required">
+                                        </div>
+
+                                        <div class="form-group col-md-4">
+                                            <label class="form-control-label" for="inputUserNameOne">Telefono de Casa</label>
+                                            <input type="text" class="form-control" id="TelefonoCasa" name="TelefonoCasa" maxlength="10">
+                                        </div>
+
+                                        <div class="form-group col-md-4">
+                                            <label class="form-control-label" for="inputUserNameOne">Email</label>
+                                            <input type="text" class="form-control" id="CorreoElectronico" name="CorreoElectronico" value="@ViewBag.Email" readonly maxlength="50">
+                                        </div>
+
+                                        <h4>Tu dirección</h4>
+
+
+                                        <div class="form-group col-md-4">
+                                            <label class="form-control-label" for="inputUserNameOne">Calle</label>
+                                            <input type="text" class="form-control" id="Calle" name="Calle" required="required">
+                                        </div>
+
+                                        <div class="form-group col-md-4">
+                                            <label class="form-control-label" for="inputUserNameOne">Colonia</label>
+                                            <input type="text" class="form-control" id="Colonia" name="Colonia" required="required">
+                                        </div>
+
+                                        <div class="form-group col-md-4">
+                                            <label class="form-control-label" for="inputUserNameOne">Número de Casa</label>
+                                            <input type="text" class="form-control" id="NumeroCasa" name="NumeroCasa" required="required">
+                                        </div>
+
+                                        <div class="form-group col-md-4">
+                                            <label class="form-control-label" for="inputUserNameOne">Código Postal</label>
+                                            <input type="text" class="form-control" id="CodigoPostal" name="CodigoPostal" required="required" maxlength="5">
+                                        </div>
+
+
+                                        <div class="form-group col-md-4">
+                                            <label class="form-control-label" for="inputUserNameOne">Ciudad</label>
+                                            <input type="text" class="form-control" id="Ciudad" name="Ciudad" required="required">
+                                        </div>
+
+                                        <div class="form-group col-md-4">
+                                            <label class="form-control-label" for="inputUserNameOne">Municipio</label>
+                                            <input type="text" class="form-control" id="Municipio" name="Municipio" required="required">
+                                        </div>
+
+
+                                        <div class="col-md-4">
+                                            <label class="form-control-label" for="inputUserNameOne">Estado</label>
+                                            @Html.DropDownList("IdEstado", (IEnumerable<SelectListItem>)ViewBag.IdEstado, "--Seleccione una opción--", new { @class = "form-control", id = "Estado", required = "required" })
+                                        </div>
+
+                                        <div class="form-group col-md-4">
+                                            <label class="form-control-label" for="inputUserNameOne">Entre Calle</label>
+                                            <input type="text" class="form-control" id="EntreCalle" name="EntreCalle" required>
+                                        </div>
+
+                                        <div class="form-group col-md-4">
+                                            <label class="form-control-label" for="inputUserNameOne">Y Calle</label>
+                                            <input type="text" class="form-control" id="YCalle" name="YCalle" required>
+                                        </div>                                   
+
+                                        <hr />
+
+
+                                    </div>
+                                    <div class="wizard-pane row" id="DivVehiculo" role="tabpanel">
+
+                                        <h4>Datos de tu vehículo</h4>
+
+                                        <div class="form-group col-md-4">
+                                            <label class="form-control-label" for="inputUserNameOne">Año</label>
+                                            <input type="text" class="form-control" id="Anio" name="Anio" value="@ViewBag.Anio" required="required" readonly>
+                                        </div>
+
+                                        <div class="form-group col-md-4">
+                                            <label class="form-control-label" for="inputUserNameOne">Marca</label>
+                                            <input type="text" class="form-control" id="Marca" name="Marca" value="@ViewBag.Marca" required="required" readonly>
+                                        </div>
+
+                                        <div class="form-group col-md-4">
+                                            <label class="form-control-label" for="inputUserNameOne">Modelo</label>
+                                            <input type="text" class="form-control" id="Modelo" name="Modelo" required="required" value="@ViewBag.Modelo" readonly>
+                                        </div>
+
+                                        <div class="form-group col-md-4">
+                                            <label class="form-control-label" for="inputUserNameOne">Versión</label>
+                                            <input type="text" class="form-control" id="Version" name="Version" required="required" value="@ViewBag.Version" readonly>
+                                        </div>
+
+
+
+                                        <div class="form-group col-md-4">
+                                            <label class="form-control-label" for="inputUserNameOne">Número de Serie (NIV)</label>
+                                            <input type="text" class="form-control" id="NumeroDeSerie" name="NumeroDeSerie" required="required" maxlength="25">
+                                        </div>
+
+                                        <div class="form-group col-md-4">
+                                            <label class="form-control-label" for="inputUserNameOne">Número de Motor</label>
+                                            <input type="text" class="form-control" id="NumeroDeMotor" name="NumeroDeMotor" required="required" maxlength="20">
+                                        </div>
+
+                                        <div class="form-group col-md-4">
+                                            <label class="form-control-label" for="inputUserNameOne">Placa</label>
+                                            <input type="text" class="form-control" id="Placas" name="Placas" required="required" maxlength="10">
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <label class="form-control-label" for="inputUserNameOne">Estado de la placa</label>
+                                            @Html.DropDownList("IdEstadoPlacas", (IEnumerable<SelectListItem>)ViewBag.IdEstadoPlaca, "--Seleccione una opción--", new { @class = "form-control", id = "IdEstadoPlacas", required = "required" })
+                                        </div>
+
+
+
+                                        <div class="form-group col-md-4">
+                                            <label class="form-control-label" for="inputUserNameOne">Color</label>
+                                            <input type="text" class="form-control" id="Color" name="Color" required="required" maxlength="15">
+                                        </div>
+                                        
+                                        
+                                        @*<div class="form-group col-md-4">
+                                            <label class="form-control-label" for="inputUserNameOne">RFC de la Factura</label>
+                                            <input type="text" class="form-control" id="RFCFactura" name="RFCFactura" required="required" maxlength="15">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label class="form-control-label" for="inputUserNameOne">Número de Factura</label>
+                                            <input type="text" class="form-control" id="NumeroFactura" name="NumeroFactura" required="required" maxlength="15">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label class="form-control-label" for="inputUserNameOne">Fecha de la factura</label>
+                                            <input type="date" class="form-control" id="FechaFactura" name="FechaFactura" required="required">
+                                        </div>*@
+
+
+
+                                        <div class="form-group col-md-4">
+                                            <label class="form-control-label" for="inputUserNameOne">No. de tarjeta de circulación</label>
+                                            <input type="text" class="form-control" id="NumeroDeTarjetaDeCirculacion" name="NumeroDeTarjetaDeCirculacion" required="required" maxlength="20">
+                                        </div>
+
+                                        @*<div class="form-group col-md-4">
+                                            <label class="form-control-label" for="inputUserNameOne">Número de puertas</label>
+                                            <input type="number" class="form-control" id="NumeroDePuertas" name="NumeroDePuertas" required="required">
+                                        </div>
+
+                                        <div class="form-group col-md-4">
+                                            <label class="form-control-label" for="inputUserNameOne">Número de asientos</label>
+                                            <input type="number" class="form-control" id="NumeroDeAsientos" name="NumeroDeAsientos" required="required">
+                                        </div>
+
+                                        <div class="form-group col-md-4">
+                                            <label class="form-control-label" for="inputUserNameOne">Número de cilindros</label>
+                                            <input type="number" class="form-control" id="NumeroDeCilindros" name="NumeroDeCilindros" required="required">
+                                        </div>*@
+
+
+
+
+
+                                        <div class="col-md-4">
+                                            <label class="form-control-label" for="inputUserNameOne">Tipo de Tranmisión</label>
+                                            @Html.DropDownList("IdTipoTransmision", (IEnumerable<SelectListItem>)ViewBag.IdTipoTransmision, "--Seleccione una opción--", new { @class = "form-control", id = "IdEstadoPlacas", required = "required" })
+                                        </div>
+
+
+
+                                    </div>
+                                    <div class="wizard-pane" id="exampleGettingOne" role="tabpanel">
+                                        <div class="text-justify my-20">
+
+
+
+                                            <div class="row">
+                                                <div class="col-md-12">
+
+                                                    <h4>Su solicitud esta completa</h4>
+
+                                                    <div class="row justify-content-center">
+
+                                                        <div class="col-xl-12 col-lg-12 col-md-12">
+                                                            <div class="feature-card style3">
+                                                                <div class="feature-info">
+                                                                    <div class="feature-title">
+                                                                        <span><img src="~/Content/IMG/asesor.jpg" alt="Image"></span>
+                                                                        <h3 class="text-left">Enviar Solicitud de Crédito</h3>
+                                                                    </div>
+                                                                    <p>Estas a un paso de concluir la solicitud de tu crédito, la información que nos proporcionó nos permitirá formar el expediente para su crédito.  Le recomendamos tener a la mano su documentación para acelerar el depósito de su préstamo a u cuenta.</p>                                                                    
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+
+
+                                     
+
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            }
+                            <!-- Wizard Content -->
+
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</div>
+
+@section Scripts {
+
+    <script>
+    var mapSimulacion = [];
+
+
+        var __RequestVerificationToken = $("input[name=__RequestVerificationToken]").val();
+        $("#formRegister").submit(function (event) {
+            event.preventDefault();
+            var actionurl = '@Url.Action("CreateSolicitud", "Simulador")';
+            var formData = new FormData($(this)[0]);
+            $.ajax({
+                url: actionurl,
+                type: 'POST',
+                success: SuccessOk,
+                error: SuccessNot,
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false
+            });
+        });
+
+
+
+        var defaults = {
+            step: '.steps .step, .pearls .pearl',
+            templates: {
+                buttons: function buttons() {
+                    var options = this.options;
+                    return "<div class=\"wizard-buttons\"><a class=\"btn btn-secondary\" href=\"#".concat(this.id, "\" data-wizard=\"back\" role=\"button\">").concat("Atras", "</a><a class=\"btn style1 btn-outline float-right\" href=\"#").concat(this.id, "\" data-wizard=\"next\" role=\"button\">").concat("Seguir", "</a><a class=\"btn style1 btn-outline float-right\" href=\"#").concat(this.id, "\" data-wizard=\"finish\" role=\"button\">").concat("Enviar Solicitud", "</a></div>");
+                }
+            },
+            classes: {
+                step: {
+                    active: 'active'
+                },
+                button: {
+                    hide: 'hidden-xs-up',
+                    disabled: 'disabled'
+                }
+            }
+        };
+        var options = $.extend(true, {}, defaults,
+            {
+                onInit: function onInit() {
+                    $('#exampleFormContainer').formValidation({
+                        framework: 'bootstrap',
+                        fields: {
+                            Nombre: {
+                                validators: {
+                                    notEmpty: {
+                                        message: 'El nombre es requerido.'
+                                    }
+                                }
+                            },
+                            ApellidoPaterno: {
+                                validators: {
+                                    notEmpty: {
+                                        message: 'El apellido paterno es requerido.'
+                                    }
+                                }
+                            },
+
+                            CURP: {
+                                validators: {                                                                        
+                                    notEmpty: {
+                                        message: 'La CURP es requerida.'
+                                    }
+                                }
+                            },
+
+                            RFC: {
+                                validators: {
+                                    notEmpty: {
+                                        message: 'El RFC es requerido.'
+                                    }
+                                }
+                            },
+
+                            FechaNacimiento: {
+                                validators: {
+                                    notEmpty: {
+                                        message: 'La fecha de nacimiento es requerida.'
+                                    }
+                                }
+                            },
+
+                            NumeroIdentificacion: {
+                                validators: {
+                                    notEmpty: {
+                                        message: 'El Número de Identificación es requerido.'
+                                    }
+                                }
+                            },
+
+
+
+                            Calle: {
+                                validators: {
+                                    notEmpty: {
+                                        message: 'La calle es requerida.'
+                                    }
+                                }
+                            },
+
+                            Colonia: {
+                                validators: {
+                                    notEmpty: {
+                                        message: 'La colonia es requerida.'
+                                    }
+                                }
+                            },
+
+                            NumeroCasa: {
+                                validators: {
+                                    notEmpty: {
+                                        message: 'El número de casa es requerido.'
+                                    }
+                                }
+                            },
+
+                            CodigoPostal: {
+                                validators: {
+                                    notEmpty: {
+                                        message: 'El código postal es requerido.'
+                                    }
+                                }
+                            },
+
+
+                            Ciudad: {
+                                validators: {
+                                    notEmpty: {
+                                        message: 'La ciudad es requerida.'
+                                    }
+                                }
+                            },
+
+                            Municipio: {
+                                validators: {
+                                    notEmpty: {
+                                        message: 'El municipio es requerido.'
+                                    }
+                                }
+                            },
+
+                            Estado: {
+                                validators: {
+                                    notEmpty: {
+                                        message: 'El estado es requerido.'
+                                    }
+                                }
+                            },
+
+                            EntreCalle: {
+                                validators: {
+                                    notEmpty: {
+                                        message: 'La entre calle es requerida.'
+                                    }
+                                }
+                            },
+
+                            YCalle: {
+                                validators: {
+                                    notEmpty: {
+                                        message: 'La calle es requerida.'
+                                    }
+                                }
+                            },                            
+
+                            IdAnio: {
+                                validators: {
+                                    notEmpty: {
+                                        message: 'El año es requerido.'
+                                    }
+                                }
+                            },
+                            IdTipoDeIdentificacion: {
+                                validators: {
+                                    notEmpty: {
+                                        message: 'El tipo de identificación es requerido.'
+                                    }
+                                }
+                            },
+
+                            IdMarca: {
+                                validators: {
+                                    notEmpty: {
+                                        message: 'La año es requerida.'
+                                    }
+                                }
+                            },
+                            IdModelo: {
+                                validators: {
+                                    notEmpty: {
+                                        message: 'El modelo es requerido.'
+                                    }
+                                }
+                            },
+                            IdVesion: {
+                                validators: {
+                                    notEmpty: {
+                                        message: 'La versión es requerido.'
+                                    }
+                                }
+                            },
+                            password: {
+                                validators: {
+                                    notEmpty: {
+                                        message: 'The password is required'
+                                    }
+                                }
+                            },
+                            AvisoPrivacidad: {
+                                validators: {
+                                    notEmpty: {
+                                        message: 'Aceptar los terminos y condiciones.'
+                                    }
+                                }
+                            },
+                            IdEstadoCivil: {
+                                validators: {
+                                    notEmpty: {
+                                        message: 'El estado civil es requerido'
+                                    }
+                                }
+                            },
+                            IdEstado: {
+                                validators: {
+                                    notEmpty: {
+                                        message: 'El estado es requerido'
+                                    }
+                                }
+                            },
+
+                            ActividadPreponderante: {
+                                validators: {
+                                    notEmpty: {
+                                        message: 'El estado es requerido'
+                                    }
+                                }
+                            },                        
+
+                            Color: {
+                                validators: {
+                                    notEmpty: {
+                                        message: 'El color es requerido'
+                                    }
+                                }
+                            },
+
+                            IdTipoTransmision: {
+                                validators: {
+                                    notEmpty: {
+                                        message: 'El tipo de transmisión es requerido'
+                                    }
+                                }
+                            },
+
+
+                            NumeroDeTarjetaDeCirculacion : {
+                                validators: {
+                                    notEmpty: {
+                                        message: 'El No. de tarjeta de circulación es requerido'
+                                    }
+                                }
+                            },
+
+                            Codigo: {
+                                validators: {
+                                    notEmpty: {
+                                        message: 'Ingresa el código'
+                                    }
+                                }
+                            },
+                            chkDos: {
+                                validators: {
+                                    notEmpty: {
+                                        message: ''
+                                    }
+                                }
+                            },
+
+                        },
+                        err: {
+                            clazz: 'invalid-feedback'
+                        },
+                        control: {
+                            // The CSS class for valid control
+                            valid: 'is-valid',
+                            // The CSS class for invalid control
+                            invalid: 'is-invalid'
+                        },
+                        row: {
+                            invalid: 'has-danger'
+                        }
+                    });
+                },
+                validator: function validator() {
+                    var fv = $('#exampleFormContainer').data('formValidation');
+                    var $this = $(this); // Validate the container
+
+                    fv.validateContainer($this);
+                    var isValidStep = fv.isValidContainer($this);
+
+                    if (isValidStep === false || isValidStep === null) {
+                        return false;
+                    }
+                    return true;
+                },
+                onFinish: function onFinish() {
+
+                    var actionurl = '@Url.Action("CreateSolicitud", "Simulador")';
+                    var formData = new FormData($('#exampleFormContainer')[0]);
+                    $.ajax({
+                        url: actionurl,
+                        type: 'POST',
+                        success: SuccessOk,
+                        error: SuccessNot,
+                        data: formData,
+                        cache: false,
+                        contentType: false,
+                        processData: false
+                    });
+
+                },
+                buttonsAppendTo: '.panel-body'
+            });
+
+
+        $(function () {
+
+            $("#IdAnio").val(null);
+            $("#exampleWizardFormContainer").wizard(options);
+        }); // Example Wizard Pager
+  // --------------------------
+
+
+        $(".form-control").change(function () {
+            DesmarcarError($(this).attr("id"));
+            $("#validacion").html("");
+            $("#validacion").hide();
+        });
+
+        $(".form-control").keyup(function () {
+            $("#validacion").html("");
+            $("#validacion").hide();
+        });
+
+
+        function LimpiarFormulario() {
+            document.getElementById("formUsuario").reset();
+        }
+
+
+        function SuccessOk(Data) {
+            if (!Data.Error) {
+                var URL2 = '@Url.Action("Index","Solicitud")' + '?IdSolicitud=' + Data.Id
+                window.location = URL2;
+            } else {
+                ValidatorForm(Data.data);
+            }
+        }
+
+
+        // Control de validaciones
+        function ValidatorForm(Data) {
+            console.log(Data);
+            if (!Data.Succeeded) {
+                console.log(Data);
+                $("#validacion").html(Data.Errors == undefined ? 'El usuario o la contraseña es incorrecta.' : Data.Errors);
+                $("#validacion").show();
+            } else {
+                $("#validacion").hide();
+            }
+            $.each(Data, function (index, value) {
+                $("#" + value.Id).addClass("is-invalid");
+                $("#" + value.Id).attr("data-toggle", "tooltip");
+                $("#" + value.Id).attr("data-placement", "top");
+                $("#" + value.Id).attr("title", value.Mensaje);
+                $("#" + value.Id).attr("data-original-title", value.Mensaje);
+                $("#" + value.Id).tooltip()
+            });
+        }
+        function DesmarcarError(Id) {
+            $("#" + Id).removeClass("is-invalid");
+            $("#" + Id).removeAttr("data-toggle");
+            $("#" + Id).removeAttr("data-placement");
+            $("#" + Id).removeAttr("data-original-title");
+
+        }
+
+
+        function SuccessNot(Data) {
+
+        }
+
+    </script>
+}

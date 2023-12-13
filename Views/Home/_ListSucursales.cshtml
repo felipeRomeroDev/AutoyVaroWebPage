@@ -1,0 +1,15 @@
+﻿@model List<AutoyVaro.Sucursal>
+
+<ul class="dropdown-menu">
+
+    @foreach (var item in Model)
+    {
+        if (item.visible)
+        {
+            <li class="nav-item">
+                <a href="@Url.Action("Sucursal","Home", new {Id = item.Id })" class="nav-link">@item.Descripción</a>
+            </li>
+
+        }
+    }
+</ul>

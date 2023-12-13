@@ -1,0 +1,943 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.libroazul.com/ws/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.libroazul.com/ws/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.libroazul.com/ws/">
+      <s:element name="IniciarSesion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Contrasena" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IniciarSesionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IniciarSesionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerAnios">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Llave" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Clase" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="Edicion" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerAniosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerAniosResult" type="tns:ArrayOfCatalogo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCatalogo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Catalogo" nillable="true" type="tns:Catalogo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Catalogo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Clave" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtenerMarcasPorAnio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Llave" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Clase" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="ClaveAnio" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Edicion" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerMarcasPorAnioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerMarcasPorAnioResult" type="tns:ArrayOfCatalogo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerModelosPorAnioMarca">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Llave" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Clase" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="ClaveAnio" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ClaveMarca" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Edicion" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerModelosPorAnioMarcaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerModelosPorAnioMarcaResult" type="tns:ArrayOfCatalogo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerVersionesPorAnioMarcaModelo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Llave" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Clase" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="ClaveAnio" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ClaveMarca" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ClaveModelo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Edicion" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerVersionesPorAnioMarcaModeloResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerVersionesPorAnioMarcaModeloResult" type="tns:ArrayOfCatalogo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerPrecioVersionPorClave">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Llave" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Clase" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClaveVersion" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Edicion" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerPrecioVersionPorClaveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerPrecioVersionPorClaveResult" type="tns:Precio" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Precio">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Venta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Compra" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Moneda" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtenerDetallesVersionPorClave">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Llave" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClaveVersion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerDetallesVersionPorClaveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerDetallesVersionPorClaveResult" type="tns:ArrayOfCatalogoDetalles" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCatalogoDetalles">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CatalogoDetalles" nillable="true" type="tns:CatalogoDetalles" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CatalogoDetalles">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Clave" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Puertas" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Pasajeros" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Combustible" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sonido" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Asientos" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GPS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ABS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="QC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Motor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Litros" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HP" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Torque" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Turbo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Aceleracion0100" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Transmision" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransmisionTipo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Velocidades" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Traccion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Carroceria" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FotoFrente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FotoFrenteExt" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FotoAtras" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FotoAtrasExt" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PrecioLista" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtenerPrecioVersionPorClaveCte">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Llave" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClaveVersion" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Edicion" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerPrecioVersionPorClaveCteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerPrecioVersionPorClaveCteResult" type="tns:Precio" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerPrecioVersionPorClaveKM">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Llave" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Clase" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClaveVersion" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Edicion" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Kilometraje" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerPrecioVersionPorClaveKMResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerPrecioVersionPorClaveKMResult" type="tns:Precio" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerPrecioVersionPorClaveCteKM">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Llave" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Clase" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClaveVersion" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Edicion" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Kilometraje" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerPrecioVersionPorClaveCteKMResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerPrecioVersionPorClaveCteKMResult" type="tns:Precio" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerPrecioVersion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Contrasena" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Marca" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Modelo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Anio" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Version" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Edicion" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerPrecioVersionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerPrecioVersionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerPrecioMotoPorClave">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Llave" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Clase" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="Clave" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Edicion" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerPrecioMotoPorClaveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerPrecioMotoPorClaveResult" type="tns:ArrayOfPrecioMoto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPrecioMoto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PrecioMoto" nillable="true" type="tns:PrecioMoto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PrecioMoto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Venta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Compra" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Moneda" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CP" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="T" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtenerEdiciones">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Llave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerEdicionesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerEdicionesResult" type="tns:ArrayOfEdicion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfEdicion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Edicion" nillable="true" type="tns:Edicion" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Edicion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Clave" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Mes" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="Anio" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtenerPrecioVersionPorClaveKMFactor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Llave" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Clase" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClaveVersion" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Edicion" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Kilometraje" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Mes" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="Anio" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerPrecioVersionPorClaveKMFactorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerPrecioVersionPorClaveKMFactorResult" type="tns:Factor" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Factor">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Mes" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="Anio" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="PorcBase" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="PorcInferior" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="PorcSuperior" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="PorcCalculado" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="RangoInferior" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="RangoSuperior" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="RangoTipo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AplicarFactor" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Venta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Compra" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VentaFactor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CompraFactor" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtenerFactorSugerido">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Llave" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Anio" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Kilometraje" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerFactorSugeridoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerFactorSugeridoResult" type="tns:FactorSugerido" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FactorSugerido">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Mes" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="Anio" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="PorcInferior" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="PorcSuperior" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="PorcCalculado" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="RangoInferior" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="RangoSuperior" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="RangoTipo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtenerCambios">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Llave" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Clase" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="Edicion" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerCambiosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerCambiosResult" type="tns:Cambios" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Cambios">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Anios" type="tns:ArrayOfCambiosAnio" />
+          <s:element minOccurs="0" maxOccurs="1" name="Marcas" type="tns:ArrayOfCambiosMarca" />
+          <s:element minOccurs="0" maxOccurs="1" name="Modelos" type="tns:ArrayOfCambiosModelo" />
+          <s:element minOccurs="0" maxOccurs="1" name="Versiones" type="tns:ArrayOfCambiosVersion" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCambiosAnio">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CambiosAnio" nillable="true" type="tns:CambiosAnio" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CambiosAnio">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Anio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClaveMarca" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Edicion" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="EdicionMes" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="EdicionAnio" type="s:short" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCambiosMarca">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CambiosMarca" nillable="true" type="tns:CambiosMarca" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CambiosMarca">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ClaveMarca" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Edicion" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="EdicionMes" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="EdicionAnio" type="s:short" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCambiosModelo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CambiosModelo" nillable="true" type="tns:CambiosModelo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CambiosModelo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ClaveMarca" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClaveModelo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Edicion" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="EdicionMes" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="EdicionAnio" type="s:short" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCambiosVersion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CambiosVersion" nillable="true" type="tns:CambiosVersion" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CambiosVersion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Anio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClaveMarca" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClaveModelo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClaveVersion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Puertas" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNombre1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNombre2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Linea" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Edicion" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="EdicionMes" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="EdicionAnio" type="s:short" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="IniciarSesionSoapIn">
+    <wsdl:part name="parameters" element="tns:IniciarSesion" />
+  </wsdl:message>
+  <wsdl:message name="IniciarSesionSoapOut">
+    <wsdl:part name="parameters" element="tns:IniciarSesionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerAniosSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerAnios" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerAniosSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerAniosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerMarcasPorAnioSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerMarcasPorAnio" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerMarcasPorAnioSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerMarcasPorAnioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerModelosPorAnioMarcaSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerModelosPorAnioMarca" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerModelosPorAnioMarcaSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerModelosPorAnioMarcaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerVersionesPorAnioMarcaModeloSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerVersionesPorAnioMarcaModelo" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerVersionesPorAnioMarcaModeloSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerVersionesPorAnioMarcaModeloResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerPrecioVersionPorClaveSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerPrecioVersionPorClave" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerPrecioVersionPorClaveSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerPrecioVersionPorClaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDetallesVersionPorClaveSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerDetallesVersionPorClave" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDetallesVersionPorClaveSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerDetallesVersionPorClaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerPrecioVersionPorClaveCteSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerPrecioVersionPorClaveCte" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerPrecioVersionPorClaveCteSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerPrecioVersionPorClaveCteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerPrecioVersionPorClaveKMSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerPrecioVersionPorClaveKM" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerPrecioVersionPorClaveKMSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerPrecioVersionPorClaveKMResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerPrecioVersionPorClaveCteKMSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerPrecioVersionPorClaveCteKM" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerPrecioVersionPorClaveCteKMSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerPrecioVersionPorClaveCteKMResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerPrecioVersionSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerPrecioVersion" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerPrecioVersionSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerPrecioVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerPrecioMotoPorClaveSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerPrecioMotoPorClave" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerPrecioMotoPorClaveSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerPrecioMotoPorClaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerEdicionesSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerEdiciones" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerEdicionesSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerEdicionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerPrecioVersionPorClaveKMFactorSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerPrecioVersionPorClaveKMFactor" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerPrecioVersionPorClaveKMFactorSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerPrecioVersionPorClaveKMFactorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerFactorSugeridoSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerFactorSugerido" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerFactorSugeridoSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerFactorSugeridoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerCambiosSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerCambios" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerCambiosSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerCambiosResponse" />
+  </wsdl:message>
+  <wsdl:portType name="wslibroazulSoap">
+    <wsdl:operation name="IniciarSesion">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">El Libro Azul - Este método permite iniciar la sesión en los servicios del libro azul. &lt;br /&gt;Se debe contar con una cuenta registrada para poder utilizar los servicios web.</wsdl:documentation>
+      <wsdl:input message="tns:IniciarSesionSoapIn" />
+      <wsdl:output message="tns:IniciarSesionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAnios">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">El Libro Azul - Este método devuelve los años de los automóviles disponibles para consulta. &lt;br /&gt;Se debe contar con una cuenta registrada para poder utilizar los servicios web.</wsdl:documentation>
+      <wsdl:input message="tns:ObtenerAniosSoapIn" />
+      <wsdl:output message="tns:ObtenerAniosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMarcasPorAnio">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">El Libro Azul - Este método devuelve las marcas de los automóviles disponibles para consulta de un año indicado. &lt;br /&gt;Se debe contar con una cuenta registrada para poder utilizar los servicios web.</wsdl:documentation>
+      <wsdl:input message="tns:ObtenerMarcasPorAnioSoapIn" />
+      <wsdl:output message="tns:ObtenerMarcasPorAnioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerModelosPorAnioMarca">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">El Libro Azul - Este método devuelve los modelos de los automóviles disponibles para consulta de un año y marca indicados. &lt;br /&gt;Se debe contar con una cuenta registrada para poder utilizar los servicios web.</wsdl:documentation>
+      <wsdl:input message="tns:ObtenerModelosPorAnioMarcaSoapIn" />
+      <wsdl:output message="tns:ObtenerModelosPorAnioMarcaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerVersionesPorAnioMarcaModelo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">El Libro Azul - Este método devuelve las versiones de los automóviles disponibles para consulta de un año, marca y modelo indicados. &lt;br /&gt;Se debe contar con una cuenta registrada para poder utilizar los servicios web.</wsdl:documentation>
+      <wsdl:input message="tns:ObtenerVersionesPorAnioMarcaModeloSoapIn" />
+      <wsdl:output message="tns:ObtenerVersionesPorAnioMarcaModeloSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPrecioVersionPorClave">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">El Libro Azul - Este método devuelve el precio de la versión de un vehículo. &lt;br /&gt;Se debe contar con una cuenta registrada para poder utilizar los servicios web.</wsdl:documentation>
+      <wsdl:input message="tns:ObtenerPrecioVersionPorClaveSoapIn" />
+      <wsdl:output message="tns:ObtenerPrecioVersionPorClaveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDetallesVersionPorClave">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">El Libro Azul - Este método devuelve los detalles disponibles para una versión. &lt;br /&gt;Se debe contar con una cuenta registrada para poder utilizar los servicios web.</wsdl:documentation>
+      <wsdl:input message="tns:ObtenerDetallesVersionPorClaveSoapIn" />
+      <wsdl:output message="tns:ObtenerDetallesVersionPorClaveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPrecioVersionPorClaveCte">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">El Libro Azul - Este método devuelve el precio de la versión de un vehículo. &lt;br /&gt;Se debe contar con una cuenta registrada para poder utilizar los servicios web.</wsdl:documentation>
+      <wsdl:input message="tns:ObtenerPrecioVersionPorClaveCteSoapIn" />
+      <wsdl:output message="tns:ObtenerPrecioVersionPorClaveCteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPrecioVersionPorClaveKM">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">El Libro Azul - Este método devuelve el precio de la versión de un vehículo afectado por la tabla de factores por año. &lt;br /&gt;Se debe contar con una cuenta registrada para poder utilizar los servicios web.</wsdl:documentation>
+      <wsdl:input message="tns:ObtenerPrecioVersionPorClaveKMSoapIn" />
+      <wsdl:output message="tns:ObtenerPrecioVersionPorClaveKMSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPrecioVersionPorClaveCteKM">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">El Libro Azul - Este método devuelve el precio de la versión de un vehículo afectado por la tabla de factores por año. &lt;br /&gt;Se debe contar con una cuenta registrada para poder utilizar los servicios web.</wsdl:documentation>
+      <wsdl:input message="tns:ObtenerPrecioVersionPorClaveCteKMSoapIn" />
+      <wsdl:output message="tns:ObtenerPrecioVersionPorClaveCteKMSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPrecioVersion">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">El Libro Azul - Este método devuelve el precio de compra y de venta de la versión específica de un automóvil, debe indicar la clave de la marca, modelo, versión, año del auto y edición&lt;br /&gt;Se debe contar con una cuenta registrada para poder utilizar los servicios web.</wsdl:documentation>
+      <wsdl:input message="tns:ObtenerPrecioVersionSoapIn" />
+      <wsdl:output message="tns:ObtenerPrecioVersionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPrecioMotoPorClave">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">El Libro Azul - Este método devuelve el precio de las motocicletas para la clave seleccionada. &lt;br /&gt;Se debe contar con una cuenta registrada para poder utilizar los servicios web.</wsdl:documentation>
+      <wsdl:input message="tns:ObtenerPrecioMotoPorClaveSoapIn" />
+      <wsdl:output message="tns:ObtenerPrecioMotoPorClaveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerEdiciones">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">El Libro Azul - Este método devuelve las ediciones disponibles para consulta. &lt;br /&gt;Se debe contar con una cuenta registrada para poder utilizar los servicios web.</wsdl:documentation>
+      <wsdl:input message="tns:ObtenerEdicionesSoapIn" />
+      <wsdl:output message="tns:ObtenerEdicionesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPrecioVersionPorClaveKMFactor">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">El Libro Azul - Este método devuelve el precio de la versión de un vehículo afectado por la tabla de factores por año. &lt;br /&gt;Se debe contar con una cuenta registrada para poder utilizar los servicios web.</wsdl:documentation>
+      <wsdl:input message="tns:ObtenerPrecioVersionPorClaveKMFactorSoapIn" />
+      <wsdl:output message="tns:ObtenerPrecioVersionPorClaveKMFactorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFactorSugerido">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">El Libro Azul - Este método devuelve el factor sugerido de ajuste por kilometraje para un Año y Kilometraje indicado. &lt;br /&gt;Se debe contar con una cuenta registrada para poder utilizar los servicios web.</wsdl:documentation>
+      <wsdl:input message="tns:ObtenerFactorSugeridoSoapIn" />
+      <wsdl:output message="tns:ObtenerFactorSugeridoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCambios">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">El Libro Azul - Este método devuelve los cambios en los catálogos de una Edición a Otra. &lt;br /&gt;Se debe contar con una cuenta registrada para poder utilizar los servicios web.</wsdl:documentation>
+      <wsdl:input message="tns:ObtenerCambiosSoapIn" />
+      <wsdl:output message="tns:ObtenerCambiosSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wslibroazulSoap" type="tns:wslibroazulSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IniciarSesion">
+      <soap:operation soapAction="http://www.libroazul.com/ws/IniciarSesion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAnios">
+      <soap:operation soapAction="http://www.libroazul.com/ws/ObtenerAnios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMarcasPorAnio">
+      <soap:operation soapAction="http://www.libroazul.com/ws/ObtenerMarcasPorAnio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerModelosPorAnioMarca">
+      <soap:operation soapAction="http://www.libroazul.com/ws/ObtenerModelosPorAnioMarca" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerVersionesPorAnioMarcaModelo">
+      <soap:operation soapAction="http://www.libroazul.com/ws/ObtenerVersionesPorAnioMarcaModelo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPrecioVersionPorClave">
+      <soap:operation soapAction="http://www.libroazul.com/ws/ObtenerPrecioVersionPorClave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDetallesVersionPorClave">
+      <soap:operation soapAction="http://www.libroazul.com/ws/ObtenerDetallesVersionPorClave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPrecioVersionPorClaveCte">
+      <soap:operation soapAction="http://www.libroazul.com/ws/ObtenerPrecioVersionPorClaveCte" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPrecioVersionPorClaveKM">
+      <soap:operation soapAction="http://www.libroazul.com/ws/ObtenerPrecioVersionPorClaveKM" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPrecioVersionPorClaveCteKM">
+      <soap:operation soapAction="http://www.libroazul.com/ws/ObtenerPrecioVersionPorClaveCteKM" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPrecioVersion">
+      <soap:operation soapAction="http://www.libroazul.com/ws/ObtenerPrecioVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPrecioMotoPorClave">
+      <soap:operation soapAction="http://www.libroazul.com/ws/ObtenerPrecioMotoPorClave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerEdiciones">
+      <soap:operation soapAction="http://www.libroazul.com/ws/ObtenerEdiciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPrecioVersionPorClaveKMFactor">
+      <soap:operation soapAction="http://www.libroazul.com/ws/ObtenerPrecioVersionPorClaveKMFactor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFactorSugerido">
+      <soap:operation soapAction="http://www.libroazul.com/ws/ObtenerFactorSugerido" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCambios">
+      <soap:operation soapAction="http://www.libroazul.com/ws/ObtenerCambios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wslibroazulSoap12" type="tns:wslibroazulSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IniciarSesion">
+      <soap12:operation soapAction="http://www.libroazul.com/ws/IniciarSesion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAnios">
+      <soap12:operation soapAction="http://www.libroazul.com/ws/ObtenerAnios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMarcasPorAnio">
+      <soap12:operation soapAction="http://www.libroazul.com/ws/ObtenerMarcasPorAnio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerModelosPorAnioMarca">
+      <soap12:operation soapAction="http://www.libroazul.com/ws/ObtenerModelosPorAnioMarca" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerVersionesPorAnioMarcaModelo">
+      <soap12:operation soapAction="http://www.libroazul.com/ws/ObtenerVersionesPorAnioMarcaModelo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPrecioVersionPorClave">
+      <soap12:operation soapAction="http://www.libroazul.com/ws/ObtenerPrecioVersionPorClave" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDetallesVersionPorClave">
+      <soap12:operation soapAction="http://www.libroazul.com/ws/ObtenerDetallesVersionPorClave" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPrecioVersionPorClaveCte">
+      <soap12:operation soapAction="http://www.libroazul.com/ws/ObtenerPrecioVersionPorClaveCte" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPrecioVersionPorClaveKM">
+      <soap12:operation soapAction="http://www.libroazul.com/ws/ObtenerPrecioVersionPorClaveKM" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPrecioVersionPorClaveCteKM">
+      <soap12:operation soapAction="http://www.libroazul.com/ws/ObtenerPrecioVersionPorClaveCteKM" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPrecioVersion">
+      <soap12:operation soapAction="http://www.libroazul.com/ws/ObtenerPrecioVersion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPrecioMotoPorClave">
+      <soap12:operation soapAction="http://www.libroazul.com/ws/ObtenerPrecioMotoPorClave" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerEdiciones">
+      <soap12:operation soapAction="http://www.libroazul.com/ws/ObtenerEdiciones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPrecioVersionPorClaveKMFactor">
+      <soap12:operation soapAction="http://www.libroazul.com/ws/ObtenerPrecioVersionPorClaveKMFactor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFactorSugerido">
+      <soap12:operation soapAction="http://www.libroazul.com/ws/ObtenerFactorSugerido" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCambios">
+      <soap12:operation soapAction="http://www.libroazul.com/ws/ObtenerCambios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wslibroazul">
+    <wsdl:port name="wslibroazulSoap" binding="tns:wslibroazulSoap">
+      <soap:address location="http://www.libroazul.com/ws/wslibroazul.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wslibroazulSoap12" binding="tns:wslibroazulSoap12">
+      <soap12:address location="http://www.libroazul.com/ws/wslibroazul.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

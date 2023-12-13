@@ -1,0 +1,33 @@
+﻿@model List<AutoyVaro.Models.UsuarioHistorialLA>
+
+
+<table class="table table-inverse">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Sucursal</th>
+            <th># Consultas</th>
+        </tr>
+    </thead>
+    <tbody id="tbodyEBC">
+
+        @foreach (var item in Model)
+        {
+
+            <tr>
+                <td>@item.Nombre</td>
+                <td>@item.Sucursal</td>
+                <td>
+                    <button type="button" onclick="ConsultaPorUsuarioEBC(@item.IdUsuario)" class="btn btn-default btn-xs btn-outline active" data-toggle="button">
+                        <span class="text">
+                            <i class="icon wb-eye text-success" aria-hidden="true"></i> @item.Consultas
+                        </span>                        
+                    </button>                               
+                </td>
+            </tr>
+
+        }
+
+    </tbody>
+</table>
+
