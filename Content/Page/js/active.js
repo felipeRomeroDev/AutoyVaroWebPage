@@ -9,7 +9,7 @@
             $(this).remove();
         });
     });
-
+    //
     // :: 2.0 Nav Active Code
     if ($.fn.classyNav) {
         $('#creditNav').classyNav();

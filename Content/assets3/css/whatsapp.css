@@ -21,3 +21,70 @@
 .my-float{
 	margin-top:16px;
 }
+
+
+/*Para hacer responsive los sliders principales del carousel*/
+    .silderAdd1 {
+		background-image: url("../../../IMG/Slider-Principal/01.jpg");
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-attachment: scroll; 
+		background-size: cover;
+	}
+
+	@media only screen and (max-width: 767px) {
+		.silderAdd1 {
+			background-image: url("../../../IMG/Slider-Principal/1.png");	
+			height: auto;
+			background-position: center center;
+			background-attachment: scroll;
+		}
+	}
+
+	.silderAdd2 {
+		background-image: url("../../../IMG/Slider-Principal/02.jpg");
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-attachment: scroll; 
+		background-size: cover;
+	}
+
+	@media only screen and (max-width: 767px) {
+		.silderAdd2 {
+			background-image: url("../../../IMG/Slider-Principal/2.png");
+		}
+	}
+
+	.silderAdd3 {
+		background-image: url("../../../IMG/Slider-Principal/03.jpg");
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-attachment: scroll; 
+		background-size: cover;
+	}
+
+	@media only screen and (max-width: 767px) {
+		.silderAdd3 {
+			background-image: url("../../../IMG/Slider-Principal/3.png");			
+			height: auto;
+			background-position: center center;
+			background-attachment: scroll;
+		}
+	}
+
+	.silderAdd4 {
+		background-image: url("../../../IMG/Slider-Principal/04.jpg");
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-attachment: scroll; 
+		background-size: cover;
+	}
+
+	@media only screen and (max-width: 767px) {
+		.silderAdd4 {
+			background-image: url("../../../IMG/Slider-Principal/4.png");			
+			height: auto;
+			background-position: center center;
+			background-attachment: scroll;
+		}
+	}
