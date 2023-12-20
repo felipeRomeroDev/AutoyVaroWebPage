@@ -3299,8 +3299,8 @@ namespace AutoyVaro.com.libroazul.www {
         public string IniciarSesion(string Usuario, string Contrasena) {
             AutoyVaro.com.libroazul.www.IniciarSesionRequest inValue = new AutoyVaro.com.libroazul.www.IniciarSesionRequest();
             inValue.Body = new AutoyVaro.com.libroazul.www.IniciarSesionRequestBody();
-            inValue.Body.Usuario = Usuario;
-            inValue.Body.Contrasena = Contrasena;
+            inValue.Body.Usuario = "prodAutoVaro5221";
+            inValue.Body.Contrasena = "data*8541";
             AutoyVaro.com.libroazul.www.IniciarSesionResponse retVal = ((AutoyVaro.com.libroazul.www.wslibroazulSoap)(this)).IniciarSesion(inValue);
             return retVal.Body.IniciarSesionResult;
         }

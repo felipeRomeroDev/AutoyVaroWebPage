@@ -1,0 +1,329 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout3.cshtml";
+}
+
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: center;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+
+<div class="breadcrumb-wrap bg-spring">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7 col-md-8 col-sm-8">
+                <div class="breadcrumb-title">
+                    <h2> Modelos y Marcas de Autos que se devaluan</h2>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Blog Details Section Start -->
+<div class="blog-details-wrap ptb-100">
+    <div class="container">
+        <div class="row gx-5">
+            <div class="col-xl-4 col-lg-12 order-xl-1 order-lg-2 order-md-2 order-2">
+                <div class="sidebar">
+                    <div class="sidebar-widget style4">
+
+                    </div>
+
+                    <div class="sidebar-widget popular-post">
+                        <h4>Siguiente Post</h4>
+                        <div class="popular-post-widget">
+                            <div class="pp-post-item">
+                                <a href="@Url.Action("Obtener","Blog")"></a>
+                                <div class="pp-post-info">
+                                    <span><i class="flaticon-calendar"></i>14 de Diciembre de 2023</span>
+                                    <h6>
+                                        <a href="@Url.Action("Obtener","Blog")"> Obtén dinero por tu auto sin dejarlo</a>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-xl-8 col-lg-12 order-xl-2 order-lg-1 order-md-1 order-1">
+                <article>
+
+                    <div class="post-img">
+                        <img src="~/Content/assets3/img/modelos1.png" />
+                    </div>
+                    <ul class="post-metainfo  list-style">
+                        <li><i class="flaticon-user"></i><a href="posts-by-author.html">Auto y Varo</a></li>
+                        <li><i class="flaticon-calendar"></i><a href="posts-by-date.html">05 Agosto, 2022</a></li>
+                      
+                    </ul>
+                    <h2>
+                        ¿Conoces qué Modelos y Marcas de Autos se Devalúan
+                        Menos?
+                    </h2>
+                    <div class="post-para">
+                        <p>
+                            Desde que un auto sale de la agencia, este pierde un porcentaje de su valor de
+                            mercado, el cual, dependiendo de la marca y modelo, oscila entre el 15% y el 25%.
+                            Además, en promedio, perderá cerca del 10% de su valor cada año.
+                            A pesar de que todos los automóviles pierden un porcentaje de su valor con el
+                            tiempo, algunos estudios demuestran que ciertas marcas y modelos han logrado
+                            mitigar el impacto de la devaluación
+                        </p>
+                        <p>
+                            Este factor resulta beneficioso al momento de vender o empeñar tu auto, ya que
+                            permite obtener más dinero por él.
+                            Aunque la devaluación de un auto depende de múltiples factores, te presentamos
+                            algunos estudios que muestran las marcas y modelos de autos que pierden menos
+                            valor en el mercado mexicano.
+                        </p>
+
+                        <h5>¿Cuáles son las marcas de autos que menos se devalúan en México?</h5>
+
+                        <p>
+                            La aseguradora de autos Clupp, elaboró un estudio en el cual analizó el valor de
+                            mercado de 4,000 modelos de 49 marcas de automóviles comercializados en
+                            México de 2010 hasta 2021. Mostrando las siguientes 5 marcas que menos se
+                            deprecian:
+                        </p>
+
+                        <table>
+                            <tr>
+                                <th>Marca</th>
+                                <th>% de devaluación promedio en 5 años</th>
+                            </tr>
+                            <tr>
+                                <td> Hyundai </td>
+                                <td>
+                                    46%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> Subaru   </td>
+                                <td>49% </td>
+                            </tr>
+
+                            <tr>
+                                <td>Mazda</td>
+                                <td>51%</td>
+                            </tr>
+
+                            <tr>
+                                <td>Honda</td>
+                                <td>
+                                    51%
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>KIA</td>
+                                <td>
+                                    52%
+                                </td>
+                            </tr>
+
+                        </table>
+
+                        <h5>¿Cuáles son los modelos de autos que menos se devalúan?</h5>
+
+                        <p>
+                            El mismo estudio, realizado por la aseguradora Clupp, revela las marcas de autos
+                            que menos se devalúan:
+                        </p>
+
+                        <dl>
+                            <dt></dt>
+                            <dd>
+                                En un periodo de 5 años: La Pick-up de Nissan con 47% y el KIA Rio con
+                                54%.
+                            </dd>
+                            <dt></dt>
+                            <dd>
+                                Durante el primer año: Nissan Sentra 6%, seguido por el KIA Rio y
+                                Volkswagen Jetta que pierden cerca del 11% de su valo
+                            </dd>
+                        </dl>
+
+                        <p>
+                            Otro estudio realizado por iSeeCars, muestra una lista con los siguientes modelos
+                            de autos que menos se deprecian en un periodo de cinco años:
+                        </p>
+
+                        <table>
+                            <tr>
+                                <th>Modelo</th>
+                                <th>% de devaluación promedio en 5 años</th>
+                            </tr>
+                            <tr>
+                                <td> Porsche 911 (coupe) </td>
+                                <td>
+                                    9.3%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> Porsche 718 Cayman   </td>
+                                <td>17.6% </td>
+                            </tr>
+
+                            <tr>
+                                <td>Toyota Tacoma </td>
+                                <td>20.4%</td>
+                            </tr>
+
+                            <tr>
+                                <td>Jeep Wrangler/Wrangler Unlimited</td>
+                                <td>
+                                    20.8%
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Honda Civic (sedan/hatchback) </td>
+                                <td>
+                                    21.5%
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td> Subaru BRZ </td>
+                                <td>
+                                    23.4%
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Chevrolet Camaro </td>
+                                <td>
+                                    24.2%
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Toyota C-HR </td>
+                                <td>
+                                    24.4%
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Subaru Crosstrek </td>
+                                <td>
+                                    24.5%
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Toyota Corolla </td>
+                                <td>
+                                    24.5%
+
+                                </td>
+                            </tr>
+
+                        </table>
+
+                        <p>
+                            Por otro lado la consultora Kelly Book realizó un estudio para conocer los 10
+                            modelos de vehículos que menos se devalúan en México, destacando los
+                            siguientes:
+                        </p>
+
+                        <table>
+                            <tr>
+                                <th>Marca</th>
+                                <th>% de devaluación promedio en 5 años</th>
+                            </tr>
+                            <tr>
+                                <td> Toyota Tundra </td>
+                                <td>29.8% </td>
+                            </tr>
+                            <tr>
+                                <td>Toyota Tacoma  </td>
+                                <td>
+                                    32%
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>GMC Sierra</td>
+                                <td>39.2%</td>
+                            </tr>
+
+                            <tr>
+                                <td>Ford Maverick</td>
+                                <td>
+                                    40.5%
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Chevrolet Corvette</td>
+                                <td>40.5%</td>
+                            </tr>
+
+                            <tr>
+                                <td> Toyota 4Runner</td>
+                                <td>
+                                    41.4%
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Tesla Model X</td>
+                                <td>42.4%</td>
+                            </tr>
+
+                            <tr>
+                                <td>Ford F-Series </td>
+                                <td>
+                                    42.7%
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Ford Ranger</td>
+                                <td>43.3% </td>
+                            </tr>
+
+                            <tr>
+                                <td>Jeep Gladiator</td>
+                                <td>43.9%</td>
+                            </tr>
+
+                        </table>
+
+                        <p>
+                            Esta información puede resultar útil si estás considerando la compra de un
+                            automóvil.
+                        </p>
+
+                        <p>
+                            Toma en cuenta que, por lo general, los vehículos que experimentan una menor
+                            depreciación son aquellos con un bajo consumo de gasolina y costos de
+                            mantenimiento económicos.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Blog Details Section End -->

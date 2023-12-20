@@ -15,17 +15,17 @@ namespace AutoyVaro.Controllers
             return View();
         }
 
-        public ActionResult Bujias()
+        public ActionResult Emprender()
         {
             return View();
         }
 
-        public ActionResult Acelerar()
+        public ActionResult Estrategias()
         {
             return View();
 
         }
-        public ActionResult Filtro()
+        public ActionResult Prestamo()
         {
             return View();
         }
@@ -33,25 +33,25 @@ namespace AutoyVaro.Controllers
         {
             return View();
         }
-        public ActionResult Motor()
+        public ActionResult Datos()
         {
             return View();
         }
 
-        public ActionResult Combustible()
+        public ActionResult Lenguaje()
         {
             return View();
         }
-        public ActionResult Goteras()
+        public ActionResult Facturas()
         {
             return View();
         }
-        public ActionResult Ventilacion()
+        public ActionResult Modelos()
         {
             return View();
         }
 
-        public ActionResult Exterior()
+        public ActionResult Obtener()
         {
             return View();
         }
@@ -60,7 +60,12 @@ namespace AutoyVaro.Controllers
         {
             return View();
         }
-        public ActionResult Llanta()
+        public ActionResult Afinacion()
+        {
+            return View();
+        }
+
+        public ActionResult Autoyvaro()
         {
             return View();
         }
